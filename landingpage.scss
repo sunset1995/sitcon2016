@@ -22,6 +22,7 @@ $cloud_left: 17%,10%,25%,70%,77%,67%;
 *{
 	margin: 0px;
 	padding: 0;
+	font-family: "Open Sans","Helvetica","Microsoft JhengHei","PT Sans Narrow","Source Han Sans TWHK",sans-serif;
 }
 body,html{
 	width: 100%;
@@ -47,7 +48,6 @@ body,html{
 	left: 0;
 	bottom: 0;
 	overflow-x: hidden;
-	overflow-y: hidden;
 
 	.cloud{
 		position: absolute;
@@ -116,8 +116,15 @@ body,html{
 	animation-name: arrow;
 	animation-duration: 1.5s;
 	animation-timing-function: linear;
-	animation-timing-function: cubic-bezier(.46,.03,.52,.96);
+	animation-timing-function: cubic-bezier(.46 , .03 , .52 , .96);
 	animation-iteration-count: infinite;
+	z-index: 500;
+}
+#arrow.scrolled{
+	animation-name: none;
+	transition: transform 800ms cubic-bezier(.16 , .84 , .44 , 1);
+	transform: translate(-50% , 200%);
+	opacity: .8;
 }
 
 @keyframes arrow{

@@ -25,8 +25,9 @@
 		<img src="img/cloud.png" class="cloud small" id="cloud6">
 		<img src="img/cloud.png" class="cloud small" id="cloud6_2">
 
-		<img id="arrow" src="img/arrow.png">
 	</div>
+
+	<img id="arrow" src="img/arrow.png">
 
 	<div id="under_ground">
 		<div class="water" id="left_water"></div>
@@ -38,6 +39,21 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+
+	var arrowShowPage = function(){
+		var scrollY = self.pageYOffset ||
+							document.documentElement.scrollTop ||
+							document.body.scrollTop;
+		if( scrollY > 0 ){
+			window.removeEventListener('scroll' , arrowShowPage);
+			document.getElementById('arrow').className = "scrolled";
+		}
+	}
+	window.addEventListener('scroll' , arrowShowPage);
+
+	</script>
 
 </body>
 </html>
