@@ -1,0 +1,155 @@
+
+$color_water: #1799c6;
+$color_grass: #a4e070;
+$color_sky: #c2e9ff;
+	/*
+$cloud1_top: 3%;
+$cloud1_left: 17%;
+$cloud2_top: 30%;
+$cloud2_left: 10%;
+$cloud3_top: 20%;
+$cloud3_left: 25%;
+$cloud4_top: 13%;
+$cloud4_left: 70%;
+$cloud5_top: 56%;
+$cloud5_left: 77%;
+$cloud6_top: 71%;
+$cloud6_left: 67%;
+*/
+$cloud_top: 3%,30%,20%,13%,56%,71%;
+$cloud_left: 17%,10%,25%,70%,77%,67%;
+
+*{
+	margin: 0px;
+	padding: 0;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+	background-color: #c2e9ff;
+}
+
+#mainBg{
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+}
+#standBg{
+	opacity: 0;
+	width: 100%;
+}
+
+#mainPage{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+	.cloud{
+		position: absolute;
+		z-index: 0;
+	}
+
+	.small{
+		animation-name: cloud_small;
+		width: 5%;
+	}
+	.middle{
+		animation-name: cloud_middle;
+		width: 7%;
+	}
+	.big{
+		animation-name: cloud_big;
+		width: 10%;
+	}
+	.opacity{
+		opacity: 0.8;
+	}
+}
+
+@for $i from 1 through 6{
+	#cloud#{$i}{
+		top: nth($cloud_top , $i);
+		left: nth($cloud_left , $i);
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	#cloud#{$i}_2{
+		top: nth($cloud_top , $i);
+		left: nth($cloud_left , $i) + 100%;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+}
+
+#cloud1 , #cloud1_2{ animation-duration: 90s; }
+#cloud2 , #cloud2_2{ animation-duration: 300s; }
+#cloud3 , #cloud3_2{ animation-duration: 200s; }
+#cloud4 , #cloud4_2{ animation-duration: 180s; }
+#cloud5 , #cloud5_2{ animation-duration: 160s; }
+#cloud6 , #cloud6_2{ animation-duration: 100s; }
+
+@keyframes cloud_small{
+	0%{ transform: translateX(0%); }
+	100%{ transform: translateX(-2000%); }
+}
+@keyframes cloud_middle{
+	0%{ transform: translateX(0%); }
+	100%{ transform: translateX(-10000%/7); }
+}
+@keyframes cloud_big{
+	0%{ transform: translateX(0%); }
+	100%{ transform: translateX(-1000%); }
+}
+
+#arrow{
+	position: absolute;
+	left: 50%;
+	bottom: 1%;
+	width: 10%;
+	height: auto;
+	transform: translate(-50% , -30%);
+	animation-name: arrow;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-timing-function: cubic-bezier(.46,.03,.52,.96);
+	animation-iteration-count: infinite;
+}
+
+@keyframes arrow{
+	0%{ transform: translate(-50% , -30%); }
+	50%{ transform: translate(-50% , -70%); }
+	100%{ transform: translate(-50% , -30%); }
+}
+
+#under_ground{
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	top: 100%;
+	left: 0;
+
+	.water{
+		position: absolute;
+		z-index: 0;
+		width: 14.25%;
+		height: 100%;
+		background-color: $color_water;
+	}
+}
+#grass{
+	position: relative;
+	z-index: 100;
+	width: 72%;
+	margin: 0 auto;
+	height: 600px;
+	border-radius: 5px;
+	background-color: $color_grass;
+	margin-top: -0.7%;
+}
+#left_water{ left: 0; }
+#right_water{ right: 0; }
