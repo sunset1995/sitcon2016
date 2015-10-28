@@ -2,6 +2,9 @@
 $color_water: #1799c6;
 $color_grass: #a4e070;
 $color_sky: #c2e9ff;
+$color_red: #f2576a;
+$font_small: 1.28em;
+$font_middle: 2.13em;
 	/*
 $cloud1_top: 3%;
 $cloud1_left: 17%;
@@ -157,16 +160,17 @@ body,html{
 	background-color: $color_grass;
 	margin-top: -0.7%;
 
-	padding: 12em 0 8em 0;
-
+	padding: 10em 0 12em 0;
 }
 
 #about_us{
 	h2{
+		font-size: $font_middle;
 		text-align: center;
+		color: #333;
 	}
 	p{
-		font-size: 1.28em;
+		font-size: $font_small;
 		line-height: 1.5em;
 		width: 80%;
 		max-width: 600px;
@@ -174,8 +178,31 @@ body,html{
 		margin-top: 1em;
 		text-align: center;
 		text-align: justify;
+		border: 1px #DBDBDB solid;
+		padding: 1em;
+		color: #333;
 	}
 }
+
+#call_for{
+	line-height: 1.5em;
+	width: 80%;
+	max-width: 600px;
+	margin: 4em auto 0 auto;
+
+	button{
+		font-size: $font_small;
+		line-height: 1.5em;
+		background-color: $color_red;
+		color: #eee;
+		padding: 1.2em;
+		border: 0;
+		border-radius: .3em;
+	}
+}
+
+#CFP{ float: left; margin-left: -1em; }
+#CFS{ float: right; margin-right: -1em; }
 
 #left_water{ left: 0; }
 #right_water{ right: 0; }
