@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<div id="mainPage">
+	<div id="mainPage" class="wait_load">
 		<img src="img/background.png" id="standBg">
 		<img src="img/background.png" id="mainBg">
 
@@ -27,9 +27,9 @@
 
 	</div>
 
-	<img id="arrow" src="img/arrow.png">
+	<img id="arrow" src="img/arrow.png" class="wait_load">
 
-	<div id="under_ground">
+	<div id="under_ground" class="wait_load">
 		<div class="water" id="left_water"></div>
 		<div class="water" id="right_water"></div>
 		<div id="grass">
@@ -59,6 +59,22 @@
 	}
 	window.addEventListener('scroll' , arrowShowPage);
 	arrowShowPage();
+
+	document.body.style.overflowY = 'hidden';
+	var loadComplete = function(){
+		var lock = true;
+		return function(){
+			if( !lock ) return;
+			lock = false;
+			document.body.style.overflowY = 'scroll';
+			var list = document.querySelectorAll('.wait_load');
+			for(var i = 0 ; i<list.length ; ++i)
+				list[i].className += ' done_load';
+			list = null;
+		}
+	}();
+	document.body.onload = loadComplete;
+	setTimeout( loadComplete , 2000 );
 
 	</script>
 

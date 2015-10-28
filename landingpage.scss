@@ -228,3 +228,11 @@ body,html{
 
 #left_water{ left: 0; }
 #right_water{ right: 0; }
+
+.wait_load{
+	opacity: 0;
+	transition: opacity 800ms $timeFunc;
+	&.done_load{
+		opacity: 1;
+	}
+}
