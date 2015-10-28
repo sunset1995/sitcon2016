@@ -110,8 +110,8 @@ body,html{
 	position: absolute;
 	left: 50%;
 	bottom: 1%;
-	width: 10%;
-	height: auto;
+	width: auto;
+	height: 4em;
 	transform: translate(-50% , -30%);
 	animation-name: arrow;
 	animation-duration: 1.5s;
@@ -146,10 +146,29 @@ body,html{
 	z-index: 100;
 	width: 72%;
 	margin: 0 auto;
-	height: 600px;
 	border-radius: 5px;
 	background-color: $color_grass;
 	margin-top: -0.7%;
+
+	padding: 12em 0 8em 0;
+
 }
+
+#about_us{
+	h2{
+		text-align: center;
+	}
+	p{
+		font-size: 1.28em;
+		line-height: 1.5em;
+		width: 80%;
+		max-width: 600px;
+		margin: 0 auto;
+		margin-top: 1em;
+		text-align: center;
+		text-align: justify;
+	}
+}
+
 #left_water{ left: 0; }
 #right_water{ right: 0; }
