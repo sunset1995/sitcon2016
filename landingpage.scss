@@ -4,6 +4,7 @@ $color_grass: #a4e070;
 $color_sky: #c2e9ff;
 $color_red: #f2576a;
 $font_small: 1.28em;
+$font_strong: 1.8em;
 $font_middle: 2.13em;
 $timeFunc: cubic-bezier(.16 , .84 , .44 , 1);
 	/*
@@ -183,6 +184,20 @@ body,html{
 		padding: 1em;
 		color: #333;
 		letter-spacing: .2em;
+	}
+	date{
+		display: block;
+		font-size: $font_small;
+		line-height: 1.5em;
+		width: 80%;
+		max-width: 600px;
+		margin: 0 auto;
+		margin-top: 1em;
+		color: #333;
+		letter-spacing: .1em;
+		strong{
+			font-size: $font_strong;
+		}
 	}
 }
 
