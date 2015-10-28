@@ -3,6 +3,7 @@ $color_water: #1799c6;
 $color_grass: #a4e070;
 $color_sky: #c2e9ff;
 $color_red: #f2576a;
+$font_tiny: 1em;
 $font_small: 1.28em;
 $font_strong: 1.8em;
 $font_middle: 2.13em;
@@ -162,7 +163,18 @@ body,html{
 	background-color: $color_grass;
 	margin-top: -0.7%;
 
-	padding: 10em 0 12em 0;
+	padding: 10em 0 8em 0;
+
+	footer{
+		display: block;
+		font-size: $font_small;
+		line-height: 1.5em;
+		width: 80%;
+		max-width: 600px;
+		margin: 0 auto;
+		color: #333;
+		letter-spacing: .1em;
+	}
 }
 
 #about_us{
@@ -205,10 +217,11 @@ body,html{
 	line-height: 1.5em;
 	width: 80%;
 	max-width: 600px;
-	margin: 4em auto 0 auto;
+	margin: 4em auto 8em auto;
+	text-align: center;
 
 	a{
-		display: block;
+		display: inline-block;
 		text-decoration: none;
 		font-size: $font_small;
 		background-color: $color_red;
@@ -223,23 +236,16 @@ body,html{
 		transition: opacity 800ms $timeFunc;
 		opacity: .8;
 
-		span{
-			display: block;
-		}
 		&:active{
 			color: #FFD7D7;
 		}
 		&:hover{
 			opacity: 1;
 		}
-		&.disabled{
-			opacity: .8;
-		}
 	}
 }
 
-#CFP{ float: left; }
-#CFS{ float: right; }
+.stand{ height: 4em; }
 
 #left_water{ left: 0; }
 #right_water{ right: 0; }
