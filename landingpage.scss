@@ -5,6 +5,7 @@ $color_sky: #c2e9ff;
 $color_red: #f2576a;
 $font_small: 1.28em;
 $font_middle: 2.13em;
+$timeFunc: cubic-bezier(.16 , .84 , .44 , 1);
 	/*
 $cloud1_top: 3%;
 $cloud1_left: 17%;
@@ -113,8 +114,8 @@ body,html{
 	position: absolute;
 	left: 50%;
 	bottom: 1%;
-	width: auto;
-	height: 4em;
+	width: 10%;
+	height: auto;
 	transform: translate(-50% , -30%);
 	animation-name: arrow;
 	animation-duration: 1.5s;
@@ -125,7 +126,7 @@ body,html{
 }
 #arrow.scrolled{
 	animation-name: none;
-	transition: transform 800ms cubic-bezier(.16 , .84 , .44 , 1);
+	transition: transform 800ms $timeFunc;
 	transform: translate(-50% , 200%);
 	opacity: .8;
 }
@@ -168,6 +169,7 @@ body,html{
 		font-size: $font_middle;
 		text-align: center;
 		color: #333;
+		word-spacing: .5em;
 	}
 	p{
 		font-size: $font_small;
@@ -178,9 +180,9 @@ body,html{
 		margin-top: 1em;
 		text-align: center;
 		text-align: justify;
-		border: 1px #DBDBDB solid;
 		padding: 1em;
 		color: #333;
+		letter-spacing: .2em;
 	}
 }
 
@@ -190,23 +192,39 @@ body,html{
 	max-width: 600px;
 	margin: 4em auto 0 auto;
 
-	button{
+	a{
+		display: block;
+		text-decoration: none;
 		font-size: $font_small;
 		background-color: $color_red;
-		color: #eee;
-		padding: 1.2em 4em;
+		color: #FFD7D7;
+		padding: 1.2em 3em;
 		border: 0;
 		border-radius: .3em;
 		cursor: pointer;
+		color: #eee;
+		letter-spacing: .2em;
+		text-align: center;
+		transition: opacity 800ms $timeFunc;
+		opacity: .8;
 
 		span{
 			display: block;
 		}
+		&:active{
+			color: #FFD7D7;
+		}
+		&:hover{
+			opacity: 1;
+		}
+		&.disabled{
+			opacity: .8;
+		}
 	}
 }
 
-#CFP{ float: left; margin-left: -1em; }
-#CFS{ float: right; margin-right: -1em; }
+#CFP{ float: left; }
+#CFS{ float: right; }
 
 #left_water{ left: 0; }
 #right_water{ right: 0; }
