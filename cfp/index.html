@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SITCON 2016</title>
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link rel="stylesheet" href="landingpage.css">
+</head>
+<body>
+
+	<div id="mainPage" class="wait_load">
+		<img src="img/background.png" id="standBg">
+		<img src="img/background.png" id="mainBg">
+
+		<img src="img/cloud.png" class="cloud small" id="cloud1">
+		<img src="img/cloud.png" class="cloud small" id="cloud1_2">
+		<img src="img/cloud.png" class="cloud small opacity" id="cloud2">
+		<img src="img/cloud.png" class="cloud small opacity" id="cloud2_2">
+		<img src="img/cloud.png" class="cloud big" id="cloud3">
+		<img src="img/cloud.png" class="cloud big" id="cloud3_2">
+		<img src="img/cloud.png" class="cloud middle" id="cloud4">
+		<img src="img/cloud.png" class="cloud middle" id="cloud4_2">
+		<img src="img/cloud.png" class="cloud small" id="cloud5">
+		<img src="img/cloud.png" class="cloud small" id="cloud5_2">
+		<img src="img/cloud.png" class="cloud small" id="cloud6">
+		<img src="img/cloud.png" class="cloud small" id="cloud6_2">
+
+	</div>
+
+	<img id="arrow" src="img/arrow.png" class="wait_load">
+		
+	<div id="under_ground" class="wait_load">
+
+		<img src="img/arrow.png" class="arrow_responsive">
+
+		<div class="water" id="left_water"></div>
+		<div class="water" id="right_water"></div>
+		<div id="grass">
+			<div id="about_us">
+				<h2>About SITCON</h2>
+				<p>SITCON 學生計算機年會，由對資訊抱持熱誠的學生們所組成的同名社群自發籌辦，希望能透過技術與知識的激盪，給予學生們一個用自身力量實踐夢想的舞台。本屆 Keynote 的主軸為「開源貢獻」，期待在我們高喊開源之時，也別忘記捲起袖子，動手寫 code 、翻譯、真正貢獻開源專案。同時，往年的座談會將改為「論壇」，以「資訊普及教育的過去、現在與未來」為討論主題，期待會眾和與談人之間有更多交流。</p>
+				<date><strong>2</strong>.27 中研院 人文社會科學館</date>
+			</div>
+
+			<div id="call_for">
+				<a id="CFP" href="#">我要投稿</a>
+			</div>
+
+			<footer>如有意願贊助請來信</footer>
+			<footer>sitcon-marketing@googlegroups.com</footer>
+		</div>
+	</div>
+
+	<script>
+
+	var arrowShowPage = function(){
+		var scrollY = self.pageYOffset ||
+							document.documentElement.scrollTop ||
+							document.body.scrollTop;
+		if( scrollY > 0 ){
+			window.removeEventListener('scroll' , arrowShowPage);
+			document.getElementById('arrow').className = "scrolled";
+		}
+	}
+	window.addEventListener('scroll' , arrowShowPage);
+	arrowShowPage();
+
+	document.body.style.overflowY = 'hidden';
+	var loadComplete = function(){
+		var lock = true;
+		return function(){
+			if( !lock ) return;
+			lock = false;
+			document.body.style.overflowY = 'scroll';
+			var list = document.querySelectorAll('.wait_load');
+			for(var i = 0 ; i<list.length ; ++i)
+				list[i].className += ' done_load';
+			list = null;
+		}
+	}();
+	document.body.onload = loadComplete;
+	setTimeout( loadComplete , 5000 );
+
+	</script>
+
+</body>
+</html>

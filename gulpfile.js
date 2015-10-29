@@ -4,17 +4,17 @@ var sass = require('gulp-sass');
 var cssmin = require('gulp-cssmin');
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('debug' , ['scss'] , function(){
-	gulp.watch('./landingpage.scss' , ['scss']);
+gulp.task('debug' , ['cfp'] , function(){
+	gulp.watch('./landingpage.scss' , ['cfp']);
 })
 
-gulp.task('scss' , function(){
-	return gulp.src( './landingpage.scss' )
+gulp.task('cfp' , function(){
+	return gulp.src( './cfp/landingpage.scss' )
 		.pipe(sass())
 		.on('error' , errorLog )
 		.pipe(autoprefixer(['last 10 version']))
 		.pipe(cssmin())
-		.pipe(gulp.dest( './' ));
+		.pipe(gulp.dest( './cfp' ));
 });
 
 function errorLog(error){
