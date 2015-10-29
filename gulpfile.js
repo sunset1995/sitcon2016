@@ -5,7 +5,7 @@ var cssmin = require('gulp-cssmin');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('debug' , ['cfp'] , function(){
-	gulp.watch('./landingpage.scss' , ['cfp']);
+	gulp.watch('./cfp/landingpage.scss' , ['cfp']);
 })
 
 gulp.task('cfp' , function(){

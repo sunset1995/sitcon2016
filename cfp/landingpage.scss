@@ -4,7 +4,7 @@ $color_grass: #a4e070;
 $color_sky: #c2e9ff;
 $color_red: #f2576a;
 $font_tiny: 1em;
-$font_small: 1.28em;
+$font_small: 1.2em;
 $font_strong: 1.8em;
 $font_middle: 2.13em;
 $timeFunc: cubic-bezier(.16 , .84 , .44 , 1);
@@ -175,6 +175,7 @@ body,html{
 		margin: 0 auto;
 		color: #333;
 		letter-spacing: .1em;
+		word-break: break-all;
 	}
 }
 
@@ -208,6 +209,7 @@ body,html{
 		margin-top: 1em;
 		color: #333;
 		letter-spacing: .1em;
+		text-align: center;
 		strong{
 			font-size: $font_strong;
 		}
