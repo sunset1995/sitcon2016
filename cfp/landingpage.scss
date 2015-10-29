@@ -50,7 +50,7 @@ body,html{
 }
 
 #mainPage{
-	position: absolute;
+	position: relative;
 	width: 100%;
 	left: 0;
 	bottom: 0;
@@ -114,17 +114,15 @@ body,html{
 }
 
 #arrow{
+	display: none;
+	position: absolute;
+	transform: translate(-50% , -30%);
+	animation-name: none;
 	position: absolute;
 	left: 50%;
 	bottom: 1%;
 	width: 10%;
 	height: auto;
-	transform: translate(-50% , -30%);
-	animation-name: arrow;
-	animation-duration: 1.5s;
-	animation-timing-function: linear;
-	animation-timing-function: cubic-bezier(.46 , .03 , .52 , .96);
-	animation-iteration-count: infinite;
 	z-index: 500;
 }
 #arrow.scrolled{
@@ -141,10 +139,10 @@ body,html{
 }
 
 #under_ground{
-	position: absolute;
+	position: relative;
+	top: .5%;
 	z-index: 0;
 	width: 100%;
-	top: 100%;
 	left: 0;
 
 	.water{
@@ -263,7 +261,7 @@ body,html{
 }
 
 .arrow_responsive{
-	display: none;
+	display: block;
 	position: absolute;
 	left: 50%;
 	top: 4em;
@@ -273,19 +271,21 @@ body,html{
 	z-index: 500;
 }
 
-@media screen and (max-aspect-ratio: 5/3 ){
+@media all and (max-aspect-ratio: 2/1 ) and (min-aspect-ratio: 5/3){
 	#mainPage{
-		position: relative;
+		position: absolute;
 	}
 	#arrow{
-		display: none;
-		position: absolute;
-		transform: translate(-50% , -30%);
-		animation-name: none;
+		display: block;
+		animation-name: arrow;
+		animation-duration: 1.5s;
+		animation-timing-function: linear;
+		animation-timing-function: cubic-bezier(.46 , .03 , .52 , .96);
+		animation-iteration-count: infinite;
 	}
-	.arrow_responsive{ display: block; }
+	.arrow_responsive{ display: none; }
 	#under_ground{
-		position: relative;
-		top: .5%;
+		position: absolute;
+		top: 100%;
 	}
 }
