@@ -48,52 +48,25 @@
 		<div class="water" id="left_water"></div>
 		<div class="water" id="right_water"></div>
 		<div id="grass">
-			<div id="about_us">
+			<div class="first_page">
 				<h2>About SITCON</h2>
 				<p>SITCON 學生計算機年會，由對資訊抱持熱誠的學生們所組成的同名社群自發籌辦，希望能透過技術與知識的激盪，給予學生們一個用自身力量實踐夢想的舞台。本屆 Keynote 的主軸為「開源貢獻」，期待在我們高喊開源之時，也別忘記捲起袖子，動手寫 code 、翻譯、真正貢獻開源專案。同時，往年的座談會將改為「論壇」，以「資訊普及教育的過去、現在與未來」為討論主題，期待會眾和與談人之間有更多交流。</p>
+
 				<date><strong>2</strong>.27 中研院 人文社會科學館</date>
 			</div>
 
 			<div id="call_for">
-				<a id="CFP" href="https://docs.google.com/document/d/115YTqKXn9457biokje08IQpzc3xlUfnH-TkNZ0PJkI4/edit?usp=sharing">我要投稿</a>
+				<a id="CFP_button" href="https://staff.sitcon.org/docs/view/SITCON-2016-CFP">我要投稿</a>
 			</div>
 
 			<footer>如有意願贊助請來信</footer>
 			<footer><a href="mailto:contact@sitcon.org">contact@sitcon.org</a></footer>
+
+			<div id="CFP"></div>
 		</div>
 	</div>
 
-	<script>
-
-	var arrowShowPage = function(){
-		var scrollY = self.pageYOffset ||
-							document.documentElement.scrollTop ||
-							document.body.scrollTop;
-		if( scrollY > 0 ){
-			window.removeEventListener('scroll' , arrowShowPage);
-			document.getElementById('arrow').className = "scrolled";
-		}
-	}
-	window.addEventListener('scroll' , arrowShowPage);
-	arrowShowPage();
-
-	document.body.style.overflowY = 'hidden';
-	var loadComplete = function(){
-		var lock = true;
-		return function(){
-			if( !lock ) return;
-			lock = false;
-			document.body.style.overflowY = 'scroll';
-			var list = document.querySelectorAll('.wait_load');
-			for(var i = 0 ; i<list.length ; ++i)
-				list[i].className += ' done_load';
-			list = null;
-		}
-	}();
-	document.body.onload = loadComplete;
-	setTimeout( loadComplete , 5000 );
-
-	</script>
-
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="pageHandler.js"></script>
 </body>
 </html>
