@@ -226,7 +226,7 @@ body,html{
 	margin: 4em auto 8em auto;
 	text-align: center;
 
-	a{
+	button{
 		display: inline-block;
 		text-decoration: none;
 		font-size: $font_small;
@@ -242,9 +242,6 @@ body,html{
 		transition: opacity 800ms $timeFunc;
 		opacity: .8;
 
-		&:active{
-			color: #FFD7D7;
-		}
 		&:hover{
 			opacity: 1;
 		}
