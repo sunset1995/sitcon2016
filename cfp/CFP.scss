@@ -1,4 +1,6 @@
 
+$timeFunc: cubic-bezier(.16 , .84 , .44 , 1);
+
 #second_page{
 	position: relative;
 	color: #333;
@@ -61,4 +63,33 @@
 	ul{
 		padding-left: 2em;
 	}
+}
+
+#first_page{
+	transition: transform 800ms $timeFunc;
+}
+#first_page.move_page{
+	transform: translate(-200% , 0);
+}
+
+#page1_button{
+	position: absolute;
+	width: 5%;
+	top: 12em;
+	left: -10%;
+	transform: rotate(-90deg);
+	transition: left 800ms $timeFunc;
+	cursor: pointer;
+	z-index: 999;
+}
+#page1_button.move_page{
+	left: 0;
+}
+#second_page{
+	display: none;
+	transition: transform 800ms $timeFunc;	
+	transform: translate(200% , 0);
+}
+#second_page.move_page{
+	transform: translate(0 , 0);
 }

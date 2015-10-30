@@ -144,6 +144,7 @@ body,html{
 	z-index: 0;
 	width: 100%;
 	left: 0;
+	transition: height 1000;
 
 	.water{
 		position: absolute;
@@ -161,6 +162,8 @@ body,html{
 	border-radius: 5px;
 	background-color: $color_grass;
 	margin-top: -0.7%;
+	overflow-x: hidden;
+	overflow-y: hidden;
 
 	padding: 10em 0 8em 0;
 
