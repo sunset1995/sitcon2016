@@ -63,6 +63,20 @@ $timeFunc: cubic-bezier(.16 , .84 , .44 , 1);
 	ul{
 		padding-left: 2em;
 	}
+
+	footer{
+		border-top: 1px solid #333;
+		padding-top: 1em;
+		margin-top: 5em;
+		font-size: 1em;
+		p{
+			margin: 0;
+		}
+		a{
+			display: block;
+			text-align: center;	
+		}
+	}
 }
 
 #first_page{
