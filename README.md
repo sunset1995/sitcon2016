@@ -17,18 +17,22 @@ npm install -g gulp
 npm install
 ```
 
-## build
+## build 及 debug
 
 所有 source code 都在資料夾 *app* 下
 
-build 網頁
+#### 更新網頁
+1. 改好 source code 後
+2. 用 gulp 的 default task build 網頁
+3. 切到 gh-pages branch
+4. 將 build 資料夾內的所有檔案複製出來
 ```
 gulp
+git checkout gh-pages
+cp -R ./build/* ./
 ```
 
-debug
-```
-gulp debug
-```
-
+#### debug
+用 `gulp debug` 會重編整個網頁
+並用 *browser-sync* 建制臨時的小型網頁伺服用來檢視結果及 livereload
 
