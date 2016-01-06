@@ -1,12 +1,9 @@
-/*
-*	
-*/
 var config = require('./_config.js');
 
 var gulp = require('gulp');
 var browsersSync = require('browser-sync');
 
-gulp.task('debug' , ['default'] , function(){
+gulp.task('debug' , ['scss-debug'] , function(){
 	var reload = browsersSync.reload;
 	browsersSync({
 		server: {
@@ -14,5 +11,5 @@ gulp.task('debug' , ['default'] , function(){
 		}
 	});
 
-	gulp.watch(config.cfp.watch, ['cfp', reload]);
+	gulp.watch(config.scss.watch, ['scss-debug', reload]);
 });
