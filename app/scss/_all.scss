@@ -1,0 +1,11 @@
+
+$sans-serif: 'Noto Sans', 'Microsoft JhengHei', 'PT Sans Narrow', 'Source Han Sans TWHK', sans-serif;
+$serif: Arial;
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: $sans-serif;
+}
