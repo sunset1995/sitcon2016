@@ -11,10 +11,10 @@ var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('cfp' , function(){
+gulp.task('cfp', function(){
 	return gulp.src(cfpPath.src)
 		.pipe(sass())
-		.on('error' , errorLog )
+		.on('error', errorLog )
 		.pipe(concat('landingpage.css'))
 		.pipe(autoprefixer(['last 10 version']))
 		.pipe(cssmin())
