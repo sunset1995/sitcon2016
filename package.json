@@ -1,21 +1,21 @@
 {
-  "name": "sitcon2016pre",
+  "name": "SITCON2016",
   "version": "1.0.0",
-  "description": "",
+  "description": "Developing SITCON 2016's web",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunset1995/SITCON2016_Landingpage.git"
+    "url": "git+https://github.com/sitcon-tw/2016"
   },
-  "author": "SITCON Design",
+  "author": "SITCON minasan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sunset1995/SITCON2016_Landingpage/issues"
+    "url": "https://github.com/sitcon-tw/2016/issues"
   },
-  "homepage": "https://github.com/sunset1995/SITCON2016_Landingpage#readme",
+  "homepage": "https://github.com/sitcon-tw/2016",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
