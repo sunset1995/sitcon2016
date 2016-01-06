@@ -1,4 +1,9 @@
 module.exports = {
+	html: {
+		src: 'app/index.html',
+		dst: 'build/',
+		watch: ['app/index.html', 'app/html/**/*']
+	},
 	scss: {
 		src: 'app/scss/sitcon2016.scss',
 		dst: 'build/',

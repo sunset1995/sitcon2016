@@ -4,4 +4,4 @@
 */
 var gulp = require('gulp');
 
-gulp.task('default', ['scss']);
+gulp.task('default', ['html', 'scss']);
