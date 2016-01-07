@@ -19,6 +19,11 @@ module.exports = {
 		dst: 'build/image/',
 		watch: 'app/image/**/*'
 	},
+	favicon: {
+		src: 'app/favicon*',
+		dst: 'build/',
+		watch: 'app/favicon*'
+	},
 	cfp: {
 		scss: {
 			src: ['app/cfp/landingpage.scss', 'app/cfp/CFP.scss'],

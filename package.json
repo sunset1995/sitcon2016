@@ -25,6 +25,7 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-file-include": "^0.13.7",
     "gulp-html-prettify": "0.0.1",
+    "gulp-imagemin": "^2.4.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.5.1",
