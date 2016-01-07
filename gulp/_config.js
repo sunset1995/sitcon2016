@@ -5,12 +5,12 @@ module.exports = {
 		watch: ['app/index.html', 'app/html/**/*']
 	},
 	js: {
-		src: 'app/js/sitcon2016.js',
+		src: 'app/js/main.js',
 		dst: 'build/',
 		watch: 'app/js/**/*'
 	},
 	scss: {
-		src: 'app/scss/sitcon2016.scss',
+		src: 'app/scss/main.scss',
 		dst: 'build/',
 		watch: 'app/scss/**/*'
 	},

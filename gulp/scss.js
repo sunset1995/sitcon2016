@@ -4,6 +4,7 @@ var scssPath = require('./_config.js').scss;
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var rename = require('gulp-rename');
 
 var scssCompileMode = function(output_style) {
     var output_style = output_style || 'compressed';
@@ -14,6 +15,7 @@ var scssCompileMode = function(output_style) {
 			}))
 			.on('error', errorLog)
 			.pipe(autoprefixer(['last 10 version']))
+			.pipe(rename('sitcon2016.css'))
 			.pipe(gulp.dest(scssPath.dst));
 	};
 };
