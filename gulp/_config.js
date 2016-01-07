@@ -15,8 +15,14 @@ module.exports = {
 		watch: 'app/image/**/*'
 	},
 	cfp: {
-		src: ['app/cfp/landingpage.scss', 'app/cfp/CFP.scss'],
-		dst: 'build/cfp/',
-		watch: ['app/cfp/landingpage.scss', 'app/cfp/CFP.scss']
+		scss: {
+			src: ['app/cfp/landingpage.scss', 'app/cfp/CFP.scss'],
+			dst: 'build/cfp/'
+		},
+		allOthers: {
+			src: 'app/cfp/allOthers/**',
+			dst: 'build/cfp/'
+		},
+		watch: 'app/cfp/**/*'
 	}
 };

@@ -11,12 +11,19 @@ var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('cfp', function(){
-	return gulp.src(cfpPath.src)
+gulp.task('cfp', ['cfp-scss', 'cfp-others']);
+
+gulp.task('cfp-scss', function() {
+	return gulp.src(cfpPath.scss.src)
 		.pipe(sass())
 		.on('error', errorLog )
 		.pipe(concat('landingpage.css'))
 		.pipe(autoprefixer(['last 10 version']))
 		.pipe(cssmin())
-		.pipe(gulp.dest(cfpPath.dst));
+		.pipe(gulp.dest(cfpPath.scss.dst));
+});
+
+gulp.task('cfp-others', function() {
+	return gulp.src(cfpPath.allOthers.src)
+		.pipe(gulp.dest(cfpPath.allOthers.dst));
 });
