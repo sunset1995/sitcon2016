@@ -1,8 +1,7 @@
 require('./lib/dom.js');
 
 var pages = [
-	'about', 'location', 'speaker',
-	'schedule', 'sponsor', 'team'
+	'home', 'schedule', 'sponsor', 'location'
 ];
 
 for(var i=0; i<pages.length; ++i)
@@ -13,7 +12,7 @@ for(var i=0; i<pages.length; ++i)
 			var which = pages[i];
 			return function() {
 				Qid('h-controller').style.height
-				= Qid(which+'-page').offsetHeight + 'px';
+				= Qid('page-'+which).offsetHeight + 'px';
 			};
 		}()
 	);	
