@@ -1,4 +1,20 @@
-// global style
-@import '_all';
+/*
+*	Do anyone have ideal
+*	why sass don't check each file dependency for us?
+*	Import partial/all twice will enlarge built result!
+*/
 
-// style for each page
+// global definition
+@import 'partial/all';
+
+// individual definition
+@import 'page-controller';
+@import 'navbar';
+
+// individual page style
+@import 'about-page';
+@import 'location-page';
+@import 'speaker-page';
+@import 'schedule-page';
+@improt 'sponsor-page';
+@import 'team-page';

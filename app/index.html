@@ -3,50 +3,45 @@
     <head>
         __@w@include('./html/meta.html')
     </head>
-    <style type="text/css">
-    button {
-    	position: fixed;
-    	z-index: 100;
-    }
-    #leftbtn { left: 5em; }
-    #rightbtn { left: 10em; }
-    body {
-    	overflow-x: hidden;
-    	position: relative;
-    }
-    #page1, #page2 {
-    	width: 100%;
-    }
-    #page1 {
-    	position: absolute;
-    	left: 0;
-    	top: 0;
-    	background-color: orange;
-    }
-    #page2 {
-    	position: absolute;
-    	left: 100%;
-    	top: 0;
-    	background-color: blue;
-    }
-    #h-controller {
-    	position: relative;
-    	overflow: hidden;
-    	transition: all 500ms;
-    }
-    #x-controller {
-    	position: relative;
-    	transition: all 500ms;
-    }
-    </style>
 <body>
-	<button id="leftbtn">left</button>
-	<button id="rightbtn">right</button>
+
+	<div id="navbar">
+		__@w@include('./html/navs.html')
+	</div>
 
 	<div id="h-controller">
+		<div id="target-about" class="targetor"></div>
+		<div id="target-location" class="targetor"></div>
+		<div id="target-speaker" class="targetor"></div>
+		<div id="target-schedule" class="targetor"></div>
+		<div id="target-sponsor" class="targetor"></div>
+		<div id="target-team" class="targetor"></div>
+
 		<div id="x-controller">
-			<div id="page1"></div>
-			<div id="page2"></div>
+			<div id="about-page" class="page-container">
+				<div class="sky"></div>
+				__@w@include('./html/pages/about.html')
+			</div>
+			<div id="location-page" class="page-container">
+				<div class="sky"></div>
+				__@w@include('./html/pages/location.html')
+			</div>
+			<div id="speaker-page" class="page-container">
+				<div class="sky"></div>
+				__@w@include('./html/pages/speaker.html')
+			</div>
+			<div id="schedule-page" class="page-container">
+				<div class="sky"></div>
+				__@w@include('./html/pages/schedule.html')
+			</div>
+			<div id="sponsor-page" class="page-container">
+				<div class="sky"></div>
+				__@w@include('./html/pages/sponsor.html')
+			</div>
+			<div id="team-page" class="page-container">
+				<div class="sky"></div>
+				__@w@include('./html/pages/team.html');
+			</div>
 		</div>
 	</div>
 

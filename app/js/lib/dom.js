@@ -25,12 +25,12 @@ removeEvent = function(ele, eve, func) {
 	else if( ele.detachEvent ) ele.detachEvent('on'+eve , func);
 	else ele[eve] = null;
 }
-removeClass = function( ele , classname ) {
+removeClass = function(ele , classname) {
 	if( !ele || typeof ele.className === 'undefined' ) return;
 	var reg = new RegExp(classname , "g");
 	ele.className = ele.className.replace(reg, "");
 }
-addClass = function( ele , applyclass ) {
+addClass = function(ele , applyclass) {
 	if( !ele || typeof ele.className === 'undefined' ) return;
 	if( ele.className.indexOf(applyclass)!=-1 ) return;
 	if( ele.className.length>0 ) ele.className += ' '+applyclass;

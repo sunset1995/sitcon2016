@@ -1,0 +1,16 @@
+#navbar {
+	position: fixed;
+	top: 2em;
+	z-index: 999;
+	text-align: center;
+
+	a {
+		text-decoration: none;
+		font-size: 1em;
+	}
+
+	.nav {
+		display: inline-block;
+		margin: 0 1em;
+	}
+}
