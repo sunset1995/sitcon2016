@@ -3,7 +3,7 @@ var config = require('./_config.js');
 var gulp = require('gulp');
 var browsersSync = require('browser-sync');
 
-gulp.task('debug' , ['html', 'scss-debug', 'js-debug', 'favicon', 'cfp'] , function() {
+gulp.task('debug' , ['html', 'scss-debug', 'js-debug', 'image', 'favicon', 'cfp'] , function() {
 	var reload = browsersSync.reload;
 	browsersSync({
 		server: {
@@ -12,8 +12,9 @@ gulp.task('debug' , ['html', 'scss-debug', 'js-debug', 'favicon', 'cfp'] , funct
 	});
 
 	gulp.watch(config.html.watch, ['html', reload]);
-	gulp.watch(config.scss.watch, ['scss-debug', reload]);
 	gulp.watch(config.js.watch, ['js-debug', reload]);
+	gulp.watch(config.scss.watch, ['scss-debug', reload]);
+	gulp.watch(config.image.watch, ['image', reload]);
 	gulp.watch(config.favicon.watch, ['favicon', reload]);
 	gulp.watch(config.cfp.watch, ['cfp', reload]);
 });
