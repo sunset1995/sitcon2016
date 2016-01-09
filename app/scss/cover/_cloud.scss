@@ -1,17 +1,29 @@
+// background mountain
+#image-mountain {
+	position: absolute;
+	bottom: 3em;
+	left: 20%;
+	width: 80%;
+	z-index: 0;
+	// variable define in partial/all
+	transition: all $pageChangeDuration $timeQuartic;
+}
+
+// background clouds
 $cloud_top: 3%, 30%, 20%, 13%, 56%, 71%;
 $cloud_left: 17%, 10%, 25%, 70%, 77%, 67%;
-
 #cover-cloud {
 	position: absolute;
-	width: 100%;
+	width: 105%;
 	height: 955px;
 	background-color: $colorSky;
+	transition: all $pageChangeDuration $timeQuartic;
 
 	@include cover-height-rwd();
 
 	.cloud{
 		position: absolute;
-		z-index: 0;
+		z-index: 1;
 	}
 
 	.small{

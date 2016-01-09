@@ -4,7 +4,8 @@
 }
 #x-controller {
 	position: relative;
-	transition: all 1800ms $timeQuartic;
+	// variable define in partial/all
+	transition: all $pageChangeDuration $timeQuartic;
 }
 
 .page-container {

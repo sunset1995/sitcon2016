@@ -1,0 +1,12 @@
+#target-home:target ~ #cover-cloud {
+	transform: translateX(0);
+}
+#target-schedule:target ~ #cover-cloud {
+	transform: translateX(-100%*5/105*1/3);
+}
+#target-sponsor:target ~ #cover-cloud {
+	transform: translateX(-100%*5/105*2/3);
+}
+#target-location:target ~ #cover-cloud {
+	transform: translateX(-100%*5/105);
+}

@@ -12,15 +12,18 @@
 @import 'page-controller';
 @import 'navbar';
 
-// individual page style
-@import 'cover/cloud';
+// individual cover style
 @import 'cover/all';
-@import 'pages/all';
+@import 'cover/cloud';
+@import 'cover/parallax';
 @import 'cover/home';
-@import 'pages/home';
 @import 'cover/schedule';
-@import 'pages/schedule';
 @import 'cover/sponsor';
-@import 'pages/sponsor';
 @import 'cover/location';
+
+// individual page style
+@import 'pages/all';
+@import 'pages/home';
+@import 'pages/schedule';
+@import 'pages/sponsor';
 @import 'pages/location';
