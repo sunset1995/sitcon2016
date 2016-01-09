@@ -5,13 +5,11 @@ require('./navbar.js');
 },{"./init-page.js":2,"./navbar.js":4}],2:[function(require,module,exports){
 require('./lib/dom.js');
 
-if( typeof location.hash !== 'undefined'
-	&&  location.hash.slice(8).length != 0 )
-	Qid('h-controller').style.height
-	= Qid(location.hash.slice(8)+'-page').offsetHeight + 'px';
-else
-	Qid('h-controller').style.height
-	= Qid('about-page').offsetHeight + 'px';
+var initPage = location.hash.slice(8) || 'home';
+location.hash = '#target-' + initPage;
+initPage = 'page-' + initPage;
+Qid('h-controller').style.height
+	= Qid(initPage).offsetHeight + 'px';
 
 },{"./lib/dom.js":3}],3:[function(require,module,exports){
 /*
@@ -57,8 +55,7 @@ addClass = function(ele , applyclass) {
 require('./lib/dom.js');
 
 var pages = [
-	'about', 'location', 'speaker',
-	'schedule', 'sponsor', 'team'
+	'home', 'schedule', 'sponsor', 'location'
 ];
 
 for(var i=0; i<pages.length; ++i)
@@ -69,7 +66,7 @@ for(var i=0; i<pages.length; ++i)
 			var which = pages[i];
 			return function() {
 				Qid('h-controller').style.height
-				= Qid(which+'-page').offsetHeight + 'px';
+				= Qid('page-'+which).offsetHeight + 'px';
 			};
 		}()
 	);	
