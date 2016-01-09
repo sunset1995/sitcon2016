@@ -1,7 +1,19 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require('./init-page.js');
 require('./navbar.js');
 
-},{"./navbar.js":3}],2:[function(require,module,exports){
+},{"./init-page.js":2,"./navbar.js":4}],2:[function(require,module,exports){
+require('./lib/dom.js');
+
+if( typeof location.hash !== 'undefined'
+	&&  location.hash.slice(8).length != 0 )
+	Qid('h-controller').style.height
+	= Qid(location.hash.slice(8)+'-page').offsetHeight + 'px';
+else
+	Qid('h-controller').style.height
+	= Qid('about-page').offsetHeight + 'px';
+
+},{"./lib/dom.js":3}],3:[function(require,module,exports){
 /*
  *	This module just define global function,
  *	exporting nothing.
@@ -41,7 +53,7 @@ addClass = function(ele , applyclass) {
 	else ele.className = applyclass;
 }
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 require('./lib/dom.js');
 
 var pages = [
@@ -62,4 +74,4 @@ for(var i=0; i<pages.length; ++i)
 		}()
 	);	
 
-},{"./lib/dom.js":2}]},{},[1])
+},{"./lib/dom.js":3}]},{},[1])
