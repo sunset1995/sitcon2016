@@ -1,0 +1,103 @@
+// SITCON ROLE and TOPIC
+#image-group-title {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	width: 100%;
+	transform: translateX(-50%);
+
+	#image-stone {
+		display: block;
+		width: 6%;
+		margin: 0 auto 1.5em auto;
+	}
+	#image-topic {
+		display: block;
+		width: 48%;
+		margin: 0 auto;
+	}
+	#image-character-blue {
+		position: absolute;
+		width: 25%;
+		rigght: 76%;
+		top: 0;
+		transform: translateX(50%);
+	}
+	#image-character-red {
+		position: absolute;
+		width: 25%;
+		left: 76%;
+		top: 20%;
+		transform: translateX(-30%);
+	}
+}
+
+// ground grass
+#page-home {
+	z-index: 110;
+
+	.grass {
+		left: 4em;
+		border-bottom-left-radius: 3em;
+		border-top-left-radius: 3em;
+	}
+	.image-grass1 {
+		left: 30%;
+	}
+	.image-grass2 {
+		left: 60%;
+	}
+}
+
+// ground bridge
+#image-group-leftground {
+	position: absolute;
+	left: 7.5em;
+	bottom: 0%;
+
+	.image-bridge {
+		position: absolute;
+		bottom: 0;
+		height: 5em;
+		right: 0;
+	}
+	#image-tree1 {
+		width: 5em;
+		right: 0;
+		transform: translateX(50%);
+	}
+	#image-tree2 {
+		width: 4em;
+		right: 0;
+		transform: translateX(120%);
+	}
+	#image-tree3 {
+		width: 6em;
+		right: 0;
+		transform: translateX(150%);
+	}
+}
+
+// ground tree
+.image-tree {
+	position: absolute;
+	bottom: 0;
+}
+#image-tree4 {
+	width: 2.8em;
+	right: 22%;
+}
+#image-tree5 {
+	width: 2em;
+	right: 15%;
+}
+#image-tree6 {
+	width: 2.5em;
+	right: 15%;
+	transform: translateX(50%);
+}
+#image-tree7 {
+	width: 2.5em;
+	right: 15%;
+	transform: translateX(200%);
+}

@@ -1,27 +1,14 @@
-$pageChangeDuration: 800ms;
-
 #h-controller {
 	position: relative;
 	overflow: hidden;
-	transition: height $pageChangeDuration $timeQuartic,
-				left $pageChangeDuration $timeQuartic;
-	background-color: #1799C6;
 }
 #x-controller {
 	position: relative;
-	transition: height $pageChangeDuration $timeQuartic,
-				left $pageChangeDuration $timeQuartic;
+	transition: all 1800ms $timeQuartic;
 }
 
 .page-container {
 	width: 100%;
-	background-color: $colorWater;
-
-	.sky {
-		width: 100%;
-		height: 600px;
-		background-color: $colorSky;
-	}
 
 	.page-content {
 		width: 80%;

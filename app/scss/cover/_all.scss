@@ -1,0 +1,19 @@
+.sky {
+	position: relative;
+	width: 100%;
+
+	@include cover-height-rwd();
+}
+
+.grass {
+	position: absolute;
+	bottom: -3em;
+	height: 6em;
+	width: 100%;
+	background-color: $colorGrass;
+}
+.image-grass {
+	width: 3em;
+	position: absolute;
+	bottom: .1em;
+}

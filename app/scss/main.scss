@@ -6,15 +6,21 @@
 
 // global definition
 @import 'partial/all';
+@import 'partial/rwd';
 
 // individual definition
 @import 'page-controller';
 @import 'navbar';
 
 // individual page style
-@import 'about-page';
-@import 'location-page';
-@import 'speaker-page';
-@import 'schedule-page';
-@improt 'sponsor-page';
-@import 'team-page';
+@import 'cover/cloud';
+@import 'cover/all';
+@import 'pages/all';
+@import 'cover/home';
+@import 'pages/home';
+@import 'cover/schedule';
+@import 'pages/schedule';
+@improt 'cover/sponsor';
+@improt 'pages/sponsor';
+@import 'cover/location';
+@import 'pages/location';

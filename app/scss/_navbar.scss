@@ -1,12 +1,14 @@
 #navbar {
 	position: absolute;
-	top: 2em;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 999;
 	text-align: center;
 
 	a {
 		text-decoration: none;
-		font-size: 1em;
+		font-size: 2em;
 	}
 
 	.nav {

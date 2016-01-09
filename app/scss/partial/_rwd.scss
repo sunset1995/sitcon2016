@@ -1,0 +1,9 @@
+@mixin cover-height-rwd() {
+	height: 900px;
+	@media screen and (max-width: 1700px) {
+		height: 800px;
+	}
+	@media screen and (max-width: 1400px) {
+		height: 700px;
+	}
+}

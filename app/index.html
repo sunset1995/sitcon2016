@@ -10,6 +10,10 @@
 	</div>
 
 	<div id="h-controller">
+		<div id="cover-cloud">
+			__@w@include('./html/cover/cloud.html')
+		</div>
+
 		<div id="target-home" class="targetor"></div>
 		<div id="target-schedule" class="targetor"></div>
 		<div id="target-sponsor" class="targetor"></div>
@@ -17,19 +21,27 @@
 
 		<div id="x-controller">
 			<div id="page-home" class="page-container">
-				<div class="sky"></div>
+				<div class="sky">
+					__@w@include('./html/cover/home.html')
+				</div>
 				__@w@include('./html/pages/home.html')
 			</div>
 			<div id="page-schedule" class="page-container">
-				<div class="sky"></div>
+				<div class="sky">
+					__@w@include('./html/cover/schedule.html')
+				</div>
 				__@w@include('./html/pages/schedule.html')
 			</div>
 			<div id="page-sponsor" class="page-container">
-				<div class="sky"></div>
+				<div class="sky">
+					__@w@include('./html/cover/sponsor.html')
+				</div>
 				__@w@include('./html/pages/sponsor.html')
 			</div>
 			<div id="page-location" class="page-container">
-				<div class="sky"></div>
+				<div class="sky">
+					__@w@include('./html/cover/location.html')
+				</div>
 				__@w@include('./html/pages/location.html');
 			</div>
 		</div>
