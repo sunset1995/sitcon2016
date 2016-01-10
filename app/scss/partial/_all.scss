@@ -24,3 +24,8 @@ html, body {
 body {
 	overflow-y: scroll;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:700);
+h1 {
+	font-family: 'Oswald', $sans-serif;
+}

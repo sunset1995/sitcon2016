@@ -1,0 +1,14 @@
+#page-home .page-content {
+	max-width: 900px;
+	font-size: 1.1em;
+
+	ul {
+		margin-top: 1em;
+		margin-bottom: 1em;
+		padding-left: 2.5em;
+	}
+
+	p + p {
+		margin-top: .5em;
+	}
+}
