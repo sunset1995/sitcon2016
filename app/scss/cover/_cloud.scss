@@ -6,7 +6,8 @@
 	width: 80%;
 	z-index: 0;
 	// variable define in partial/all
-	transition: all $pageChangeDuration $timeQuartic;
+	transition: left $pageChangeDuration $timeQuartic,
+				transform $pageChangeDuration $timeQuartic;
 }
 
 // background clouds
@@ -17,37 +18,38 @@ $cloud_left: 17%, 10%, 25%, 70%, 77%, 67%;
 	width: 105%;
 	height: 955px;
 	background-color: $colorSky;
-	transition: all $pageChangeDuration $timeQuartic;
+	transition: left $pageChangeDuration $timeQuartic,
+				transform $pageChangeDuration $timeQuartic;
 
 	@include cover-height-rwd();
 
-	.cloud{
+	.cloud {
 		position: absolute;
 		z-index: 1;
 	}
 
-	.small{
+	.small {
 		animation-name: cloud_small;
 		width: 5%;
 	}
-	.middle{
+	.middle {
 		animation-name: cloud_middle;
 		width: 7%;
 	}
-	.big{
+	.big {
 		animation-name: cloud_big;
 		width: 10%;
 	}
 }
 
-@for $i from 1 through 6{
-	#cloud#{$i}{
+@for $i from 1 through 6 {
+	#cloud#{$i} {
 		top: nth($cloud_top , $i);
 		left: nth($cloud_left , $i);
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 	}
-	#cloud#{$i}_2{
+	#cloud#{$i}_2 {
 		top: nth($cloud_top , $i);
 		left: nth($cloud_left , $i) + 100%;
 		animation-timing-function: linear;
@@ -55,22 +57,22 @@ $cloud_left: 17%, 10%, 25%, 70%, 77%, 67%;
 	}
 }
 
-#cloud1 , #cloud1_2{ animation-duration: 90s; }
-#cloud2 , #cloud2_2{ animation-duration: 300s; }
-#cloud3 , #cloud3_2{ animation-duration: 200s; }
-#cloud4 , #cloud4_2{ animation-duration: 180s; }
-#cloud5 , #cloud5_2{ animation-duration: 160s; }
-#cloud6 , #cloud6_2{ animation-duration: 100s; }
+#cloud1 , #cloud1_2 { animation-duration: 90s; }
+#cloud2 , #cloud2_2 { animation-duration: 300s; }
+#cloud3 , #cloud3_2 { animation-duration: 200s; }
+#cloud4 , #cloud4_2 { animation-duration: 180s; }
+#cloud5 , #cloud5_2 { animation-duration: 160s; }
+#cloud6 , #cloud6_2 { animation-duration: 100s; }
 
-@keyframes cloud_small{
+@keyframes cloud_small {
 	0%{ transform: translateX(0%); }
 	100%{ transform: translateX(-2000%); }
 }
-@keyframes cloud_middle{
+@keyframes cloud_middle {
 	0%{ transform: translateX(0%); }
 	100%{ transform: translateX(-10000%/7); }
 }
-@keyframes cloud_big{
+@keyframes cloud_big {
 	0%{ transform: translateX(0%); }
 	100%{ transform: translateX(-1000%); }
 }
