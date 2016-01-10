@@ -73,16 +73,21 @@ h1 {
 
 #navbar {
   position: absolute;
-  top: 0;
+  top: .5em;
   left: 50%;
+  width: 100%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 999;
   text-align: center; }
   #navbar a {
+    color: #0093ba;
     text-decoration: none;
-    font-size: 2em; }
+    font-size: 1.5em;
+    padding-bottom: .1em; }
+  #navbar a.active {
+    border-bottom: 2px solid #0093ba; }
   #navbar .nav {
     display: inline-block;
     margin: 0 1em; }
