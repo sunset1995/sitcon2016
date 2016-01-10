@@ -3,6 +3,7 @@
 *	why sass don't check each file dependency for us?
 *	Import partial/all twice will enlarge built result!
 */
+@import url(https://fonts.googleapis.com/css?family=Oswald:700);
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +19,9 @@ html, body {
 body {
   overflow-y: scroll; }
 
+h1 {
+  font-family: "Oswald", "Noto Sans", "Microsoft JhengHei", "PT Sans Narrow", "Source Han Sans TWHK", sans-serif; }
+
 #h-controller {
   position: relative;
   overflow: hidden; }
@@ -29,10 +33,6 @@ body {
 
 .page-container {
   width: 100%; }
-  .page-container .page-content {
-    width: 80%;
-    margin: 4em auto;
-    background-color: #333; }
 
 #page-home {
   position: absolute;
@@ -87,6 +87,10 @@ body {
     display: inline-block;
     margin: 0 1em; }
 
+.cover-stand {
+  width: 100%;
+  height: 3em; }
+
 .sky {
   position: relative;
   width: 100%;
@@ -116,16 +120,20 @@ body {
   left: 20%;
   width: 80%;
   z-index: 0;
-  -webkit-transition: all 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
-  transition: all 2000ms cubic-bezier(0.17, 0.84, 0.44, 1); }
+  -webkit-transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1); }
 
 #cover-cloud {
   position: absolute;
   width: 105%;
   height: 955px;
-  background-color: #C2E9FF;
-  -webkit-transition: all 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
-  transition: all 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  background-color: transparent;
+  -webkit-transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
   height: 900px; }
   @media screen and (max-width: 1700px) {
     #cover-cloud {
@@ -317,6 +325,46 @@ body {
     -webkit-transform: translateX(-1000%);
             transform: translateX(-1000%); } }
 
+#cover-fix {
+  position: absolute;
+  width: 100%;
+  height: 955px;
+  background-color: #C2E9FF;
+  -webkit-transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  transition: left 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1), -webkit-transform 2000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  height: 900px; }
+  @media screen and (max-width: 1700px) {
+    #cover-fix {
+      height: 800px; } }
+  @media screen and (max-width: 1400px) {
+    #cover-fix {
+      height: 700px; } }
+
+#image-bird1, #image-bird2, #image-bird3 {
+  position: absolute;
+  width: 3%;
+  opacity: .3; }
+
+#image-bird1 {
+  top: 50%;
+  left: 7%; }
+
+#image-bird2 {
+  top: 45%;
+  left: 10%; }
+
+#image-bird3 {
+  top: 70%;
+  right: 10%; }
+
+#image-sun {
+  position: absolute;
+  width: 7%;
+  right: 3%;
+  top: 3%; }
+
 #target-home:target ~ #cover-cloud {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -339,7 +387,7 @@ body {
 
 #image-group-title {
   position: absolute;
-  top: 5%;
+  top: 8%;
   left: 50%;
   width: 100%;
   -webkit-transform: translateX(-50%);
@@ -477,3 +525,41 @@ body {
     bottom: 0;
     left: 0;
     height: 5em; }
+
+.page-upground {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -55%);
+      -ms-transform: translate(-50%, -55%);
+          transform: translate(-50%, -55%); }
+
+.page-content {
+  width: 80%;
+  margin: 8em auto; }
+
+h1:not(:first-child) {
+  margin-top: 2em; }
+
+p {
+  text-align: left;
+  text-align: justify; }
+
+#page-home .page-content {
+  max-width: 900px;
+  font-size: 1.1em; }
+  #page-home .page-content ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2.5em; }
+  #page-home .page-content p + p {
+    margin-top: .5em; }
+
+#location-map {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 1em;
+          border-radius: 1em; }
