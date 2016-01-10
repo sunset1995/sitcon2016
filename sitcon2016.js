@@ -1,8 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 require('./init-page.js');
 require('./navbar.js');
+require('./pages/location-open.js');
 
-},{"./init-page.js":2,"./navbar.js":4}],2:[function(require,module,exports){
+},{"./init-page.js":2,"./navbar.js":4,"./pages/location-open.js":5}],2:[function(require,module,exports){
 require('./lib/dom.js');
 
 var initPage = location.hash.slice(8) || 'home';
@@ -71,4 +72,34 @@ for(var i=0; i<pages.length; ++i)
 		}()
 	);	
 
-},{"./lib/dom.js":3}]},{},[1])
+},{"./lib/dom.js":3}],5:[function(require,module,exports){
+require('../lib/dom.js');
+
+var locationOpening = function() {
+	removeEvent(Qid('link-location'), 'click',
+					locationOpening);
+	var locationMap = Qid('location-map');
+	setTimeout(function() {
+		addClass(locationMap, 'middle');
+	}, 1000);
+	setTimeout(function() {
+		addClass(locationMap, 'open');
+		locationMap = null;
+	}, 1500);
+}
+
+if( location.hash.slice(8) === 'location' ){
+	var locationMap = Qid('location-map');
+	setTimeout(function() {
+		addClass(locationMap, 'middle');
+	}, 100);
+	setTimeout(function() {
+		addClass(locationMap, 'open');
+		locationMap = null;
+	}, 500);
+}
+else
+	addEvent(Qid('link-location'), 'click',
+			locationOpening);
+
+},{"../lib/dom.js":3}]},{},[1])
