@@ -17,7 +17,7 @@ $cloud_left: 17%, 10%, 25%, 70%, 77%, 67%;
 	position: absolute;
 	width: 105%;
 	height: 955px;
-	background-color: $colorSky;
+	background-color: transparent;
 	transition: left $pageChangeDuration $timeQuartic,
 				transform $pageChangeDuration $timeQuartic;
 
