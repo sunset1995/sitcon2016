@@ -58,12 +58,16 @@ addClass = function(ele , applyclass) {
 },{}],4:[function(require,module,exports){
 Request = require('superagent');
 
-Request.get('https://staff.sitcon.org/api/staffgroups/')
-	.withCredentials()
-	.end(function(err, res) {
-		console.log(err)
-		console.log(res)
-	});
+//Request.get('https://staff.sitcon.org/api/staffgroups/')
+	//.query({format: 'json'})
+	//.accept('*/*')
+	//.withCredentials()
+	//.end(function(err, res) {
+		//console.log(err)
+		//console.log(res)
+//	});
+
+console.log(Qid('apidata').innerHTML);
 
 },{"superagent":9}],5:[function(require,module,exports){
 require('./lib/dom.js');

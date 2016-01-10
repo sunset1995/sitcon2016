@@ -392,7 +392,7 @@ h1 {
 
 #image-group-title {
   position: absolute;
-  top: 8%;
+  top: 12%;
   left: 50%;
   width: 100%;
   -webkit-transform: translateX(-50%);
