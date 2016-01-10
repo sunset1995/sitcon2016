@@ -1,0 +1,34 @@
+#cover-fix {
+	position: absolute;
+	width: 100%;
+	height: 955px;
+	background-color: transparent;
+	transition: left $pageChangeDuration $timeQuartic,
+				transform $pageChangeDuration $timeQuartic;
+
+	@include cover-height-rwd();
+}
+
+#image-bird1, #image-bird2, #image-bird3{
+	position: absolute;
+	width: 3%;
+	opacity: .3;
+}
+#image-bird1 {
+	top: 50%;
+	left: 7%;
+}
+#image-bird2 {
+	top: 45%;
+	left: 10%;
+}
+#image-bird3 {
+	top: 70%;
+	right: 10%;
+}
+#image-sun {
+	position: absolute;
+	width: 7%;
+	right: 3%;
+	top: 3%;
+}
