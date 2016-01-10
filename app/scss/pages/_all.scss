@@ -1,3 +1,16 @@
+.page-upground {
+	position: absolute;
+	width: 80%;
+	height: 70%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -55%);
+}
+.page-content {
+	width: 80%;
+	margin: 8em auto;
+}
+
 h1:not(:first-child) {
 	margin-top: 2em;
 }
