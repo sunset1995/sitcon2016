@@ -15,9 +15,13 @@
 	height: 6em;
 	width: 100%;
 	background-color: $colorGrass;
+
+	@include cover-goundgrass-rwd();
 }
 .image-grass {
 	width: 3em;
 	position: absolute;
 	bottom: .1em;
+
+	@include cover-groundobj-rwd();
 }
