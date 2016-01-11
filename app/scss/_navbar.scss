@@ -12,6 +12,10 @@
 		text-decoration: none;
 		font-size: 1.5em;
 		padding-bottom: .1em;
+
+		@include cellphone-rwd() {
+			font-size: 1.2em;
+		}
 	}
 	a.active {
 		border-bottom: 2px solid $colorSkyDark;

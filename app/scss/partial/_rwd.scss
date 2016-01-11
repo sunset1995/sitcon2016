@@ -1,3 +1,14 @@
+@mixin cellphone-rwd() {
+	@media screen and (max-width: 500px) {
+		& { @content; }
+	}
+}
+@mixin cellphone-hidden-rwd() {
+	@media screen and (max-width: 500px) {
+		display: none;
+	}
+}
+
 @mixin cover-height-rwd() {
 	height: 900px;
 	@media screen and (max-width: 1700px) {
@@ -6,4 +17,23 @@
 	@media screen and (max-width: 1400px) {
 		height: 700px;
 	}
+	@media screen and (max-width: 1000px) {
+		height: 400px;
+	}
+	@media screen and (max-width: 500px) {
+		height: 250px;
+	}
+}
+
+// left bridge and trees
+@mixin cover-groundobj-rwd() {
+	@media screen and (max-width: 1000px) {
+		transform: scale(.5);
+	}
+}
+@mixin cover-goundgrass-rwd() {
+	@media screen and (max-width: 1000px) {
+		height: 4em;
+		bottom: -2em;
+	}	
 }

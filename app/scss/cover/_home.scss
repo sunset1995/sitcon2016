@@ -5,6 +5,18 @@
 	left: 50%;
 	width: 100%;
 	transform: translateX(-50%);
+	transform: translate3d(-50%, 0, 0);
+
+	@include cellphone-rwd() {
+		& {
+			top: 15%;
+			width: 110%;
+		}
+	}
+
+	&.active {
+		transition: transform $pageChangeDuration $timeQuartic;
+	}
 
 	#image-stone {
 		display: block;
@@ -55,6 +67,13 @@
 	left: 7.5em;
 	bottom: 0%;
 
+	@include cover-groundobj-rwd();
+	@include cellphone-rwd() {
+		& {
+			left: 5em;
+		}
+	}
+
 	.image-bridge {
 		position: absolute;
 		bottom: 0;
@@ -69,12 +88,17 @@
 	#image-tree2 {
 		width: 4em;
 		right: 0;
+		bottom: .8em;
 		transform: translateX(120%);
+		@include cellphone-hidden-rwd();
 	}
 	#image-tree3 {
 		width: 6em;
 		right: 0;
+		bottom: .8em;
 		transform: translateX(150%);
+
+		@include cellphone-hidden-rwd();
 	}
 }
 
@@ -82,22 +106,26 @@
 .image-tree {
 	position: absolute;
 	bottom: 0;
+
+	@include cover-groundobj-rwd();
 }
 #image-tree4 {
 	width: 2.8em;
 	right: 22%;
+	@include cellphone-hidden-rwd();
 }
 #image-tree5 {
 	width: 2em;
 	right: 15%;
+	@include cellphone-hidden-rwd();
 }
 #image-tree6 {
 	width: 2.5em;
-	right: 15%;
-	transform: translateX(50%);
+	right: 13%;
+	@include cellphone-hidden-rwd();
 }
 #image-tree7 {
 	width: 2.5em;
-	right: 15%;
-	transform: translateX(200%);
+	right: 10%;
+	@include cellphone-hidden-rwd();
 }
