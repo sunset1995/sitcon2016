@@ -1,5 +1,5 @@
 #page-home .page-content {
-	max-width: 900px;
+	max-width: 770px;
 	font-size: 1.1em;
 
 	ul {
@@ -10,5 +10,26 @@
 
 	p + p {
 		margin-top: .5em;
+	}
+
+	.title-small-stone {
+		position: absolute;
+		font-size: 1em;
+		height: 1em;
+		top: 50%;
+		left: -1.1em;
+		transform: translateY(-50%);
+		opacity: .9;
+	}
+}
+
+#CoC-image {
+	position: absolute;
+	width: 18em;
+	right: -13em;
+	top: 7em;
+
+	@media screen and (max-width: 1140px) {
+		display: none;
 	}
 }

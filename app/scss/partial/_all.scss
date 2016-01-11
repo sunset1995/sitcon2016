@@ -1,7 +1,9 @@
 $colorWater: #77BDE1;
+$colorWaterDark: #000045;
 $colorSky: #C2E9FF;
-$colorGrass: #A4E070;
 $colorSkyDark: #0093ba;
+$colorGrass: #A4E070;
+$colorUnderground: #f9da8c;
 
 $sans-serif: 'Noto Sans', 'Microsoft JhengHei', 'PT Sans Narrow', 'Source Han Sans TWHK', sans-serif;
 $serif: Arial;
@@ -24,6 +26,9 @@ html, body {
 }
 body {
 	overflow-y: scroll;
+}
+.relative {
+	position: relative;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Oswald:700);
