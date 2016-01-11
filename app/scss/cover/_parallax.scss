@@ -3,8 +3,8 @@ $pages: 'home', 'schedule', 'sponsor', 'location';
 @for $i from 1 through 4 {
 	$tmp: $i - 1;
 	#target-#{nth($pages, $i)}:target ~ #cover-cloud {
-		transform: translateX(-100%*5/105 * $tmp /3);
-		transform: translate3d(-100%*5/105 * $tmp /3, 0, 0);
+		transform: translateX(-100%*10/110 * $tmp /3);
+		transform: translate3d(-100%*10/110 * $tmp /3, 0, 0);
 	}
 	#target-#{nth($pages, $i)}:target ~ #x-controller #image-group-title {
 		transform: translateX(-50% - 100% * $tmp / 3);
