@@ -1,4 +1,5 @@
 require('./lib/dom.js');
+require('./lib/resize-handler.js');
 
 var pages = [
 	'home', 'schedule', 'sponsor', 'location'
@@ -22,3 +23,9 @@ for(var i=0; i<pages.length; ++i)
 			};
 		}()
 	);	
+
+// source in /js/lib/resize-handler
+resizeHandler.regist(function() {
+	Qid('h-controller').style.height
+	= Qid('page-'+activePage).offsetHeight + 'px';
+});
