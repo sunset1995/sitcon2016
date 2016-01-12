@@ -30,16 +30,46 @@
 			margin: 0 .5em 1.5em .5em;
 			vertical-align: top;
 
-			.staff-photo {
-				display: block;
+			.photo-frame {
+				border-radius: .5em;
+				overflow: hidden;
+				perspective: 1000;
+				opacity: .6;
+			}
+			&:hover .staff-photo-container {
+				transform: rotateY(180deg);
+			}
+			.staff-photo-container {
+				position: relative;
 				width: $cardWidth;
 				height: $cardWidth;
+				transform-origin: 50% 50%;
+				transform: rotateY(0deg);
+				transform-style: preserve-3d;
+				transition: all 600ms $timeQuartic;
+			}
+			.staff-photo, .stone-photo {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
 				background-repeat: no-repeat;
+				backface-visibility: hidden;
+			}
+			.staff-photo {
 				background-size: 100% 100%;
 				background-size: cover;
-				border-radius: .5em;
-				opacity: .5;
-				box-shadow: 0 0 5em -3em $colorUnderground inset;
+				z-index: 2;
+				transform: rotateY(0deg);
+			}
+			.stone-photo {
+				background-color: #fff;
+				background-image: url(image/stone.png);
+				background-size: 60% auto;
+				background-position: 50% 50%;
+				transform: rotateY(180deg);
 			}
 
 			p {

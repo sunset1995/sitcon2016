@@ -4,18 +4,27 @@ var ajax = require('superagent');
 var staffsDOM = Qid('staffs');
 var staffCard = function(member) {
 	var card = document.createElement('div');
-	var img = document.createElement('div');
+	var imgFrame = document.createElement('div');
+	var imgs = document.createElement('div');
+	var imgFront = document.createElement('div');
+	var imgBack = document.createElement('div');
 	var name = document.createElement('p');
 
 	card.className = 'staff-card';
-	img.className = 'staff-photo';
+	imgFrame.className = 'photo-frame';
+	imgs.className = 'staff-photo-container';
+	imgFront.className = 'staff-photo';
 	if( member.avatar.slice(0, 4) !== 'http' )
-		img.style.backgroundImage = 'url(https://staff.sitcon.org' + member.avatar + ')';
+		imgFront.style.backgroundImage = 'url(https://staff.sitcon.org' + member.avatar + ')';
 	else
-		img.style.backgroundImage = 'url(' + member.avatar + ')';
+		imgFront.style.backgroundImage = 'url(' + member.avatar + ')';
+	imgBack.className = 'stone-photo';
 	name.innerHTML = member.display_name;
 	
-	card.appendChild(img);
+	imgs.appendChild(imgFront);
+	imgs.appendChild(imgBack);
+	imgFrame.appendChild(imgs);
+	card.appendChild(imgFrame);
 	card.appendChild(name);
 	return card;
 }
