@@ -4,7 +4,7 @@
 	}
 }
 @mixin ipad-rwd() {
-	@media screen and (max-width: 950px) {
+	@media screen and (max-width: 1000px) {
 		& { @content; }
 	}
 }

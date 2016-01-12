@@ -1,11 +1,15 @@
 #navbar {
 	position: absolute;
-	top: .5em;
+	top: 2em;
 	left: 50%;
 	width: 100%;
 	transform: translateX(-50%);
 	z-index: 999;
 	text-align: center;
+
+	@include ipad-rwd() {
+		top: .8em;
+	}
 
 	a {
 		color: $colorSkyDark;
@@ -13,8 +17,11 @@
 		font-size: 1.5em;
 		padding-bottom: .1em;
 
-		@include cellphone-rwd() {
+		@include ipad-rwd() {
 			font-size: 1.2em;
+		}
+		@include cellphone-rwd() {
+			font-size: 1em;
 		}
 	}
 	a.active {
