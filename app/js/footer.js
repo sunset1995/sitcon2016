@@ -7,15 +7,17 @@ var staffsDOM = Qid('staffs');
 var slideInAnimator = function() {
 	// This function flip the staffs' img of a group to front
 	var flipIn = function(group) {
-		console.log(group)
-		var delay = 0;
-		var members = group.querySelectorAll('.staff-photo-container');
 		var fliper = function(domObj) {
 			return function() {
 				removeClass(domObj, 'unactive');
 			};
 		}
+		var delay = 0;
+		var members = group.querySelectorAll('.staff-photo-container');
+		var leftmost = getX(members[0]);
 		for(var i=0; i<members.length; ++i) {
+			if( getX(members[i])==leftmost )
+				delay = 0;
 			setTimeout(fliper(members[i]), delay);
 			delay += 80;
 		}

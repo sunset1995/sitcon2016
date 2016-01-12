@@ -47,3 +47,6 @@ getScrollY = function() {
 getY = function(domObj) {
 	return domObj.offsetTop;
 }
+getX = function(domObj) {
+	return domObj.offsetLeft;
+}
