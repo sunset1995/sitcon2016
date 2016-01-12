@@ -7,6 +7,7 @@ var staffsDOM = Qid('staffs');
 var slideInAnimator = function() {
 	// This function flip the staffs' img of a group to front
 	var flipIn = function(group) {
+		console.log(group)
 		var delay = 0;
 		var members = group.querySelectorAll('.staff-photo-container');
 		var fliper = function(domObj) {
@@ -22,7 +23,7 @@ var slideInAnimator = function() {
 	// This function count how px the domObj above bottom line of window
 	var aboveBtn = function(domObj) {
 		return getScrollY()
-				+ document.body.offsetHeight
+				+ window.innerHeight
 				- getY(domObj);
 	}
 	// The y position in array groups
@@ -38,6 +39,8 @@ var slideInAnimator = function() {
 		},
 		proc: function() {
 			if( locked ) return;
+			console.log('scroll '+getScrollY())
+			console.log('screen '+window.innerHeight)
 			if( nowid==groups.length ) {
 				removeEvent(document.body, 'scroll', slideInAnimator.proc);
 				groups = null;
@@ -83,7 +86,7 @@ var procStaff = function(staffs) {
 		slideInAnimator.regist(groupDOM);
 		groupDOM = null;
 	}
-	addEvent(document.body, 'scroll', slideInAnimator.proc);
+	addEvent(window, 'scroll', slideInAnimator.proc);
 }
 
 ajax.get('https://staff.sitcon.org/api/staffgroups/')

@@ -38,18 +38,12 @@ addClass = function(ele , applyclass) {
 }
 getScrollY = function() {
 	if (self.pageYOffset)
-		return function() { 
-			return self.pageYOffset;
-		};
+		return self.pageYOffset;
 	else if (document.documentElement && document.documentElement.scrollTop)
-		return function() {
-			return document.documentElement.scrollTop;
-		};
+		return document.documentElement.scrollTop;
 	else if (document.body)
-		return function() {
-			return document.body.scrollTop;
-		};
-}();
+		return document.body.scrollTop;
+};
 getY = function(domObj) {
 	return domObj.offsetTop;
 }

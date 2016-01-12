@@ -21,13 +21,8 @@ $pageChangeDuration: 2000ms;
 }
 html, body {
 	position: relative;
-	width: 100%;
-	height: 100%;
 	overflow-x: hidden;
 	background-color: $colorWater;
-}
-body {
-	overflow-y: scroll;
 }
 .relative {
 	position: relative;
