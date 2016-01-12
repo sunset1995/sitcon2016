@@ -99,7 +99,8 @@ h1 {
     margin: 0 1em; }
 
 #footer {
-  background-color: #f9da8c; }
+  background-color: #f9da8c;
+  margin-top: 12em; }
 
 .cover-stand {
   width: 100%;
@@ -662,9 +663,9 @@ h1 {
 .page-content {
   width: 80%;
   margin: 8em auto;
-  color: #000045; }
+  color: #484848; }
 
-article {
+article:not(:first-child) {
   margin-top: 4em; }
 
 h1:not(:first-child) {
@@ -678,14 +679,19 @@ p {
   text-align: justify; }
 
 #page-home .page-content {
-  max-width: 770px;
-  font-size: 1.1em; }
+  max-width: 800px;
+  font-size: 1.1em;
+  padding: 5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 1.5em;
+          border-radius: 1.5em;
+  color: #484848; }
   #page-home .page-content ul {
     margin-top: 1em;
     margin-bottom: 1em;
     padding-left: 2.5em; }
   #page-home .page-content p + p {
-    margin-top: .5em; }
+    margin-top: 1em; }
   #page-home .page-content .title-small-stone {
     position: absolute;
     font-size: 1em;
