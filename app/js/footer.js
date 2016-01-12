@@ -39,10 +39,8 @@ var slideInAnimator = function() {
 		},
 		proc: function() {
 			if( locked ) return;
-			console.log('scroll '+getScrollY())
-			console.log('screen '+window.innerHeight)
 			if( nowid==groups.length ) {
-				removeEvent(document.body, 'scroll', slideInAnimator.proc);
+				removeEvent(window, 'scroll', slideInAnimator.proc);
 				groups = null;
 				slideInAnimator = null;
 				return;
