@@ -116,7 +116,7 @@ function staffCard(member) {
 	if( member.avatar.slice(0, 4) !== 'http' )
 		imgFront.style.backgroundImage = 'url(https://staff.sitcon.org' + member.avatar + ')';
 	else
-		imgFront.style.backgroundImage = 'url(' + member.avatar + ')';
+		imgFront.style.backgroundImage = 'url(' + member.avatar + '&s=80)';
 	imgBack.className = 'stone-photo';
 	name.innerHTML = member.display_name;
 	
