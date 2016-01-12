@@ -10,6 +10,12 @@
 	margin: 0 auto;
 	color: $colorUndergroundText;
 
+	h1 {
+		font-size: 3em;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
 	.group {
 		position: relative;
 		&:not(:first-child) {
@@ -20,6 +26,7 @@
 			position: absolute;
 			right: 100%;
 			font-size: 1.1em;
+			width: 1.1em;
 		}
 
 		$cardWidth: 80px;
@@ -36,7 +43,7 @@
 				perspective: 1000;
 				opacity: .6;
 			}
-			&:hover .staff-photo-container {
+			.staff-photo-container.unactive {
 				transform: rotateY(180deg);
 			}
 			.staff-photo-container {

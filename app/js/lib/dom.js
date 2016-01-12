@@ -36,3 +36,20 @@ addClass = function(ele , applyclass) {
 	if( ele.className.length>0 ) ele.className += ' '+applyclass;
 	else ele.className = applyclass;
 }
+getScrollY = function() {
+	if (self.pageYOffset)
+		return function() { 
+			return self.pageYOffset;
+		};
+	else if (document.documentElement && document.documentElement.scrollTop)
+		return function() {
+			return document.documentElement.scrollTop;
+		};
+	else if (document.body)
+		return function() {
+			return document.body.scrollTop;
+		};
+}();
+getY = function(domObj) {
+	return domObj.offsetTop;
+}
