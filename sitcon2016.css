@@ -3,7 +3,7 @@
 *	why sass don't check each file dependency for us?
 *	Import partial/all twice will enlarge built result!
 */
-@import url(https://fonts.googleapis.com/css?family=Oswald:700,300);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +18,7 @@ html, body {
   position: relative; }
 
 h1, #copyright {
-  font-family: "Oswald", "Noto Sans", "Microsoft JhengHei", "PT Sans Narrow", "Source Han Sans TWHK", sans-serif; }
+  font-family: "Varela Round", "Noto Sans", "Microsoft JhengHei", "PT Sans Narrow", "Source Han Sans TWHK", sans-serif; }
 
 #h-controller {
   position: relative;
@@ -752,7 +752,9 @@ h1 {
 
 p {
   text-align: left;
-  text-align: justify; }
+  text-align: justify;
+  line-height: 1.6em;
+  font-size: 14pt; }
 
 #page-home .page-content {
   max-width: 800px;
@@ -774,9 +776,9 @@ p {
   #page-home .page-content .title-small-stone {
     position: absolute;
     font-size: 1em;
-    height: 1em;
-    top: 50%;
-    left: -1.1em;
+    height: .8em;
+    top: 43%;
+    left: -.9em;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
@@ -789,7 +791,7 @@ p {
   position: absolute;
   width: 18em;
   right: -13em;
-  top: 7em; }
+  top: 9em; }
   @media screen and (max-width: 1140px) {
     #CoC-image {
       display: none; } }
