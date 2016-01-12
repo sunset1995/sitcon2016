@@ -1,4 +1,58 @@
 #footer {
 	background-color: $colorUnderground;
 	margin-top: 12em;
+	padding: 8em 0 4em 0;
+}
+
+#staffs {
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
+	color: $colorUndergroundText;
+
+	.group {
+		position: relative;
+		&:not(:first-child) {
+			margin-top: 1.5em;
+		}
+
+		h2 {
+			position: absolute;
+			right: 100%;
+			font-size: 1.1em;
+		}
+
+		$cardWidth: 80px;
+		.staff-card {
+			width: $cardWidth;
+			height: $cardWidth * 150 / 107;
+			display: inline-block;
+			margin: 0 .5em 1.5em .5em;
+			vertical-align: top;
+
+			.staff-photo {
+				display: block;
+				width: $cardWidth;
+				height: $cardWidth;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				background-size: cover;
+				border-radius: .5em;
+				opacity: .5;
+				box-shadow: 0 0 5em -3em $colorUnderground inset;
+			}
+
+			p {
+				margin-top: 1em .5em 0 .5em;
+				font-size: .95em;
+				text-align: center;
+			}
+		}
+	}
+}
+
+#copyright {
+	margin-top: 8em;
+	text-align: center;
+	color: #333;
 }

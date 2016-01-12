@@ -4,7 +4,8 @@ $colorWaterText: #484848;
 $colorSky: #C2E9FF;
 $colorSkyDark: #0093ba;
 $colorGrass: #A4E070;
-$colorUnderground: #f9da8c;
+$colorUnderground: #8a6f55;
+$colorUndergroundText: #eee;
 
 $sans-serif: 'Noto Sans', 'Microsoft JhengHei', 'PT Sans Narrow', 'Source Han Sans TWHK', sans-serif;
 $serif: Arial;
@@ -32,7 +33,7 @@ body {
 	position: relative;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:700);
-h1 {
+@import url(https://fonts.googleapis.com/css?family=Oswald:700,300);
+h1, #copyright {
 	font-family: 'Oswald', $sans-serif;
 }
