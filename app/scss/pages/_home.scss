@@ -6,6 +6,12 @@
 	border-radius: 1.5em;
 	color: $colorWaterText;
 
+	@include ipad-rwd() {
+		& {
+			padding: 2em;
+		}
+	}
+
 	ul {
 		margin-top: 1em;
 		margin-bottom: 1em;
@@ -24,6 +30,12 @@
 		left: -1.1em;
 		transform: translateY(-50%);
 		opacity: .9;
+
+		@include ipad-rwd() {
+			& {
+				display: none;
+			}
+		}
 	}
 }
 

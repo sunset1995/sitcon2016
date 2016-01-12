@@ -3,6 +3,11 @@
 		& { @content; }
 	}
 }
+@mixin ipad-rwd() {
+	@media screen and (max-width: 950px) {
+		& { @content; }
+	}
+}
 @mixin cellphone-hidden-rwd() {
 	@media screen and (max-width: 500px) {
 		display: none;
