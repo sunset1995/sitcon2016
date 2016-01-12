@@ -9,10 +9,10 @@
 .page-content {
 	width: 80%;
 	margin: 8em auto;
-	color: $colorWaterDark;
+	color: $colorWaterText;
 }
 
-article {
+article:not(:first-child) {
 	margin-top: 4em;
 }
 h1:not(:first-child) {
