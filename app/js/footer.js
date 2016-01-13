@@ -1,4 +1,5 @@
 require('./lib/dom.js');
+require('./lib/loadpage-handler.js');
 var ajax = require('superagent');
 
 var staffsDOM = Qid('staffs');
@@ -105,6 +106,7 @@ function staffCard(member) {
 	var card = document.createElement('div');
 	var imgFrame = document.createElement('div');
 	var imgs = document.createElement('div');
+	var imgloader = document.createElement('img');
 	var imgFront = document.createElement('div');
 	var imgBack = document.createElement('div');
 	var name = document.createElement('p');
@@ -113,13 +115,20 @@ function staffCard(member) {
 	imgFrame.className = 'photo-frame';
 	imgs.className = 'staff-photo-container unactive';
 	imgFront.className = 'staff-photo';
-	if( member.avatar.slice(0, 4) !== 'http' )
+	imgloader.style.display = 'none';
+	loadPagePleaseWait.regist(imgloader);
+	if( member.avatar.slice(0, 4) !== 'http' ) {
+		imgloader.src = 'https://staff.sitcon.org' + member.avatar;
 		imgFront.style.backgroundImage = 'url(https://staff.sitcon.org' + member.avatar + ')';
-	else
+	}
+	else {
+		imgloader.src = member.avatar + '&s=80';
 		imgFront.style.backgroundImage = 'url(' + member.avatar + '&s=80)';
+	}
 	imgBack.className = 'stone-photo';
 	name.innerHTML = member.display_name;
 	
+	imgs.appendChild(imgloader);
 	imgs.appendChild(imgFront);
 	imgs.appendChild(imgBack);
 	imgFrame.appendChild(imgs);
