@@ -7,6 +7,9 @@ loadPagePleaseWait = function() {
 	var startPage = function() {
 		if( pageStarted ) return;
 		pageStarted = true;
+		setTimeout(function() {
+			document.getElementById('loading-page').style.display = 'none';
+		}, 1000);
 		blockingPage.style.opacity = '0';
 	}
 
