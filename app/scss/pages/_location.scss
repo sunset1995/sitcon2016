@@ -7,6 +7,8 @@
 	border-radius: 1em;
 	transition: height 500ms $timeQuartic,
 				width 800ms $timeQuartic;
+	border-radius: 1em;
+	overflow: hidden;
 }
 #location-map.close {
 	width: 2em;
