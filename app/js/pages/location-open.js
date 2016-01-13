@@ -46,7 +46,8 @@ function loadingMap() {
 		interactions: ol.interaction.defaults({mouseWheelZoom:false}),
 		layers: [
 			new ol.layer.Tile({
-				source: new ol.source.OSM()
+				source: new ol.source.OSM(),
+				opacity: 0.6
 			}),
 			iconMain,
 			iconBus
