@@ -19,10 +19,16 @@ loadPagePleaseWait = function() {
 	downloadNum += imgDOM.length;
 	imgDOM = null;
 
+	window.onload = function() {
+		console.log('window onload');
+		percentageDOM.style.opacity = '1';
+	}
+
 	return {
 		regist: function(dom) {
 			waitNum++;
 			dom.onload = function() {
+				console.log(dom)
 				downloadNum++;
 				if( downloadNum == waitNum )
 					startPage();
