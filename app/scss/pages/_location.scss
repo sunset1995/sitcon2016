@@ -1,3 +1,27 @@
+#page-location {
+	.location-address {
+		display: none;
+		position: absolute;
+		z-index: 500;
+		text-align: center;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 12em;
+		padding: 1em;
+		border: 2px solid #5b5b5b;
+		border-radius: .5em;
+		background-color: rgba(255,255,255,.2);
+
+		strong {
+			display: block;
+			font-size: 1.5em;
+			color: #5b5b5b;
+			font-family: 'Varela Round', $sans-serif;
+		}
+	}
+}
+
 #location-map {
 	position: absolute;
 	left: 50%;
