@@ -16,17 +16,13 @@ var locationOpening = function() {
 	setTimeout(mapOpenFinal, 1500);
 }
 
-if( location.hash.slice(8) === 'location' ){
-	setTimeout(mapOpenMiddle, 100);
-	setTimeout(mapOpenFinal, 500);
+if( location.hash.slice(8) === 'location' ) {
+	setTimeout(mapOpenMiddle, 1000);
+	setTimeout(mapOpenFinal, 1500);
 }
 else
 	addEvent(Qid('link-location'), 'click',
 			locationOpening);
-
-addEvent(locationMap, 'scroll', function() {
-	console.log('scroll map')
-})
 
 // Use OpenStreetMap via OpenLaye
 var reloadMaxTime = 10;
