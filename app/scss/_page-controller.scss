@@ -1,6 +1,7 @@
 #h-controller {
 	position: relative;
 	overflow: hidden;
+	transition: height $pageChangeDuration $timeQuartic;
 }
 #x-controller {
 	position: relative;
