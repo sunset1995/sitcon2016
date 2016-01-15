@@ -7,6 +7,7 @@
 // global definition
 @import 'partial/all';
 @import 'partial/rwd';
+@import 'thirdpart/perfect-scrollbar.min';
 
 // individual definition
 @import 'page-controller';
@@ -26,6 +27,7 @@
 // individual page style
 @import 'pages/all';
 @import 'pages/home';
-@import 'pages/schedule';
+@import 'pages/schedule-upground';
+@import 'pages/schedule-water';
 @import 'pages/sponsor';
 @import 'pages/location';

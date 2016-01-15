@@ -9,6 +9,14 @@
 	<div id="loading-page">
 		<h1 id="loading-percentage">0%</h1>
 	</div>
+	<div id="fancybox-event-detail">
+		<!-- Style define in scss/pages/schedule-upground -->
+		<div class="closearea"></div>
+		<div class="container">
+			<div class="content"></div>
+			<div class="stand"></div>
+		</div>
+	</div>
 
 	<div id="navbar">
 		__@w@include('./html/navs.html')
@@ -38,7 +46,14 @@
 				<div class="sky">
 					__@w@include('./html/cover/schedule.html')
 				</div>
-				__@w@include('./html/pages/schedule.html')
+				<div class="page-upground">
+					<div id="group-events">
+					__@w@include('./html/pages/schedule-upground.html')
+					</div>
+				</div>
+				<div class="page-content">
+					__@w@include('./html/pages/schedule-water.html')
+				</div>
 			</div>
 			<div id="page-sponsor" class="page-container">
 				<div class="sky">
