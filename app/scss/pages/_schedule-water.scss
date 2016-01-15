@@ -1,0 +1,41 @@
+.conf-time-table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 0;
+
+	th {
+		font-size: 16pt;
+		color: white;
+	}
+	td {
+		border: 2px solid $colorWater;
+		background-color: rgba(255,255,255,.6);
+		text-align: center;
+		color: #484848;
+	}
+	td.time {
+		background-color: transparent;
+		color: white;
+
+		p {
+			font-size: 16pt;
+			text-align: center;
+			font-family: 'Varela Round', $sans-serif;
+		}
+		small {
+			font-size: 10pt;
+		}
+	}
+	td.clickable {
+		cursor: pointer;
+		transition: background-color 1000ms $timeQuartic,;
+
+		&:hover {
+			background-color: rgba(255,255,255,.9);
+		}
+	}
+	td.empty-slot {
+		background-color: transparent;
+	}
+}
