@@ -63,6 +63,21 @@
 		height: 100%;
 		cursor: pointer;
 	}
+	.close {
+		cursor: pointer;
+		font-size: .9em;
+		position: absolute;
+		right: 1em;
+		top: 1em;
+		display: inline-block;
+		border-radius: .3em;
+		text-align: center;
+		padding: .5em 0;
+		width: 2em;
+		background-color: #f2576a;
+		color: white;
+		font-family: 'Varela Round', $sans-serif;
+	}
 	.container {
 		font-size: 14pt;
 		position: absolute;

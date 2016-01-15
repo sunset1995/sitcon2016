@@ -13,9 +13,14 @@ var eventList = [
 var fancybox = Qid('fancybox-event-detail');
 
 var closeArea = fancybox.querySelector('.closearea');
+var closeX = fancybox.querySelector('.close');
 addEvent(closeArea, 'click', function() {
 	closeFancyboxEventDetail();
 });
+addEvent(closeX, 'click', function() {
+	closeFancyboxEventDetail();
+});
+closeArea = closeX = null;
 
 var container = fancybox.querySelector('.container');
 perfectScrollBar.initialize(container);
