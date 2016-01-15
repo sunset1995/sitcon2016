@@ -39,3 +39,49 @@
 		background-color: transparent;
 	}
 }
+
+#fancybox-talk-detail {
+	display: none;
+	position: fixed;
+	overflow-y: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+
+	.bg {
+		display: none;
+		width: 100%;
+		height: 100%;
+		background-color: $colorWater;
+		opacity: .8;
+	}
+	.container {
+		position: absolute;
+		display: block;
+		width: 80%;
+		max-width: 1000px;
+		height: 100%;
+		top: 0;
+		left: 50%;
+		background-color: white;
+		transform: translate(-50%, 100%);
+		transition: transform 800ms $timeQuartic;
+
+		&.active {
+			transform: translate(-50%, 0%);
+		}
+	}
+}
+#circleMask {
+	display: none;
+	position: absolute;
+	z-index: 100;
+	width: 1px;
+	height: 1px;
+	background-color: $colorWater;
+	opacity: .8;
+	transition: all 1500ms $timeQuartic;
+	transform: translate(-50%, -50%) scale(0);
+}
