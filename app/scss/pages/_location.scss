@@ -7,7 +7,6 @@
 	transform: translate(-50%, -55%);
 	
 	.location-address {
-		display: none;
 		position: absolute;
 		z-index: 500;
 		text-align: center;
@@ -19,6 +18,8 @@
 		border: 2px solid #5b5b5b;
 		border-radius: .5em;
 		background-color: rgba(255,255,255,.2);
+		transition: opacity 1000ms $timeQuartic;
+		opacity: 0;
 
 		strong {
 			display: block;

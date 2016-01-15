@@ -7,6 +7,9 @@ var mapOpenMiddle = function() {
 var mapOpenFinal = function() {
 	addClass(locationMap, 'open');
 	setTimeout(loadingMap, 1500);
+	setTimeout(function() {
+		Q('#group-map>.location-address').style.opacity = '1';
+	}, 2000);
 }
 
 var locationOpening = function() {
