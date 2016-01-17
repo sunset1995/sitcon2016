@@ -9,6 +9,10 @@
 	animation-timing-function: cubic-bezier(.45,.05,.55,.95);
 	animation-iteration-count: infinite;
 
+	@include ipad-rwd() {
+		display: none;
+	}
+
 	@keyframes arrow{
 		0%{ transform: translate(-50% , -30%); }
 		50%{ transform: translate(-50% , -70%); }
@@ -80,6 +84,7 @@
 	display: block;
 	max-width: 800px;
 	margin: 4em auto;
+	padding: 0 1em;
 
 	* + p {
 		font-size: 16pt;
