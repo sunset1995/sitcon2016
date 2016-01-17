@@ -1,13 +1,24 @@
 #group-events {
 	position: absolute;
-	top: 50%;
+	top: 8em;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translateX(-50%);
+	transform: translate3d(-50%,0,0);
 	width: 80%;
 	max-width: 1000px;
 
+	h1 {
+		text-align: center;
+		font-weight: 300;
+		color: $colorSkyDark;
+	}
+
+	@include ipad-rwd() {
+		top: 4em;
+	}
 	@include cellphone-rwd() {
 		width: 100%;
+		top: 4em;
 
 		h2 {
 			font-size: 1em;
