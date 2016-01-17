@@ -32,29 +32,24 @@
 		opacity: 0;
 	}
 }
+#fancybox-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	background-color: transparent;
+}
 
 /*
 *	Below control the animation for opening fancybox
 */
-$fancyboxDuration: 800ms;
-#fancybox-forwardbox {
-	z-index: 10;
-	background-color: #5b5b5b;
-	transition: all $fancyboxDuration $timeQuartic 0ms;
-}
-#fancybox-bg {
-	z-index: 20;
-	background-color: $colorWater;
-	transition: all $fancyboxDuration $timeQuartic 200ms;
-}
+$fancyboxDuration: 500ms;
 #fancybox-container {
 	z-index: 30;
-	background-color: rgba(255,255,255,.8);
-	transition: all $fancyboxDuration $timeQuartic 400ms;
+	background-color: white;
+	transition: all $fancyboxDuration $timeQuartic;
 }
 
-#fancybox-forwardbox,
-#fancybox-bg,
 #fancybox-container {
 	position: absolute;
 	left: 50%;
@@ -63,17 +58,10 @@ $fancyboxDuration: 800ms;
 	height: 50px;
 	transform: translate(-50%, 1000px);
 }
-#fancybox-forwardbox.in,
-#fancybox-bg.in,
 #fancybox-container.in {
 	transform: translate(-50%, -50%);
 }
-#fancybox-forwardbox.open,
-#fancybox-bg.open {
-	width: 100%;
-	height: 100%;
-}
 #fancybox-container.open {
 	width: 80%;
-	height: 100%;
+	height: 80%;
 }

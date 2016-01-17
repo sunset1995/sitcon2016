@@ -3,7 +3,6 @@ var perfectScrollBar = require('perfect-scrollbar');
 
 fancybox = function() {
 	var fancybox = Qid('fancybox');
-	var fancyForward = Qid('fancybox-forwardbox');
 	var fancyBg = Qid('fancybox-bg');
 	var fancyContainer = Qid('fancybox-container');
 	var locked = false;
@@ -13,7 +12,7 @@ fancybox = function() {
 	var str = '';
 	perfectScrollBar.initialize(content);
 
-	var duration = 1000;
+	var duration = 530;
 	var step3 = function() {
 		content.innerHTML = str;
 		perfectScrollBar.update(content);
@@ -21,23 +20,15 @@ fancybox = function() {
 								= '1';
 	}
 	var step2 = function() {
-		addClass(fancyForward, 'open');
-		addClass(fancyBg, 'open');
 		addClass(fancyContainer, 'open');
-		setTimeout(step3, duration+200);
+		setTimeout(step3, duration);
 	};
 	var step1 = function() {
-		addClass(fancyForward, 'in');
-		addClass(fancyBg, 'in');
 		addClass(fancyContainer, 'in');
 		setTimeout(step2, duration);
 	};
 	var reset = function() {
-		removeClass(fancyForward, 'in');
-		removeClass(fancyBg, 'in');
 		removeClass(fancyContainer, 'in');
-		removeClass(fancyForward, 'open');
-		removeClass(fancyBg, 'open');
 		removeClass(fancyContainer, 'open');
 		content.style.opacity	= xx.style.opacity
 								= '0';
