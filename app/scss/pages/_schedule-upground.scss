@@ -1,3 +1,21 @@
+#guide-arrow {
+	position: absolute;
+	left: 50%;
+	top: 85%;
+	width: 12em;
+	transform: translate(-50%, -50%);
+	animation-name: arrow;
+	animation-duration: 1.5s;
+	animation-timing-function: cubic-bezier(.45,.05,.55,.95);
+	animation-iteration-count: infinite;
+
+	@keyframes arrow{
+		0%{ transform: translate(-50% , -30%); }
+		50%{ transform: translate(-50% , -70%); }
+		100%{ transform: translate(-50% , -30%); }
+	}
+}
+
 #group-events {
 	position: absolute;
 	top: 8em;
