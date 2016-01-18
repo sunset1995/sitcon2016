@@ -3,25 +3,36 @@ var ajax = require('superagent');
 
 var staffsDOM = Qid('staffs');
 
+var queueStaffCard = function(items, delay, callback) {
+
+    var currentItemId = 0;
+    var tasks = []
+    var resolver = function() {
+        currentItemId++
+
+        if(tasks[currentItemId]) {
+            tasks[currentItemId](resolver)
+        } else {
+            if(callback) callback()
+        }
+    }
+
+    var worker = function(cardDOM) {
+        return function(next) {
+            removeClass(cardDOM, 'unactive')
+            setTimeout(next, delay)
+        }
+    }
+
+    for(var i = 0; i < items.length; i++) {
+        tasks.push(worker(items[i]))
+    }
+
+    tasks[0](resolver)
+}
+
 // Control the slidein animate
 var slideInAnimator = function() {
-	// This function flip the staffs' img of a group to front
-	var flipIn = function(group) {
-		var fliper = function(domObj) {
-			return function() {
-				removeClass(domObj, 'unactive');
-			};
-		}
-		var delay = 0;
-		var members = group.querySelectorAll('.staff-photo-container');
-		var leftmost = getX(members[0]);
-		for(var i=0; i<members.length; ++i) {
-			if( getX(members[i])==leftmost )
-				delay = 0;
-			setTimeout(fliper(members[i]), delay);
-			delay += 80;
-		}
-	}
 	// This function count how px the domObj above bottom line of window
 	var aboveBtn = function(domObj) {
 		return getScrollY()
@@ -49,13 +60,17 @@ var slideInAnimator = function() {
 			}
 			locked = 1;
 			if( aboveBtn(groups[nowid]) > 150 ) {
-				flipIn(groups[nowid]);
-				++nowid;
-				setTimeout(function(){
-					locked = 0;
-					slideInAnimator.proc();
-				}, 100);
-			}
+
+                var members = groups[nowid].querySelectorAll('.staff-photo-container');
+                // NOTE: Behavior changed, it will wait last animation finished to start next
+                // This can change by wrapper a new function and as another callback to resolve
+                queueStaffCard(members, 80, function() {
+                    locked = 0
+                })
+
+                ++nowid;
+
+            }
 			else locked = 0;
 		}
 	}
@@ -104,7 +119,7 @@ ajax.get('https://staff.sitcon.org/api/staffgroups/')
 function staffCard(member) {
 	var card = document.createElement('div');
 	var imgFrame = document.createElement('div');
-	var imgs = document.createElement('div');
+    var imgs = document.createElement('div');
 	var imgloader = document.createElement('img');
 	var imgFront = document.createElement('div');
 	var imgBack = document.createElement('div');
@@ -125,8 +140,7 @@ function staffCard(member) {
 	}
 	imgBack.className = 'stone-photo';
 	name.innerHTML = member.display_name;
-	
-	imgs.appendChild(imgloader);
+
 	imgs.appendChild(imgFront);
 	imgs.appendChild(imgBack);
 	imgFrame.appendChild(imgs);

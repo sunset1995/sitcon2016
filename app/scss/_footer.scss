@@ -51,7 +51,7 @@
 				width: $cardWidth;
 				height: $cardWidth;
 				transform-origin: 50% 50%;
-				transform: rotateY(0deg);
+				transform: rotateY(0deg) translateZ(0);
 				transform-style: preserve-3d;
 				transition: all 600ms $timeQuartic;
 			}
