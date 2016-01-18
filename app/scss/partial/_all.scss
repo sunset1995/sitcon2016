@@ -31,6 +31,9 @@ html, body {
 .data-storage {
 	display: none;
 }
+.blur {
+	filter: blur(3px);
+}
 
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 h1, #copyright {

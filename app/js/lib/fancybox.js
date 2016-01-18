@@ -7,7 +7,8 @@ fancybox = function() {
 	var fancyContainer = Qid('fancybox-container');
 	var fancyboxForward1 = Qid('fancybox-forward1');
 	var fancyboxForward2 = Qid('fancybox-forward2');
-	var locked = false;
+	var blurArea = Qid('blur-area');
+	var locked = false, opened = false;
 
 	var content = fancyContainer.querySelector('.content');
 	var xx = fancyContainer.querySelector('.xx');
@@ -20,6 +21,10 @@ fancybox = function() {
 		perfectScrollBar.update(content);
 		content.style.opacity	= xx.style.opacity
 								= '1';
+		setTimeout(function() {
+			if( opened )
+				addClass(blurArea, 'blur');
+		}, 500)
 	};
 	var step1 = function() {
 		addClass(fancyboxForward1, 'open');
@@ -36,7 +41,9 @@ fancybox = function() {
 	};
 
 	var close = function() {
+		opened = false;
 		fancybox.style.display = 'none';
+		removeClass(blurArea, 'blur');
 		reset();
 		locked = false;
 	}
@@ -49,7 +56,7 @@ fancybox = function() {
 		},
 		open: function() {
 			if( locked ) return;
-			locked = true;
+			locked = opened = true;
 			fancybox.style.display = 'block';
 			setTimeout(step1, 100);
 		},
