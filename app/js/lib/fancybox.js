@@ -18,6 +18,7 @@ fancybox = function() {
 	var duration = 530;
 	var step2 = function() {
 		content.innerHTML = str;
+		content.scrollTop = 0;
 		perfectScrollBar.update(content);
 		content.style.opacity	= xx.style.opacity
 								= '1';
