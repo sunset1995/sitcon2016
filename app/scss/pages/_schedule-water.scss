@@ -1,3 +1,12 @@
+#conference-time {
+	position: relative;
+	font-family: 'Varela Round', $sans-serif;
+
+	h1 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+}
 .conf-time-table {
 	width: 100%;
 	border-spacing: 0;
@@ -10,9 +19,29 @@
 	}
 	td {
 		border: 2px solid $colorWater;
-		background-color: rgba(255,255,255,.6);
 		text-align: center;
 		color: #484848;
+		background-color: rgba(255,255,255,.6);
+
+		.title {
+			padding: 0 1em;
+		}
+		.speaker {
+			padding: 0 1em;
+			margin-top: 1em;
+			color: #4d4c4d;
+		}
+		.photo {
+			display: inline-block;
+			width: 2em;
+			height: 2em;
+			border-radius: 1em;
+			margin-right: .8em;
+			vertical-align: middle;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-size: cover;
+		}
 	}
 	td.time {
 		background-color: transparent;
@@ -20,11 +49,12 @@
 
 		p {
 			font-size: 16pt;
+			height: 1.5em;
 			text-align: center;
-			font-family: 'Varela Round', $sans-serif;
 		}
 		small {
 			font-size: 10pt;
+			opacity: .5;
 		}
 	}
 	td.clickable {
@@ -37,5 +67,42 @@
 	}
 	td.empty-slot {
 		background-color: transparent;
+	}
+}
+
+.data-conf {
+	padding: 8em 4em;
+	max-width: 1000px;
+	margin: 0 auto;
+
+	&::after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+
+	.left {
+		float: left;
+		width: 20%;
+
+		.photo {
+			width: 200px;
+			height: 200px;
+			border-radius: 100px;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-size: cover;
+		}
+	}
+	.right {
+		float: right;
+		width: 70%;
+
+		h1 {
+			color: $colorWater;
+		}
+		p {
+			text-align: justify;
+		}
 	}
 }
