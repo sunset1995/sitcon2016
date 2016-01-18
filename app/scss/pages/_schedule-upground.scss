@@ -31,8 +31,7 @@
 
 	h1 {
 		text-align: center;
-		font-weight: 300;
-		color: $colorSkyDark;
+		color: $colorBallon;
 	}
 
 	@include ipad-rwd() {
