@@ -76,10 +76,11 @@
 		<h1 id="loading-percentage">0%</h1>
 	</div>
 	<div id="fancybox">
-		<div id="fancybox-forwardbox"></div>
 		<div id="fancybox-bg"></div>
+		<div id="fancybox-forward1"></div>
+		<div id="fancybox-forward2"></div>
 		<div id="fancybox-container">
-			<div class="xx">x</div>
+			<div class="xx"></div>
 			<div class="content"></div>
 		</div>
 	</div>
@@ -236,6 +237,7 @@
 				</div>
 				<div class="page-upground">
 					<div id="group-events">
+						<h1>Feature 活動介紹</h1>
 						<div class="col">
 							<div id="event-lighting-talk" class="event-container">
 								<h2>Lightning talk</h2>
@@ -355,247 +357,228 @@
 						</div>
 
 					</div>
+					<img id="guide-arrow" src="image/arrow.png"></img>
 				</div>
 				<div class="page-content">
-					<table class="conf-time-table">
-						<tbody>
-							<tr>
-								<th class="empty-slot"></th>
-								<th>R2</th>
-								<th>R0</th>
-								<th>R1</th>
-								<th>R3</th>
-								<th>交誼廳</th>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>08<small>30</small>
-									</p>
-									<p>~</p>
-									<p>09<small>00</small>
-									</p>
-								</td>
-								<td colspan="4">入場時間</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>09<small>00</small>
-									</p>
-									<p>~</p>
-									<p>09<small>10</small>
-									</p>
-								</td>
-								<td colspan="4">開幕</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>09<small>10</small>
-									</p>
-									<p>~</p>
-									<p>10<small>00</small>
-									</p>
-								</td>
-								<td colspan="4" class="clickable">Coming soon</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>10<small>10</small>
-									</p>
-									<p>~</p>
-									<p>11<small>00</small>
-									</p>
-								</td>
-								<td colspan="4" class="clickable">Coming soon</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>11<small>10</small>
-									</p>
-									<p>~</p>
-									<p>11<small>30</small>
-									</p>
-								</td>
-								<td rowspan="2" class="clickable">在樹梅派土炮農場是否搞錯了什麼
-								</td>
-								<td rowspan="2" class="clickable">參與國際社群經驗談以推廣者角度
-								</td>
-								<td rowspan="2" class="clickable">SITCON 籌備與行政投稿系統開發
-								</td>
-								<td rowspan="2" class="clickable">藝術家也為之瘋狂的 JS Library
-								</td>
-								<td class="clickable">Unconf 1</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>11<small>30</small>
-									</p>
-									<p>~</p>
-									<p>11<small>50</small>
-									</p>
-								</td>
-								<td class="clickable">Unconf 2</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>11<small>50</small>
-									</p>
-									<p>~</p>
-									<p>12<small>40</small>
-									</p>
-								</td>
-								<td colspan="4">午餐</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>12<small>40</small>
-									</p>
-									<p>~</p>
-									<p>14<small>10</small>
-									</p>
-								</td>
-								<td colspan="4" class="clickable">論壇</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>14<small>10</small>
-									</p>
-									<p>~</p>
-									<p>14<small>50</small>
-									</p>
-								</td>
-								<td colspan="4">交流</td>
-								<td>沙龍</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>14<small>50</small>
-									</p>
-									<p>~</p>
-									<p>15<small>10</small>
-									</p>
-								</td>
-								<td colspan="4">點心</td>
-								<td>沙龍</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>15<small>10</small>
-									</p>
-									<p>~</p>
-									<p>15<small>20</small>
-									</p>
-								</td>
-								<td class="clickable">Intern in your journey.</td>
-								<td class="clickable">網釣就在你身旁~校園資安報告</td>
-								<td class="clickable">ピカピカ商科學生遇到程式</td>
-								<td class="clickable">ARM uVisor Debug Refinement Project</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>15<small>20</small>
-									</p>
-									<p>~</p>
-									<p>15<small>30</small>
-									</p>
-								</td>
-								<td class="clickable">LHU Student Game Jam</td>
-								<td class="clickable">Got Your PW - 入門資安的微旅行</td>
-								<td class="clickable">進擊的開源推廣！</td>
-								<td class="clickable">0mu 動態式分散部落格管理系統</td>
-								<td rowspan="2">Unconf 3</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>15<small>30</small>
-									</p>
-									<p>~</p>
-									<p>15<small>40</small>
-									</p>
-								</td>
-								<td class="clickable">跨平台佈署建築資訊模型應用系統</td>
-								<td class="clickable">我和 SITCON 交往的這些年</td>
-								<td class="clickable">從我的 Style 開始開源吧</td>
-								<td class="clickable">Pandas！資料處理/分析的利器！</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>15<small>50</small>
-									</p>
-									<p>~</p>
-									<p>16<small>10</small>
-									</p>
-								</td>
-								<td rowspan="2" class="clickable">防毒擋不住？勒索病毒猖獗與實作</td>
-								<td rowspan="2" class="clickable">工程師也能懂的前端美學</td>
-								<td rowspan="2" class="clickable">Roads to Native Speed on Web</td>
-								<td rowspan="2" class="clickable">ARM Cloud Project</td>
-								<td class="clickable">Unconf 4</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>16<small>10</small>
-									</p>
-									<p>~</p>
-									<p>16<small>30</small>
-									</p>
-								</td>
-								<td class="clickable">Unconf 5</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>16<small>40</small>
-									</p>
-									<p>~</p>
-									<p>17<small>00</small>
-									</p>
-								</td>
-								<td rowspan="2" class="clickable">以圖書資訊學的角度來看HTML與SE</td>
-								<td rowspan="2" class="clickable">翻牆實戰</td>
-								<td rowspan="2" class="clickable">Contribute to OpenStack upstream</td>
-								<td rowspan="2" class="clickable">支援 DSL 的嵌入式圖形操作環境</td>
-								<td class="clickable">Unconf 6</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>17<small>00</small>
-									</p>
-									<p>~</p>
-									<p>17<small>20</small>
-									</p>
-								</td>
-								<td class="clickable">Unconf 7</td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>17<small>30</small>
-									</p>
-									<p>~</p>
-									<p>17<small>55</small>
-									</p>
-								</td>
-								<td colspan="4">lightning talk</td>
-								<td class="empty-slot"></td>
-							</tr>
-							<tr>
-								<td class="time">
-									<p>17<small>55</small>
-									</p>
-									<p>~</p>
-									<p>18<small>05</small>
-									</p>
-								</td>
-								<td colspan="4">閉幕</td>
-								<td class="empty-slot"></td>
-							</tr>
-						</tbody>
-					</table>
+					<div id="conference-time">
+						<table class="conf-time-table">
+							<tbody>
+								<tr>
+									<th class="empty-slot"></th>
+									<th>R2</th>
+									<th>R0</th>
+									<th>R1</th>
+									<th>R3</th>
+									<th>交誼廳</th>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>08<small>30</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4">入場時間</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>09<small>00</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4">開幕</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>09<small>10</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4" class="clickable">Coming soon</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>10<small>10</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4" class="clickable">Coming soon</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>11<small>10</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td rowspan="2" class="clickable confslot" id="R2-310"></td>
+									<td rowspan="2" class="clickable confslot" id="R0-310"></td>
+									<td rowspan="2" class="clickable confslot" id="R1-310"></td>
+									<td rowspan="2" class="clickable confslot" id="R3-310"></td>
+									<td class="clickable">Unconf 1</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>11<small>30</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td class="clickable">Unconf 2</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>11<small>50</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4">午餐</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>12<small>40</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4" class="clickable">論壇</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>14<small>10</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4">交流</td>
+									<td>沙龍</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>14<small>50</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4">點心</td>
+									<td>沙龍</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>15<small>10</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td class="clickable confslot" id="R2-710"></td>
+									<td class="clickable confslot" id="R0-710"></td>
+									<td class="clickable confslot" id="R1-710"></td>
+									<td class="clickable confslot" id="R3-710"></td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>15<small>20</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td class="clickable confslot" id="R2-720"></td>
+									<td class="clickable confslot" id="R0-720"></td>
+									<td class="clickable confslot" id="R1-720"></td>
+									<td class="clickable confslot" id="R3-720"></td>
+									<td rowspan="2">Unconf 3</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>15<small>30</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td class="clickable confslot" id="R2-730"></td>
+									<td class="clickable confslot" id="R0-730"></td>
+									<td class="clickable confslot" id="R1-730"></td>
+									<td class="clickable confslot" id="R3-730"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>15<small>50</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td rowspan="2" class="clickable confslot" id="R2-750"></td>
+									<td rowspan="2" class="clickable confslot" id="R0-750"></td>
+									<td rowspan="2" class="clickable confslot" id="R1-750"></td>
+									<td rowspan="2" class="clickable confslot" id="R3-750"></td>
+									<td class="clickable">Unconf 4</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>16<small>10</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td class="clickable">Unconf 5</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>16<small>40</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td rowspan="2" class="clickable confslot" id="R0-840"></td>
+									<td rowspan="2" class="clickable confslot" id="R1-840"></td>
+									<td rowspan="2" class="clickable confslot" id="R2-840"></td>
+									<td rowspan="2" class="clickable confslot" id="R3-840"></td>
+									<td class="clickable">Unconf 6</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>17<small>00</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td class="clickable">Unconf 7</td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>17<small>30</small>
+										</p>
+										<p></p>
+										<p></p>
+									</td>
+									<td colspan="4">lightning talk</td>
+									<td class="empty-slot"></td>
+								</tr>
+								<tr>
+									<td class="time">
+										<p>17<small>55</small>
+										</p>
+										<p></p>
+										<p>18<small>05</small>
+										</p>
+									</td>
+									<td colspan="4">閉幕</td>
+									<td class="empty-slot"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
 				</div>
 			</div>
