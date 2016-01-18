@@ -44,23 +44,33 @@
 *	Below control the animation for opening fancybox
 */
 $fancyboxDuration: 500ms;
+#fancybox-forward1 {
+	z-index: 10;
+	background-color: #5b5b5b;
+	transition: all $fancyboxDuration $timeQuartic;
+}
+#fancybox-forward2 {
+	z-index: 20;
+	background-color: $colorWater;
+	transition: all $fancyboxDuration $timeQuartic 100ms;
+}
 #fancybox-container {
 	z-index: 30;
 	background-color: white;
-	transition: all $fancyboxDuration $timeQuartic;
+	transition: all $fancyboxDuration $timeQuartic 200ms;
 }
-
+#fancybox-forward1,
+#fancybox-forward2,
 #fancybox-container {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 50px;
-	height: 50px;
-	transform: translate(-50%, 1000px);
-}
-#fancybox-container.in {
+	width: 0%;
+	height: 0%;
 	transform: translate(-50%, -50%);
 }
+#fancybox-forward1.open,
+#fancybox-forward2.open,
 #fancybox-container.open {
 	width: 80%;
 	height: 80%;
