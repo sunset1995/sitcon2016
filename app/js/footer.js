@@ -51,7 +51,7 @@ var slideInAnimator = function() {
 			groups.push(newGroup);
 		},
 		proc: function() {
-			if( locked ) return;
+			//if( locked ) return;
 			if( nowid==groups.length ) {
 				removeEvent(window, 'scroll', slideInAnimator.proc);
 				groups = null;
