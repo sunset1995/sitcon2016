@@ -87,6 +87,76 @@
 		}
 	}
 }
+#footer-sponsor {
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto 8em auto;;
+	color: $colorUndergroundText;
+
+	h1 {
+		font-size: 3em;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	.row {
+		position: relative;
+		&::after {
+			content: ' ';
+			display: block;
+			clear: both;
+		}
+
+		h2 {
+			position: absolute;
+			right: 101%;
+			top: 50%;
+			font-size: 1.1em;
+			width: 1.1em;
+			transform: translateY(-50%);
+		}
+		.col-left {
+			width: 50%;
+			float: left;
+		}
+		.col-right {
+			width: 49%;
+			float: right;
+		}
+		.sponsor {
+			position: relative;
+			& + .sponsor {
+				margin-top: 1em;
+			}
+			.col-left-img {
+				width: 55%;
+			}
+			.col-right-text {
+				width: 39%;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+			}
+
+			.logo {
+				width: 100%;
+				background-color: rgba(255,255,255,.6);
+			}
+			.intro {
+				display: block;
+				font-size: 15pt;
+				color: #333;
+				font-weight: 400;
+			}
+			.title {
+				font-size: 11pt;
+				color: white;
+				font-weight: 100;
+			}
+		}
+	}
+}
 
 #copyright {
 	margin-top: 8em;
