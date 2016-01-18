@@ -1,5 +1,4 @@
 require('../lib/dom.js');
-require('../lib/loadpage-handler.js');
 var ajax = require('superagent');
 
 // Process API data
@@ -19,7 +18,6 @@ var procConf = function(confs) {
 		var dom = Qid(id);
 		
 		var img = document.createElement('img');
-		loadPagePleaseWait.regist(img);
 		img.src = nowImg;
 		img.style.display = 'none';
 		dom.appendChild(img);

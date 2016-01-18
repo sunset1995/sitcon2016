@@ -1,5 +1,4 @@
 require('./lib/dom.js');
-require('./lib/loadpage-handler.js');
 var ajax = require('superagent');
 
 var staffsDOM = Qid('staffs');
@@ -116,7 +115,6 @@ function staffCard(member) {
 	imgs.className = 'staff-photo-container unactive';
 	imgFront.className = 'staff-photo';
 	imgloader.style.display = 'none';
-	loadPagePleaseWait.regist(imgloader);
 	if( member.avatar.slice(0, 4) !== 'http' ) {
 		imgloader.src = 'https://staff.sitcon.org' + member.avatar;
 		imgFront.style.backgroundImage = 'url(https://staff.sitcon.org' + member.avatar + ')';
