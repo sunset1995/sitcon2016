@@ -30,4 +30,11 @@
 			}
 		}
 	}
+	.image-right-tree {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 10em;
+		transform: translateX(-50%);
+	}
 }
