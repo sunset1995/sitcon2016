@@ -6,8 +6,4 @@ $pages: 'home', 'schedule', 'sponsor', 'location';
 		transform: translateX(-100%*20/120 * $tmp /3);
 		transform: translate3d(-100%*20/120 * $tmp /3, 0, 0);
 	}
-	#target-#{nth($pages, $i)}:target ~ #x-controller #image-group-title {
-		transform: translateX(-50% - 200% * $tmp / 3);
-		transform: translate3d(-50% - 200% * $tmp / 3, 0, 0);
-	}
 }

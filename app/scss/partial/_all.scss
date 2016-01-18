@@ -34,6 +34,10 @@ html, body {
 .blur {
 	filter: blur(3px);
 }
+.clear {
+	display: block;
+	clear: both;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 h1, #copyright {

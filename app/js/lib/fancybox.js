@@ -18,9 +18,11 @@ fancybox = function() {
 	var duration = 530;
 	var step2 = function() {
 		content.innerHTML = str;
+		content.scrollTop = 0;
 		perfectScrollBar.update(content);
 		content.style.opacity	= xx.style.opacity
 								= '1';
+		document.documentElement.style.overflowY = 'hidden';
 		setTimeout(function() {
 			if( opened )
 				addClass(blurArea, 'blur');
@@ -43,6 +45,7 @@ fancybox = function() {
 	var close = function() {
 		opened = false;
 		fancybox.style.display = 'none';
+		document.documentElement.style.overflowY = 'scroll';
 		removeClass(blurArea, 'blur');
 		reset();
 		locked = false;
