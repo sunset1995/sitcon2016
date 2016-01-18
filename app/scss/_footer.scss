@@ -87,6 +87,7 @@
 		}
 	}
 }
+
 #footer-sponsor {
 	width: 80%;
 	max-width: 1000px;
@@ -101,6 +102,9 @@
 
 	.row {
 		position: relative;
+		& + .row {
+			margin-top: 2em;
+		}
 		&::after {
 			content: ' ';
 			display: block;
@@ -125,34 +129,28 @@
 		}
 		.sponsor {
 			position: relative;
-			& + .sponsor {
-				margin-top: 1em;
-			}
-			.col-left-img {
-				width: 55%;
-			}
-			.col-right-text {
-				width: 39%;
-				position: absolute;
-				top: 50%;
-				right: 0;
-				transform: translateY(-50%);
-			}
 
 			.logo {
-				width: 100%;
+				width: 80%;
 				background-color: rgba(255,255,255,.6);
+				margin: 0 auto 1em auto;
+
+				img {
+					width: 100%;
+				}
 			}
 			.intro {
 				display: block;
 				font-size: 15pt;
 				color: #333;
 				font-weight: 400;
+				text-align: center;
 			}
 			.title {
 				font-size: 11pt;
 				color: white;
 				font-weight: 100;
+				text-align: center;
 			}
 		}
 	}
