@@ -66,7 +66,7 @@ function get_speaker_avatar_url(speaker) {
 function createTitle(title) {
 	var div = document.createElement('div');
 	div.className = 'title';
-	div.innerText = title;
+	div.textContent = title;
 	return div;
 }
 function createSpeaker(url, speakerName) {
@@ -76,7 +76,7 @@ function createSpeaker(url, speakerName) {
 	div.className = 'speaker';
 	img.className = 'photo';
 	img.style.backgroundImage = 'url('+url+')';
-	name.innerText = speakerName;
+	name.textContent = speakerName;
 	div.appendChild(img);
 	div.appendChild(name);
 	return div;
@@ -87,10 +87,10 @@ function createDetail(title, abstract, speaker, bio, imgurl) {
 	var pAbstract = document.createElement('p');
 	var h1Speaker = document.createElement('h1');
 	var pBio = document.createElement('p');
-	h1Title.innerText = title;
-	pAbstract.innerText = abstract;
-	h1Speaker.innerText = speaker;
-	pBio.innerText = bio;
+	h1Title.textContent = title;
+	pAbstract.textContent = abstract;
+	h1Speaker.textContent = speaker;
+	pBio.textContent = bio;
 	right.appendChild(h1Title);
 	right.appendChild(pAbstract);
 	right.appendChild(h1Speaker);
