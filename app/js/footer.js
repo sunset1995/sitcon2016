@@ -65,11 +65,13 @@ var procStaff = function(staffs) {
 				loader: staff_card.children[1]
 			});
 		}
-
 		staffsDOM.appendChild(groupDOM);
 		groupDOM = null;
 	}
-	//img.style.backgroundImage = 'url("' + avatar_url + '")';
+
+	// Hardcode add staff
+	hardcodeAddStaff();
+
 	addEvent(window, 'scroll', lazy.check);
 	lazy.check();
 }
@@ -123,4 +125,35 @@ function sortGroup(member) {
 			member.push( member[i] );
 			member[i] = null;
 		}
+}
+// Hardcode add staff
+function hardcodeAddStaff() {
+	var marketGroup = Qid('group4');
+	hardcode_staff_addone('Christine', 'image/staffs/christine.jpg', marketGroup);
+	hardcode_staff_addone('翔子', 'image/staffs/shiyoko.jpg', marketGroup);
+	hardcode_staff_addone('HBA', '', marketGroup);
+	hardcode_staff_addone('松營', '', marketGroup);
+}
+function hardcode_staff_addone(display_name, url, addTo) {
+	var card = document.createElement('div');
+	var img = document.createElement('div');
+	var imgloader = document.createElement('img');
+	var name = document.createElement('p');
+
+	card.className = 'staff-card';
+	img.className = 'staff-photo';
+	imgloader.className = 'staff-photo-loader';
+
+	imgloader.textContent = url;
+	name.textContent = display_name;
+
+	card.appendChild(img);
+	card.appendChild(imgloader);
+	card.appendChild(name);
+
+	addTo.appendChild(card);
+	lazy.regist({
+		img: img,
+		loader: imgloader
+	});
 }
