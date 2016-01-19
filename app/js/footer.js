@@ -86,7 +86,7 @@ var procStaff = function(staffs) {
 		groupDOM.className = 'group';
 
 		var h2 = document.createElement('h2');
-		h2.innerHTML = nowGroup.name;
+		h2.innerText = current_group.name;
 		groupDOM.appendChild(h2);
 
 		var member = nowGroup.users;
@@ -139,7 +139,7 @@ function staffCard(member) {
 		imgFront.style.backgroundImage = 'url(' + member.avatar + '&s=80)';
 	}
 	imgBack.className = 'stone-photo';
-	name.innerHTML = member.display_name;
+	name.innerText = member.display_name;
 
 	imgs.appendChild(imgFront);
 	imgs.appendChild(imgBack);

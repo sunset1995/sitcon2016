@@ -54,7 +54,7 @@ function imgUrl(ori) {
 function createTitle(title) {
 	var div = document.createElement('div');
 	div.className = 'title';
-	div.innerHTML = title;
+	div.innerText = title;
 	return div;
 }
 function createSpeaker(url, speakerName) {
@@ -64,7 +64,7 @@ function createSpeaker(url, speakerName) {
 	div.className = 'speaker';
 	img.className = 'photo';
 	img.style.backgroundImage = 'url('+url+')';
-	name.innerHTML = speakerName;
+	name.innerText = speakerName;
 	div.appendChild(img);
 	div.appendChild(name);
 	return div;
@@ -75,10 +75,10 @@ function createDetail(title, abstract, speaker, bio, imgurl) {
 	var pAbstract = document.createElement('p');
 	var h1Speaker = document.createElement('h1');
 	var pBio = document.createElement('p');
-	h1Title.innerHTML = title;
-	pAbstract.innerHTML = abstract;
-	h1Speaker.innerHTML = speaker;
-	pBio.innerHTML = bio;
+	h1Title.innerText = title;
+	pAbstract.innerText = abstract;
+	h1Speaker.innerText = speaker;
+	pBio.innerText = bio;
 	right.appendChild(h1Title);
 	right.appendChild(pAbstract);
 	right.appendChild(h1Speaker);
