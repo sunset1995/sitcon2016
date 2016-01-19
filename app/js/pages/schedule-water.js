@@ -60,7 +60,7 @@ function get_speaker_avatar_url(speaker) {
 			return avatar;
 		}
 	} else {
-		return 'https://cfp.sitcon.org/users/' + speaker.pk + '/photo/small';
+		return 'https://cfp.sitcon.org/users/' + speaker.pk + '/photo/medium';
 	}
 }
 function createTitle(title) {
