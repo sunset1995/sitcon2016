@@ -129,3 +129,65 @@
 	right: 10%;
 	@include cellphone-hidden-rwd();
 }
+
+#I-want-take-part {
+	display: inline-block;
+	position: absolute;
+	font-size: 16pt;
+	left: 50%;
+	top: 55%;
+	transform: translate(-50%, 0);
+	transform: translate3d(-50%, 0, 0);
+	padding: .8em 1.2em;
+	background-color: rgba(235, 107, 127, 0.6);
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color 1000ms $timeQuartic;
+	&:hover {
+		background-color: $colorBallon;
+	}
+
+	@include ipad-rwd() {
+		font-size: 14pt;
+	}
+	@include cellphone-rwd() {
+		font-size: 9pt;
+	}
+}
+
+#guide-index-arrow {
+	position: absolute;
+	bottom: 5em;
+	left: 50%;
+	transform: translateX(-50%);
+	transform: translate3d(-50%, 0, 0);
+
+	@include ipad-rwd() {
+		display: none;
+	}
+
+	p {
+		color: $colorBallon;
+		font-size: 16pt;
+		text-align: center;
+		font-weight: 900;
+	}
+	img {
+		position: relative;
+		left: 50%;
+		height: 2em;
+		transform: translate(-50%, 50%);
+		animation-name: arrow-index;
+		animation-duration: 1.5s;
+		animation-timing-function: cubic-bezier(.45,.05,.55,.95);
+		animation-iteration-count: infinite;
+
+		@keyframes arrow-index {
+			0%{ transform: translate(-50% , 30%); }
+			50%{ transform: translate(-50% , 70%); }
+			100%{ transform: translate(-50% , 30%); }
+		}
+	}
+}
