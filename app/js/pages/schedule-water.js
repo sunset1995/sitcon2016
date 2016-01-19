@@ -32,10 +32,12 @@ var procConf = function(sessions) {
 
 	Qall('.confslot', function(dom) {
 		var detail = dom.querySelector('.data-storage');
-		addEvent(dom, 'click', function() {
-			fancybox.setContent(detail.innerHTML);
-			fancybox.open();
-		});
+        if(detail) {
+            addEvent(dom, 'click', function() {
+                fancybox.setContent(detail.innerHTML);
+                fancybox.open();
+            });
+        }
 	});
 }
 
