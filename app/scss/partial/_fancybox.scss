@@ -18,8 +18,8 @@
 	.xx {
 		position: absolute;
 		display: inline-block;
-		right: .5em;
-		top: 0;
+		right: 1em;
+		top: 1em;
 		width: 2em;
 		height: 2em;
 		z-index: 100;
@@ -48,16 +48,19 @@ $fancyboxDuration: 500ms;
 	z-index: 10;
 	background-color: #5b5b5b;
 	transition: all $fancyboxDuration $timeQuartic;
+	border-radius: 3px;
 }
 #fancybox-forward2 {
 	z-index: 20;
 	background-color: $colorWater;
 	transition: all $fancyboxDuration $timeQuartic 100ms;
+	border-radius: 3px;
 }
 #fancybox-container {
 	z-index: 30;
 	background-color: white;
 	transition: all $fancyboxDuration $timeQuartic 200ms;
+	border-radius: 3px;
 }
 #fancybox-forward1,
 #fancybox-forward2,
