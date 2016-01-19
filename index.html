@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>學生計算機年會 | Students' Information Technology Conference</title>
 
@@ -38,33 +38,6 @@
 			height: 100%;
 			background-color: #C2E9FF;
 			z-index: 1000;
-			opacity: 1;
-			-o-transition: opacity 1000ms;
-			-moz-transition: opacity 1000ms;
-			-webkit-transition: opacity 1000ms;
-			transition: opacity 1000ms;
-		}
-		#loading-page > h1 {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			color: #0093ba;
-			font-weight: 500;
-			opacity: 0;
-		
-			-o-transform: translate(-50%, -50%);
-			-o-transform: translate3d(-50%, -50%, 0);
-			-moz-transform: translate(-50%, -50%);
-			-moz-transform: translate3d(-50%, -50%, 0);
-			-webkit-transform: translate(-50%, -50%);
-			-webkit-transform: translate3d(-50%, -50%, 0);
-			transform: translate(-50%, -50%);
-			transform: translate3d(-50%, -50%, 0);
-		
-			-o-transition: opacity 1000ms;
-			-moz-transition: opacity 1000ms;
-			-webkit-transition: opacity 1000ms;
-			transition: opacity 1000ms;
 		}
 	</style>
 
@@ -72,9 +45,7 @@
 
 <body>
 
-	<div id="loading-page">
-		<h1 id="loading-percentage">0%</h1>
-	</div>
+	<div id="loading-page"></div>
 	<div id="fancybox">
 		<div id="fancybox-bg"></div>
 		<div id="fancybox-forward1"></div>
@@ -110,7 +81,7 @@
 			<div id="target-location" class="targetor"></div>
 
 			<div id="cover-fix">
-				<img id="image-sun" src="image/sun.png"></img>
+				<img id="image-sun" src="image/sun.png">
 
 				<img id="image-bird1" src="image/bird.png">
 				<img id="image-bird2" src="image/bird.png">
@@ -139,24 +110,33 @@
 				<div id="page-home" class="page-container">
 					<div class="sky">
 						<div class="grass"></div>
-						<img class="image-grass image-grass1" src="image/grass.png"></img>
-						<img class="image-grass image-grass2" src="image/grass.png"></img>
+						<img class="image-grass image-grass1" src="image/grass.png">
+						<img class="image-grass image-grass2" src="image/grass.png">
 						<div id="image-group-leftground">
-							<img class="image-bridge" src="image/bridge.png"></img>
-							<img id="image-tree3" class="image-tree" src="image/tree.png"></img>
-							<img id="image-tree2" class="image-tree" src="image/tree.png"></img>
-							<img id="image-tree1" class="image-tree" src="image/tree.png"></img>
+							<img class="image-bridge" src="image/bridge.png">
+							<img id="image-tree3" class="image-tree" src="image/tree.png">
+							<img id="image-tree2" class="image-tree" src="image/tree.png">
+							<img id="image-tree1" class="image-tree" src="image/tree.png">
 						</div>
-						<img id="image-tree4" class="image-tree" src="image/tree.png"></img>
-						<img id="image-tree6" class="image-tree" src="image/tree.png"></img>
-						<img id="image-tree5" class="image-tree" src="image/tree.png"></img>
-						<img id="image-tree7" class="image-tree" src="image/tree.png"></img>
+						<img id="image-tree4" class="image-tree" src="image/tree.png">
+						<img id="image-tree6" class="image-tree" src="image/tree.png">
+						<img id="image-tree5" class="image-tree" src="image/tree.png">
+						<img id="image-tree7" class="image-tree" src="image/tree.png">
 
 						<div id="image-group-title">
 							<img id="image-character-blue" src="image/character-blue.png">
 							<img id="image-character-red" src="image/character-red.png">
 							<img id="image-stone" src="image/stone.png">
 							<img id="image-topic" src="image/topic.png">
+						</div>
+
+						<a id="I-want-take-part">
+	我要報名
+</a>
+
+						<div id="guide-index-arrow">
+							<p>關於本年會</p>
+							<img src="image/arrow.png">
 						</div>
 
 					</div>
@@ -189,7 +169,7 @@
 
 						<article>
 							<h1 class="relative">
-			Innovation & Implementation
+			Innovation &amp; Implementation
 			<img class="title-small-stone" src="image/stone-iv.png">
 		</h1>
 							<p>
@@ -232,9 +212,9 @@
 				<div id="page-schedule" class="page-container">
 					<div class="sky">
 						<div class="grass"></div>
-						<img class="image-grass image-grass1" src="image/grass.png"></img>
-						<img class="image-grass image-grass2" src="image/grass.png"></img>
-						<img id="image-light-house" src="image/light-house.png"></img>
+						<img class="image-grass image-grass1" src="image/grass.png">
+						<img class="image-grass image-grass2" src="image/grass.png">
+						<img id="image-light-house" src="image/light-house.png">
 
 					</div>
 					<div class="page-upground">
@@ -263,6 +243,13 @@
 								<div id="event-booth" class="event-container">
 									<h2>攤位</h2>
 								</div>
+							</div>
+
+							<div class="clear"></div>
+
+							<div id="conf-guide-block">
+								<h1>議程介紹</h1>
+								<img id="guide-arrow" src="image/arrow.png">
 							</div>
 
 							<div id="event-lighting-talk-info" class="data-storage">
@@ -359,7 +346,6 @@
 							</div>
 
 						</div>
-						<img id="guide-arrow" src="image/arrow.png"></img>
 					</div>
 					<div class="page-content">
 						<div id="conference-time">
@@ -587,8 +573,8 @@
 				<div id="page-sponsor" class="page-container">
 					<div class="sky">
 						<div class="grass"></div>
-						<img class="image-grass image-grass1" src="image/grass.png"></img>
-						<img class="image-grass image-grass2" src="image/grass.png"></img>
+						<img class="image-grass image-grass1" src="image/grass.png">
+						<img class="image-grass image-grass2" src="image/grass.png">
 
 					</div>
 					<div class="page-upground co-host">
@@ -626,9 +612,10 @@
 				<div id="page-location" class="page-container">
 					<div class="sky">
 						<div class="grass"></div>
-						<img class="image-grass image-grass1" src="image/grass.png"></img>
+						<img class="image-grass image-grass1" src="image/grass.png">
 						<div id="image-group-rightground">
-							<img class="image-bridge" src="image/bridge.png"></img>
+							<img class="image-bridge" src="image/bridge.png">
+							<img class="image-right-tree" src="image/tree.png">
 						</div>
 
 					</div>
