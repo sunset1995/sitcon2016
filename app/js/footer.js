@@ -78,24 +78,25 @@ var slideInAnimator = function() {
 
 // Process API data
 var procStaff = function(staffs) {
-	for(var i=0; i<staffs.length; ++i) {
-		var nowGroup = staffs[i];
+	for(var i in staffs) {
+		var current_group = staffs[i];
 
 		var groupDOM = document.createElement('div');
-		groupDOM.id = 'group' + nowGroup.pk;
+		groupDOM.id = 'group' + current_group.pk;
 		groupDOM.className = 'group';
 
 		var h2 = document.createElement('h2');
 		h2.innerText = current_group.name;
 		groupDOM.appendChild(h2);
 
-		var member = nowGroup.users;
-		sortGroup(member);
-		for(var j=0; j<member.length; ++j)
-			if( member[j] !== null )
-				groupDOM.appendChild(
-					staffCard(member[j].profile)
-				);
+		var group_members = current_group.users;
+		sortGroup(group_members);
+		group_members = group_members.filter(Boolean);
+		for(var j in group_members) {
+			var member = group_members[j];
+			var staff_card = generate_staff_card(member.profile, member.pk);
+			groupDOM.appendChild(staff_card);
+		}
 
 		staffsDOM.appendChild(groupDOM);
 		slideInAnimator.regist(groupDOM);
@@ -116,10 +117,10 @@ ajax.get('https://staff.sitcon.org/api/staffgroups/')
 */
 
 // Generate each member card
-function staffCard(member) {
+function generate_staff_card(member, member_pk) {
 	var card = document.createElement('div');
 	var imgFrame = document.createElement('div');
-    var imgs = document.createElement('div');
+	var imgs = document.createElement('div');
 	var imgloader = document.createElement('img');
 	var imgFront = document.createElement('div');
 	var imgBack = document.createElement('div');
@@ -130,14 +131,20 @@ function staffCard(member) {
 	imgs.className = 'staff-photo-container unactive';
 	imgFront.className = 'staff-photo';
 	imgloader.style.display = 'none';
-	if( member.avatar.slice(0, 4) !== 'http' ) {
-		imgloader.src = 'https://staff.sitcon.org' + member.avatar;
-		imgFront.style.backgroundImage = 'url(https://staff.sitcon.org' + member.avatar + ')';
+
+	var avatar_url, avatar = member.avatar;
+	if(avatar.substr(0, 4) == 'http') {
+		if(avatar.indexOf('gravatar.com/') > -1) {
+			avatar_url = avatar + '&s=80';
+		} else {
+			avatar_url = avatar;
+		}
+	} else {
+		avatar_url = 'https://staff.sitcon.org/users/' + member_pk + '/photo/small';
 	}
-	else {
-		imgloader.src = member.avatar + '&s=80';
-		imgFront.style.backgroundImage = 'url(' + member.avatar + '&s=80)';
-	}
+	imgloader.src = avatar_url;
+	imgFront.style.backgroundImage = 'url("' + avatar_url + '")';
+
 	imgBack.className = 'stone-photo';
 	name.innerText = member.display_name;
 
