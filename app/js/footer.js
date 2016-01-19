@@ -3,75 +3,39 @@ var ajax = require('superagent');
 
 var staffsDOM = Qid('staffs');
 
-var queueStaffCard = function(items, delay, callback) {
-
-    var currentItemId = 0;
-    var tasks = []
-    var resolver = function() {
-        currentItemId++
-
-        if(tasks[currentItemId]) {
-            tasks[currentItemId](resolver)
-        } else {
-            if(callback) callback()
-        }
-    }
-
-    var worker = function(cardDOM) {
-        return function(next) {
-            removeClass(cardDOM, 'unactive')
-            setTimeout(next, delay)
-        }
-    }
-
-    for(var i = 0; i < items.length; i++) {
-        tasks.push(worker(items[i]))
-    }
-
-    tasks[0](resolver)
+// This function count how px the domObj above bottom line of window
+var aboveBtn = function(domObj) {
+	return getScrollY()
+			+ window.innerHeight
+			- getY(domObj);
 }
 
-// Control the slidein animate
-var slideInAnimator = function() {
-	// This function count how px the domObj above bottom line of window
-	var aboveBtn = function(domObj) {
-		return getScrollY()
-				+ window.innerHeight
-				- getY(domObj);
-	}
-	// The y position in array groups
-	// must be from top to bottom
-	var groups = [];
-	var nowid=0;
-	// Locked while fliping img
-	var locked=0;
+// Lazy loading staff photo when scroll to staff area
+var lazy = function() {
+	var loaded = false;
+	var lazylist = [];
+	var createHandle = function(photoDOM, url) {
+		return function() {
+			addClass(photoDOM, 'loaded');
+			photoDOM.style.backgroundImage = 'url('+url+')';
+		};
+	};
 
 	return {
-		regist: function(newGroup) {
-			groups.push(newGroup);
+		regist: function(card) {
+			lazylist.push(card);
 		},
-		proc: function() {
-			if( locked ) return;
-			if( nowid==groups.length ) {
-				removeEvent(window, 'scroll', slideInAnimator.proc);
-				groups = null;
-				slideInAnimator = null;
+		check: function() {
+			if( loaded ) return;
+			if( aboveBtn(staffsDOM) < 400 )
 				return;
+			loaded = true;
+			removeEvent(window, 'scroll', lazy.check);
+			for(var i in lazylist) {
+				var now = lazylist[i];
+				now.loader.onload = createHandle(now.img, now.loader.textContent);
+				now.loader.src = now.loader.textContent;
 			}
-			locked = 1;
-			if( aboveBtn(groups[nowid]) > 150 ) {
-
-                var members = groups[nowid].querySelectorAll('.staff-photo-container');
-                // NOTE: Behavior changed, it will wait last animation finished to start next
-                // This can change by wrapper a new function and as another callback to resolve
-                queueStaffCard(members, 80, function() {
-                    locked = 0
-                })
-
-                ++nowid;
-
-            }
-			else locked = 0;
 		}
 	}
 }();
@@ -96,13 +60,18 @@ var procStaff = function(staffs) {
 			var member = group_members[j];
 			var staff_card = generate_staff_card(member.profile, member.pk);
 			groupDOM.appendChild(staff_card);
+			lazy.regist({
+				img: staff_card.children[0],
+				loader: staff_card.children[1]
+			});
 		}
 
 		staffsDOM.appendChild(groupDOM);
-		slideInAnimator.regist(groupDOM);
 		groupDOM = null;
 	}
-	addEvent(window, 'scroll', slideInAnimator.proc);
+	//img.style.backgroundImage = 'url("' + avatar_url + '")';
+	addEvent(window, 'scroll', lazy.check);
+	lazy.check();
 }
 
 ajax.get('https://staff.sitcon.org/api/staffgroups/')
@@ -119,18 +88,13 @@ ajax.get('https://staff.sitcon.org/api/staffgroups/')
 // Generate each member card
 function generate_staff_card(member, member_pk) {
 	var card = document.createElement('div');
-	var imgFrame = document.createElement('div');
-	var imgs = document.createElement('div');
+	var img = document.createElement('div');
 	var imgloader = document.createElement('img');
-	var imgFront = document.createElement('div');
-	var imgBack = document.createElement('div');
 	var name = document.createElement('p');
 
 	card.className = 'staff-card';
-	imgFrame.className = 'photo-frame';
-	imgs.className = 'staff-photo-container unactive';
-	imgFront.className = 'staff-photo';
-	imgloader.style.display = 'none';
+	img.className = 'staff-photo';
+	imgloader.className = 'staff-photo-loader';
 
 	var avatar_url, avatar = member.avatar;
 	if(avatar.substr(0, 4) == 'http') {
@@ -142,16 +106,12 @@ function generate_staff_card(member, member_pk) {
 	} else {
 		avatar_url = 'https://staff.sitcon.org/users/' + member_pk + '/photo/small';
 	}
-	imgloader.src = avatar_url;
-	imgFront.style.backgroundImage = 'url("' + avatar_url + '")';
+	imgloader.textContent = avatar_url;
 
-	imgBack.className = 'stone-photo';
 	name.textContent = member.display_name;
 
-	imgs.appendChild(imgFront);
-	imgs.appendChild(imgBack);
-	imgFrame.appendChild(imgs);
-	card.appendChild(imgFrame);
+	card.appendChild(img);
+	card.appendChild(imgloader);
 	card.appendChild(name);
 	return card;
 }
