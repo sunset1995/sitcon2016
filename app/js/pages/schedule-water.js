@@ -2,15 +2,17 @@ require('../lib/dom.js');
 var ajax = require('superagent');
 
 // Process API data
-var procConf = function(confs) {
-	for(var i=0; i<confs.length; ++i) {
-		var nowTitle = confs[i].title;
-		var nowAbstract = confs[i].abstract;
-		var nowSpeaker = confs[i].speaker.profile.display_name;
-		var nowBio = confs[i].speaker.profile.bio;
-		var nowImg = imgUrl(confs[i].speaker.profile.avatar);
-		var nowRoom = confs[i].room.slice(0, 2);
-		var nowStart = new Date(confs[i].start);
+var procConf = function(sessions) {
+	for(var i in sessions) {
+		var session = sessions[i];
+
+		var nowTitle = session.title;
+		var nowAbstract = session.abstract;
+		var nowSpeaker = session.speaker.profile.display_name;
+		var nowBio = session.speaker.profile.bio;
+		var nowImg = get_speaker_avatar_url(session.speaker);
+		var nowRoom = session.room.slice(0, 2);
+		var nowStart = new Date(session.start);
 		var id = nowRoom 
 					+ '-'
 					+ nowStart.getUTCHours().toString()
@@ -47,9 +49,17 @@ ajax.get('https://cfp.sitcon.org/api/submissions/')
 /*
 *	Below is cumbersome code ==
 */
-function imgUrl(ori) {
-	if( ori.slice(0, 4)=='http' ) return ori;
-	else return 'https://cfp.sitcon.org'+ori;
+function get_speaker_avatar_url(speaker) {
+	var avatar = speaker.profile.avatar;
+	if(avatar.substr(0, 4) == 'http') {
+		if(avatar.indexOf('gravatar.com/') > -1) {
+			return avatar + '&s=80';
+		} else {
+			return avatar;
+		}
+	} else {
+		return 'https://cfp.sitcon.org/users/' + speaker.pk + '/photo/small';
+	}
 }
 function createTitle(title) {
 	var div = document.createElement('div');
