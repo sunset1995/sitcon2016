@@ -44,7 +44,10 @@
 		}
 	}
 	.page-content {
-		
+		@include ipad-rwd() {
+			width: 90%;
+		}
+
 		.title {
 			color: white;
 		}
@@ -57,6 +60,10 @@
 			content: ' ';
 			display: block;
 			clear: both;
+		}
+
+		@include ipad-rwd() {
+			width: 100%;
 		}
 	}
 
@@ -79,6 +86,9 @@
 		background-color: rgba(255,255,255,.3);
 		cursor: pointer;
 		border-radius: 3px;
+		&:hover {
+			background-color: white;
+		}
 
 		img {
 			width: 100%;
@@ -99,11 +109,24 @@
 }
 
 .data-sponsor {
-	padding: 4em;
+	padding: 4em 1em;
+	width: 90%;
+	max-width: 1000px;
+	margin: 0 auto;
+	&::after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
 
 	.left {
 		width: 40%;
 		float: left;
+		@include ipad-rwd() {
+			float: none;
+			width: 60%;
+			margin: 0 auto;
+		}
 
 		img {
 			width: 100%;
@@ -112,5 +135,13 @@
 	.right {
 		width: 59%;
 		float: right;
+		h1 {
+			color: $colorSkyDark;
+			font-size: 2em;
+		}
+		@include ipad-rwd() {
+			float: none;
+			width: 100%;
+		}
 	}
 }
