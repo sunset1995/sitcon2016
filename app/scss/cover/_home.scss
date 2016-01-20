@@ -28,6 +28,11 @@
 		width: 48%;
 		margin: 0 auto;
 	}
+	#image-topic-ch {
+		display: block;
+		width: 10%;
+		margin: 0 auto;	
+	}
 	#image-character-blue {
 		position: absolute;
 		width: 25%;
@@ -138,7 +143,7 @@
 	top: 55%;
 	transform: translate(-50%, 0);
 	transform: translate3d(-50%, 0, 0);
-	padding: .8em 1.2em;
+	padding: .6em 1em;
 	background-color: $colorBallon;
 	color: rgba(255,255,255,.8);
 	border-radius: 3px;
@@ -152,7 +157,8 @@
 	}
 
 	@include ipad-rwd() {
-		font-size: 14pt;
+		font-size: 13pt;
+		top: 60%;
 	}
 	@include cellphone-rwd() {
 		font-size: 9pt;
