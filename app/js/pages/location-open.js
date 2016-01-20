@@ -1,9 +1,6 @@
 require('../lib/dom.js');
 
 var locationMap = Qid('location-map');
-var mapOpenMiddle = function() {
-	addClass(locationMap, 'middle');
-}
 var mapOpenFinal = function() {
 	addClass(locationMap, 'open');
 	setTimeout(loadingMap, 1500);
@@ -11,26 +8,28 @@ var mapOpenFinal = function() {
 		Q('#group-map>.location-address').style.opacity = '1';
 	}, 2000);
 }
+var mapOpenMiddle = function() {
+	addClass(locationMap, 'middle');
+	setTimeout(mapOpenFinal, 500);
+}
 
 var locationOpening = function() {
 	removeEvent(Qid('link-location'), 'click',
 					locationOpening);
 	setTimeout(mapOpenMiddle, 1000);
-	setTimeout(mapOpenFinal, 1500);
 }
 
 if( location.hash.slice(8) === 'location' ) {
 	setTimeout(mapOpenMiddle, 1000);
-	setTimeout(mapOpenFinal, 1500);
 }
 else
 	addEvent(Qid('link-location'), 'click',
 			locationOpening);
 
-// Use OpenStreetMap via OpenLaye
+// Use OpenStreetMap via OpenLayer
 var reloadMaxTime = 10;
 function loadingMap() {
-	if( locationMap.offsetWidth != locationMap.parentElement.offsetWidth ) {
+	if( reloadMaxTime > 0 && locationMap.offsetWidth != locationMap.parentElement.offsetWidth ) {
 		if( reloadMaxTime > 0 )
 			setTimeout(loadingMap, 500);
 		--reloadMaxTime;
