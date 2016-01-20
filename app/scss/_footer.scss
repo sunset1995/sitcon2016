@@ -116,9 +116,9 @@
 				background-color: rgba(255,255,255,.1);
 				margin: 0 auto 1em auto;
 				border-radius: 3px;
-				cursor: pointer;
 				transition: background-color 1000ms $timeQuartic;
-				&:hover {
+				&.hover:hover {
+					cursor: pointer;
 					background-color: white;
 				}
 
