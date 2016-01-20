@@ -1,6 +1,7 @@
 #conference-time {
 	position: relative;
 	font-family: 'Varela Round', $sans-serif;
+	width: 100%;
 
 	h1 {
 		text-align: center;
@@ -74,16 +75,23 @@
 	padding: 6em 4em;
 	max-width: 1000px;
 	margin: 0 auto;
-
 	&::after {
 		content: ' ';
 		display: block;
 		clear: both;
 	}
+	@include cellphone-rwd() {
+		padding: 6em 1em;
+	}
 
 	.left {
 		float: left;
 		width: 20%;
+
+		@include ipad-rwd() {
+			float: none;
+			width: 100%;
+		}
 
 		.photo {
 			width: 200px;
@@ -92,11 +100,21 @@
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			background-size: cover;
+
+			@include ipad-rwd() {
+				display: block;
+				margin: 0 auto 2em auto;
+			}
 		}
 	}
 	.right {
 		float: right;
 		width: 70%;
+
+		@include ipad-rwd() {
+			float: none;
+			width: 100%;
+		}
 
 		h1 {
 			color: $colorWater;

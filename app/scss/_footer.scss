@@ -126,6 +126,10 @@
 				color: white;
 				font-weight: 100;
 				text-align: center;
+
+				@include ipad-rwd() {
+					font-size: .9em;
+				}
 			}
 			.intro {
 				display: none;

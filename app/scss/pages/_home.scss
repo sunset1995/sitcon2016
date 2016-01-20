@@ -7,9 +7,11 @@
 	color: $colorWaterText;
 
 	@include ipad-rwd() {
-		& {
-			padding: 2em;
-		}
+		padding: 2em;
+	}
+	@include cellphone-rwd() {
+		width: 80%;
+		padding: 1em;
 	}
 
 	ul {

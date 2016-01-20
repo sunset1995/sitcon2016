@@ -1,5 +1,7 @@
 require('../lib/dom.js');
+require('../lib/resize-handler.js')
 var ajax = require('superagent');
+var perfectScrollBar = require('perfect-scrollbar');
 
 // Process API data
 var procConf = function(sessions) {
@@ -47,6 +49,29 @@ ajax.get('https://cfp.sitcon.org/api/submissions/')
 		var confs = JSON.parse(res.text);
 		procConf(confs);
 	});
+
+var checkWidth = function() {
+	var timetableContainer = Qid('conference-time');
+	perfectScrollBar.initialize(timetableContainer, {
+				suppressScrollY: true,
+				suppressScrollX: false
+			});
+	return function() {
+		perfectScrollBar.destroy(timetableContainer);
+		if(timetableContainer.offsetWidth < 800)
+			perfectScrollBar.initialize(timetableContainer, {
+				suppressScrollY: true,
+				suppressScrollX: false
+			});
+		else
+			perfectScrollBar.initialize(timetableContainer, {
+				suppressScrollY: true,
+				suppressScrollX: true
+			});
+	}
+}();
+checkWidth();
+resizeHandler.regist(checkWidth);
 
 /*
 *	Below is cumbersome code ==

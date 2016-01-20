@@ -10,6 +10,10 @@
 	width: 80%;
 	margin: 8em auto;
 	color: $colorWaterText;
+
+	@include cellphone-rwd() {
+		width: 100%;
+	}
 }
 
 article:not(:first-child) {
