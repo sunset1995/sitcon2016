@@ -1,5 +1,6 @@
 require('../lib/dom.js');
-require('../lib/resize-handler.js')
+require('../lib/resize-handler.js');
+require('../lib/fancybox.js');
 var ajax = require('superagent');
 var perfectScrollBar = require('perfect-scrollbar');
 
