@@ -6,6 +6,7 @@
 	width: 100%;
 	transform: translateX(-50%);
 	transform: translate3d(-50%, 0, 0);
+	text-align: center;
 
 	@include cellphone-rwd() {
 		& {
@@ -71,6 +72,39 @@
 
 		@include ipad-rwd() {
 			left: 80%;
+		}
+	}
+	.btn-block {
+		display: block;
+		margin: 1em auto 0 auto;
+		text-align: center;
+	}
+	.btn {
+		display: inline-block;
+		font-size: 14pt;
+		padding: .5em .8em;
+		text-align: center;
+		background-color: $colorBallon;
+		color: rgba(255,255,255,.8);
+		border-radius: 3px;
+		text-decoration: none;
+		transition: background-color 1000ms $timeQuartic,
+					color 1000ms $timeQuartic;
+
+		@include ipad-rwd() {
+			font-size: 11pt;
+		}
+		@include cellphone-rwd() {
+			font-size: 9pt;
+		}
+
+		& + .btn {
+			margin-top: .5em;
+		}
+		&.hover:hover {
+			cursor: pointer;
+			background-color: rgba(235, 107, 127, 0.6);
+			color: white;
 		}
 	}
 }
@@ -161,26 +195,16 @@
 	@include cellphone-hidden-rwd();
 }
 
-#I-want-take-part {
+#home-cover-btn-block {
 	display: inline-block;
 	position: absolute;
-	font-size: 16pt;
+	font-size: 14pt;
 	left: 50%;
-	top: 55%;
+	top: 60%;
 	transform: translate(-50%, 0);
 	transform: translate3d(-50%, 0, 0);
-	padding: .6em 1em;
-	background-color: $colorBallon;
-	color: rgba(255,255,255,.8);
-	border-radius: 3px;
-	cursor: pointer;
-	text-decoration: none;
-	transition: background-color 1000ms $timeQuartic,
-				color 1000ms $timeQuartic;
-	&:hover {
-		background-color: rgba(235, 107, 127, 0.6);
-		color: white;
-	}
+
+
 
 	@include ipad-rwd() {
 		font-size: 13pt;
@@ -193,7 +217,7 @@
 
 #guide-index-arrow {
 	position: absolute;
-	bottom: 5em;
+	bottom: 4.1em;
 	left: 50%;
 	transform: translateX(-50%);
 	transform: translate3d(-50%, 0, 0);
