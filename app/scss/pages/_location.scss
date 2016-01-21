@@ -6,6 +6,14 @@
 	left: 50%;
 	transform: translate(-50%, -55%);
 	
+	@include ipad-rwd() {
+		top: 60%;
+		height: 80%;
+	}
+	@include cellphone-rwd() {
+		width: 90%;
+	}
+
 	.location-address {
 		position: absolute;
 		z-index: 500;
@@ -21,11 +29,26 @@
 		transition: opacity 1000ms $timeQuartic;
 		opacity: 0;
 
+		@include ipad-rwd() {
+			width: 10em;
+			padding: .5em;
+		}
+		@include cellphone-rwd() {
+			width: 6em;
+		}
+
 		strong {
 			display: block;
 			font-size: 1.5em;
 			color: #5b5b5b;
 			font-family: 'Varela Round', $sans-serif;
+
+			@include ipad-rwd() {
+				font-size: 1em;
+			}
+			@include cellphone-rwd() {
+				font-size: .8em;
+			}
 		}
 	}
 }
