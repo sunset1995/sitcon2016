@@ -144,5 +144,18 @@
 			float: none;
 			width: 100%;
 		}
+		.col-left, .col-right {
+			display: inline-block;
+			font-size: 14pt;
+			line-height: 1.6em;
+			margin-top: .5em;
+		}
+		.col-left {
+			width: 20%;
+			vertical-align: top;
+		}
+		.col-right {
+			width: 78%;
+		}
 	}
 }
