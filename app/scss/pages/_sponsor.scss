@@ -1,10 +1,21 @@
 #page-sponsor {
+	@mixin cover-too-small() {
+		@media screen and (max-width: 1400px) {
+			& { @content; }
+		}
+	}
 
 	.stand {
 		display: block;
 		width: 100%;
 		height: 6em;
 
+		@include cover-too-small() {
+			height: 12em;
+		}
+		@include ipad-rwd() {
+			height: 6em;
+		}
 		@include cellphone-rwd() {
 			height: 3em;
 		}
@@ -14,7 +25,7 @@
 		color: white;
 		text-align: center;
 		font-size: 18pt;
-		margin-bottom: 1em;
+		margin-bottom: .5em;
 
 		@include ipad-rwd() {
 			font-size: 14pt;
@@ -23,7 +34,7 @@
 	.host {
 		max-width: 1000px;
 		margin: 0 auto;
-		@include ipad-rwd() {
+		@include cover-too-small() {
 			.row-l {
 				float: left;
 				width: 33%;
@@ -81,7 +92,7 @@
 	}
 	.logo {
 		width: 80%;
-		margin: 0 auto 1em auto;
+		margin: 0 auto;
 		border-radius: 3px;
 		background-color: rgba(255,255,255,.3);
 		border-radius: 3px;
