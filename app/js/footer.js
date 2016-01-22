@@ -1,4 +1,4 @@
-require('./lib/dom.js');
+require('dom.js');
 var ajax = require('superagent');
 
 var staffsDOM = Qid('staffs');

@@ -1,4 +1,4 @@
-require('../lib/dom.js');
+require('dom.js');
 
 var locationMap = Qid('location-map');
 var mapOpenFinal = function() {

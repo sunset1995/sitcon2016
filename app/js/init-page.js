@@ -1,4 +1,4 @@
-require('./lib/dom.js');
+require('dom.js');
 
 var initPage = location.hash.slice(8) || 'home';
 location.hash = '#target-' + initPage;

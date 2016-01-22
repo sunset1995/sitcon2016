@@ -1,5 +1,5 @@
-require('./lib/dom.js');
-require('./lib/resize-handler.js');
+require('dom.js');
+require('resize-handler.js');
 
 var pages = [
 	'home', 'schedule', 'sponsor', 'location'
