@@ -10,7 +10,9 @@ var concat = require('gulp-concat');
 
 gulp.task('js', function(){
 	return gulp.src(jsPath.src)
-		.pipe(browserify())
+		.pipe(browserify({
+			paths: jsPath.include_paths
+		}))
 		.on('error', errorLog)
 		.pipe(concat('sitcon2016.js'))
 		.pipe(buffer())
@@ -20,7 +22,9 @@ gulp.task('js', function(){
 
 gulp.task('js-debug', function(){
 	return gulp.src(jsPath.src)
-		.pipe(browserify())
+		.pipe(browserify({
+			paths: jsPath.include_paths
+		}))
 		.on('error', errorLog)
 		.pipe(concat('sitcon2016.js'))
 		.pipe(buffer())
