@@ -1,4 +1,4 @@
-require('./dom.js');
+require('dom.js');
 var perfectScrollBar = require('perfect-scrollbar');
 
 fancybox = function() {

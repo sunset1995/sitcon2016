@@ -7,7 +7,8 @@ module.exports = {
 	js: {
 		src: 'app/js/main.js',
 		dst: 'build/',
-		watch: 'app/js/**/*'
+		watch: 'app/js/**/*',
+		include_paths: ['app/js/lib', __dirname + '/../node_modules']
 	},
 	scss: {
 		src: 'app/scss/main.scss',

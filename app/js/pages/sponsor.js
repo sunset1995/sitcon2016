@@ -1,5 +1,5 @@
-require('../lib/dom.js');
-require('../lib/fancybox.js');
+require('dom.js');
+require('fancybox.js');
 
 Qall('.sponsor .logo', function(dom) {
 	var data = dom.querySelector('.data-storage');
