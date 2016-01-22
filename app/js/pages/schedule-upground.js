@@ -1,5 +1,5 @@
-require('../lib/dom.js');
-require('../lib/fancybox.js');
+require('dom.js');
+require('fancybox.js');
 
 var eventList = [
 	'event-lighting-talk',
