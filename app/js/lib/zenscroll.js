@@ -189,10 +189,13 @@
 			}
 		}
 
+		// NOTICE: This behavior conflicts with navbar
+		/*
 		// create listeners for the documentElement only & exclude IE8-
 		if (!scrollContainer && "addEventListener" in win && !win.noZensmooth) {
 			win.addEventListener("click", internalLinkHandler, false)
 		}
+		*/
 
 		/**
 		 * Changes default settings for this scroller.
