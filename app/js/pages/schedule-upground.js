@@ -1,5 +1,6 @@
 require('dom.js');
 require('fancybox.js');
+require('zenscroll.js');
 
 var eventList = [
 	'event-lighting-talk',
@@ -21,3 +22,7 @@ for(var i=0; i<eventList.length; ++i) {
 	}());
 	eventDOM = null;
 }
+
+addEvent(Qid('guide-arrow'), 'click', function() {
+    zenscroll.to(Qid('conference-time'));
+});
