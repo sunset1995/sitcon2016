@@ -103,7 +103,7 @@
 		}
 		&.hover:hover {
 			cursor: pointer;
-			background-color: rgba(235, 107, 127, 0.6);
+			background-color: #FE2647;
 			color: white;
 		}
 	}
@@ -203,8 +203,6 @@
 	top: 60%;
 	transform: translate(-50%, 0);
 	transform: translate3d(-50%, 0, 0);
-
-
 
 	@include ipad-rwd() {
 		font-size: 13pt;
