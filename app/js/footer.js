@@ -1,4 +1,4 @@
-require('./lib/dom.js');
+require('dom.js');
 var ajax = require('superagent');
 
 var staffsDOM = Qid('staffs');
@@ -130,7 +130,7 @@ function sortGroup(member) {
 function hardcodeAddStaff() {
 	var marketGroup = Qid('group4');
 	hardcode_staff_addone('Christine', 'image/staffs/christine.jpg', marketGroup);
-	hardcode_staff_addone('翔子', 'image/staffs/shiyoko.jpg', marketGroup);
+	hardcode_staff_addone('翔子', 'image/staffs/shouko.jpg', marketGroup);
 	hardcode_staff_addone('HBA', '', marketGroup);
 	hardcode_staff_addone('松營', '', marketGroup);
 }

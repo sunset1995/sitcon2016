@@ -1,4 +1,4 @@
-require('./dom.js');
+require('dom.js');
 
 resizeHandler = function() {
 	var stk = [];

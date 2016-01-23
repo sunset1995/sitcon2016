@@ -1,6 +1,7 @@
 require('./init-page.js');
 require('./navbar.js');
 require('./footer.js');
+require('./pages/home.js');
 require('./pages/schedule-upground.js');
 require('./pages/schedule-water.js');
 require('./pages/sponsor.js');
