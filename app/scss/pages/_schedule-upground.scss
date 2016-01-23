@@ -69,6 +69,7 @@
 	left: 50%;
 	height: 3em;
 	transform: translate(-50%, 50%);
+	cursor: pointer;
 	animation-name: arrow;
 	animation-duration: 1.5s;
 	animation-timing-function: cubic-bezier(.45,.05,.55,.95);
