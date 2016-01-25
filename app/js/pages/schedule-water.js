@@ -21,6 +21,10 @@ var procConf = function(sessions) {
 					+ nowStart.getUTCHours().toString()
 					+ nowStart.getUTCMinutes().toString();
 		var dom = Qid(id);
+		if( dom===null ) {
+			console.log(session);
+			continue;
+		}
 		
 		var img = document.createElement('img');
 		img.src = nowImg;
