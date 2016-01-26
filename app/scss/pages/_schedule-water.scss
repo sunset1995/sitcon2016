@@ -124,3 +124,33 @@
 		}
 	}
 }
+#conf-map {
+	font-size: 2em;
+	margin: 2em auto;
+	width: 6em;
+	padding: 0.5em 0.8em;
+	background-color: rgba(255, 255, 255, 0.6);
+	color: #484848;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 1000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+}
+.conf-map {
+	width: 90%;
+	max-width: 850px;
+	margin: 0 auto;
+	padding: 4em 0;
+
+	h1 {
+		color: $colorSkyDark;
+		font-size: 2em;
+		text-align: center;
+	}
+	img {
+		width: 100%;
+	}
+}
