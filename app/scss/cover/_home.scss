@@ -55,7 +55,7 @@
 	#image-character-blue {
 		position: absolute;
 		width: 25%;
-		right: 76%;
+		right: 80%;
 		top: 0;
 		transform: translateX(50%);
 
@@ -67,7 +67,7 @@
 		position: absolute;
 		width: 25%;
 		left: 76%;
-		top: 20%;
+		top: 10%;
 		transform: translateX(-30%);
 
 		@include ipad-rwd() {
@@ -81,9 +81,9 @@
 	}
 	.btn {
 		display: inline-block;
-		font-size: 14pt;
+		font-size: 13pt;
 		padding: .5em .8em;
-		margin: 0 1em;
+		margin: 0 .15em;
 		text-align: center;
 		background-color: $colorBallon;
 		color: rgba(255,255,255,.8);
