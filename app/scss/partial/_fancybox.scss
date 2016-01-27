@@ -77,4 +77,9 @@ $fancyboxDuration: 500ms;
 #fancybox-container.open {
 	width: 80%;
 	height: 80%;
+
+	@include cellphone-rwd() {
+		height: 100%;
+		width: 100%;
+	}
 }
