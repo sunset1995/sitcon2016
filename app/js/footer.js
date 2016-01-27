@@ -131,7 +131,7 @@ function hardcodeAddStaff() {
 	var marketGroup = Qid('group4');
 	hardcode_staff_addone('Christine', 'image/staffs/christine.jpg', marketGroup);
 	hardcode_staff_addone('翔子', 'image/staffs/shouko.jpg', marketGroup);
-	hardcode_staff_addone('HBA', '', marketGroup);
+	hardcode_staff_addone('HBA', 'image/staffs/hba.jpg', marketGroup);
 	hardcode_staff_addone('松營', '', marketGroup);
 }
 function hardcode_staff_addone(display_name, url, addTo) {
