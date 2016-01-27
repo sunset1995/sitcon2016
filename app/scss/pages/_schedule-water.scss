@@ -53,6 +53,14 @@
 			height: 1.5em;
 			text-align: center;
 		}
+		p.time-stand {
+			@include ipad-rwd() {
+				height: 4em;
+			}
+			@include cellphone-rwd() {
+				height: 6em;
+			}
+		}
 		small {
 			font-size: 10pt;
 			opacity: .5;
