@@ -39,6 +39,7 @@
 			border-radius: 1em;
 			margin-right: .8em;
 			vertical-align: middle;
+			background-color: white;
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			background-size: cover;
@@ -64,6 +65,11 @@
 		small {
 			font-size: 10pt;
 			opacity: .5;
+		}
+		.top {
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 	td.clickable {
@@ -105,6 +111,7 @@
 			width: 200px;
 			height: 200px;
 			border-radius: 100px;
+			background-color: #eee;
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			background-size: cover;
@@ -130,6 +137,50 @@
 		p {
 			text-align: justify;
 		}
+	}
+	.stand {
+		height: 6em;
+	}
+	.middle {
+		margin: 0 auto;
+		width: 70%;
+
+		@include ipad-rwd() {
+			width: 100%;
+		}
+
+		h1 {
+			color: $colorWater;
+		}
+		p {
+			text-align: justify;
+		}	
+	}
+	p.li {
+		position: relative;
+		padding-left: 2em;
+
+		&:first-of-type {
+			padding-top: 1em;
+		}
+		&:last-of-type {
+			padding-bottom: 1em;
+		}
+		&::before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			height: .6em;
+			width: .6em;
+			border-radius: .5em;
+			background-color: #333;
+			top: 50%;
+			left: 1em;
+			transform: translateY(-50%);
+		}
+	}
+	ul {
+		padding-left: 2em;
 	}
 }
 #conf-map {
@@ -160,5 +211,17 @@
 	}
 	img {
 		width: 100%;
+	}
+}
+
+.speaker-block {
+	margin: .5em auto;
+	text-align: center;	
+}
+#forum-slot {
+	padding: .8em 0;
+	.speaker {
+		display: inline-block;
+		margin: 0 1em;
 	}
 }
