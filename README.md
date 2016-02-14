@@ -1,6 +1,6 @@
-#  STICON 2016 網頁
+#  SITCON 2016 網頁
 
-請多提供技術上及網頁設計上的意見  
+請多提供技術上及網頁設計上的意見
 [檢視目前結果](http://sunset1995.github.io/sitcon2016/)
 
 ## 環境準備
@@ -36,26 +36,26 @@ cp -R ./build/* ./
 #### debug
 `gulp debug` 會重 build 個網頁並建制臨時的小型網頁伺服用來檢視結果及 livereload
 
-gulp debug 在 build 時不會壓縮  
+gulp debug 在 build 時不會壓縮
 所以 debug 完請再 `gulp` 一次以壓縮可以壓縮的檔案
 
 ## Source code
 
 #### html
-整個 html 拆成多個部份放在資料夾 **app/html/** 下  
-由 **app/index.html** 在 build 時 include  
-其中網頁內文放在 **_app/html/pages_**  
+整個 html 拆成多個部份放在資料夾 **app/html/** 下
+由 **app/index.html** 在 build 時 include
+其中網頁內文放在 **_app/html/pages_**
 若只想 build html 可 `gulp html`
 
 #### scss
-所有 scss 放在 **app/scss/** 下  
-由 **app/scss/main.scss** import  
-最後只會 build 出一個 **build/sitcon2016.css**  
+所有 scss 放在 **app/scss/** 下
+由 **app/scss/main.scss** import
+最後只會 build 出一個 **build/sitcon2016.css**
 若只想 build scss 可 `gulp scss`
 
 #### js
-所有 js 放在 **app/js/** 下  
-由 **app/js/main.js** require  
-最後只會 build 出一個 **build/sitcon2016.js**  
+所有 js 放在 **app/js/** 下
+由 **app/js/main.js** require
+最後只會 build 出一個 **build/sitcon2016.js**
 若只想 build js 可 `gulp js`
 
