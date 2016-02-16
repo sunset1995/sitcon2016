@@ -3,8 +3,16 @@ require('dom.js');
 var initPage = location.hash.slice(8) || 'home';
 location.hash = '#target-' + initPage;
 initPage = 'page-' + initPage;
-Qid('h-controller').style.height
-	= Qid(initPage).offsetHeight + 'px';
+var resize_things = function() {
+	Qid('h-controller').style.height =
+		Qid(initPage).offsetHeight + 'px';
+};
+
+resize_things();
+
+Qall('#page-sponsor img', function(element) {
+	addEvent(element, 'load', resize_things);
+});
 
 setTimeout(function() {
 	addClass(Qid('image-group-title'), 'active');

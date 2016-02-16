@@ -29,17 +29,17 @@ for(var i=0; i<pages.length; ++i)
 				}
 			return function() {
 				footerSponsorToggle();
-				Qid('h-controller').style.height
-				= Qid('page-'+which).offsetHeight + 'px';
+				Qid('h-controller').style.height =
+					Qid('page-'+which).offsetHeight + 'px';
 				removeClass(Qid('link-'+activePage), 'active');
 				activePage = which;
 				addClass(Qid('link-'+activePage), 'active');
 			};
 		}()
-	);	
+	);
 
 // source in /js/lib/resize-handler
 resizeHandler.regist(function() {
-	Qid('h-controller').style.height
-	= Qid('page-'+activePage).offsetHeight + 'px';
+	Qid('h-controller').style.height =
+		Qid('page-'+activePage).offsetHeight + 'px';
 });
