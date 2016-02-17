@@ -7,6 +7,7 @@ var pages = [
 
 var activePage = location.hash.slice(8) || 'home';
 addClass(Qid('link-'+activePage), 'active');
+location.hash = "#target-" + activePage;
 
 var footerSponsorDOM = Qid('footer-sponsor');
 if( activePage==='sponsor' )
