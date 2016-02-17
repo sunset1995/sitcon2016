@@ -43,3 +43,11 @@ resizeHandler.regist(function() {
 	Qid('h-controller').style.height
 	= Qid('page-'+activePage).offsetHeight + 'px';
 });
+
+addEvent(window, 'scroll', function() {
+	Qid('h-controller').style.height
+	= Qid('page-'+activePage).offsetHeight + 'px';
+});
+
+Qid('h-controller').style.height
+	= Qid('page-'+activePage).offsetHeight + 'px';
