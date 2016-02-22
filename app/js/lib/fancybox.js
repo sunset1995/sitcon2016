@@ -17,12 +17,12 @@ fancybox = function() {
 
 	var duration = 530;
 	var step2 = function() {
+		disableScroll();
 		content.innerHTML = str;
 		content.scrollTop = 0;
 		perfectScrollBar.update(content);
 		content.style.opacity	= xx.style.opacity
 								= '1';
-		document.documentElement.style.overflowY = 'hidden';
 		setTimeout(function() {
 			if( opened )
 				addClass(blurArea, 'blur');
@@ -43,9 +43,9 @@ fancybox = function() {
 	};
 
 	var close = function() {
+		enableScroll();
 		opened = false;
 		fancybox.style.display = 'none';
-		document.documentElement.style.overflowY = 'scroll';
 		removeClass(blurArea, 'blur');
 		reset();
 		locked = false;
@@ -66,3 +66,13 @@ fancybox = function() {
 		close: close
 	}
 }();
+
+function preventScroll(e) {
+	e.preventDefault();
+}
+function disableScroll() {
+	addEvent(document.documentElement, 'DOMMouseScroll', preventScroll);
+}
+function enableScroll() {
+	removeEvent(document.documentElement, 'DOMMouseScroll', preventScroll);
+}
