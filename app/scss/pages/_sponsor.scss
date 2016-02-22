@@ -199,8 +199,13 @@
 		li {
 			font-size: 14pt;
 			line-height: 1.6em;
-			a {
-				color: $colorSkyDark;
+		}
+		a {
+			color: $colorSkyDark;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}
