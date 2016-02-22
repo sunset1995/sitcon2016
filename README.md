@@ -1,7 +1,7 @@
 #  SITCON 2016 網頁
 
 請多提供技術上及網頁設計上的意見
-[檢視目前結果](http://sunset1995.github.io/sitcon2016/)
+[檢視目前結果](http://sitcon.org/2016/)
 
 ## 環境準備
 
@@ -36,8 +36,8 @@ cp -R ./build/* ./
 #### debug
 `gulp debug` 會重 build 個網頁並建制臨時的小型網頁伺服用來檢視結果及 livereload
 
-gulp debug 在 build 時不會壓縮
-所以 debug 完請再 `gulp` 一次以壓縮可以壓縮的檔案
+gulp **debug** 在 build 時**不會壓縮**
+所以 **debug 完請再 `gulp` 一次**以壓縮可以壓縮的檔案
 
 ## Source code
 
