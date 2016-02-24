@@ -13,7 +13,6 @@ Qall('.sponsor .logo', function(dom) {
 addEvent(Qid('conf-map'), 'click', function() {
 	var data = Qid('conf-map').querySelector('.data-storage');
 	return function() {
-		console.log(data)
 		fancybox.setContent(data.innerHTML);
 		fancybox.open();
 	}
