@@ -23,6 +23,13 @@
 		text-align: center;
 		color: #484848;
 		background-color: rgba(255,255,255,.6);
+		&.unconf {
+			width: 10%;
+
+			div:first-of-type {
+				margin-bottom: .8em;
+			}
+		}
 
 		.title {
 			padding: 0 1em;
@@ -107,6 +114,15 @@
 		padding-bottom: .3em;
 		margin-bottom: 2em;
 		border-bottom: 1px solid $colorWater;
+	}
+	a {
+		color: #0093ba;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;;
+		}
 	}
 	strong {
 		display: block;
