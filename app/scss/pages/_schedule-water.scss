@@ -17,6 +17,33 @@
 	th {
 		font-size: 16pt;
 		color: white;
+
+		section {
+			font-size: .8em;
+			display: block;
+		}
+		.stand {
+			display: inline-block;
+			width: 2em;
+			font-size: 1em;
+			height: 1em;
+		}
+		a {
+			display: inline-block;
+			font-size: 1em;
+			margin: 0 .3em;
+			padding: 0 .3em;
+			border-radius: 3px;
+			font-weight: 100;
+			text-decoration: none;
+			background: $colorBallon;
+			color: rgba(255, 255, 255, 0.8);
+			transition: all 500ms $timeQuartic;
+			&:hover {
+				background: rgba(255, 255, 255, 0.8);
+				color: $colorBallon;
+			}
+		}
 	}
 	td {
 		border: 2px solid $colorWater;
