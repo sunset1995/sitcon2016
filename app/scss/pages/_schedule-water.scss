@@ -78,8 +78,12 @@
 			background-size: 100% 100%;
 			background-size: cover;
 		}
+		.unconfspeaker {
+			color: gray;
+		}
 	}
 	td.time {
+		position: relative;
 		background-color: transparent;
 		color: white;
 
@@ -116,6 +120,31 @@
 	}
 	td.empty-slot {
 		background-color: transparent;
+	}
+	.LT-intro {
+		margin-top: .5em;
+		&::after {
+			content: ' ';
+			display: block;
+			clear: both;
+		}
+		.left {
+			width: 49%;
+			float: left;
+			text-align: right;
+		}
+		.right {
+			width: 50%;
+			float: right;
+			text-align: left;
+		}
+		@include cellphone-rwd() {
+			.left, .right {
+				width: 100%;
+				float: none;
+				text-align: center;
+			}
+		}
 	}
 }
 
