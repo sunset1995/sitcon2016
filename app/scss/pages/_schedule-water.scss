@@ -216,6 +216,7 @@
 	}
 }
 #conf-map {
+	position: relative;
 	font-size: 2em;
 	margin: 2em auto;
 	width: 6em;
@@ -228,6 +229,12 @@
 	transition: background-color 1000ms cubic-bezier(0.17, 0.84, 0.44, 1);
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.9);
+	}
+	.icon {
+		font-size: 2em;
+		display: inline-block;
+		height: 1em;
+		vertical-align: middle;
 	}
 }
 .conf-map {
