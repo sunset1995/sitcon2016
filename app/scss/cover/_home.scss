@@ -84,15 +84,17 @@
 		}
 	}
 	.btn {
+		position: relative;
 		display: inline-block;
+		overflow: hidden;
 		font-size: 13pt;
-		padding: .5em .8em;
+		padding: .5em .7em;
 		margin: 0 .15em;
 		text-align: center;
 		background-color: $colorBallon;
 		color: rgba(255,255,255,.8);
-		border-radius: 3px;
 		text-decoration: none;
+		cursor: pointer;
 		transition: background-color 1000ms $timeQuartic,
 					color 1000ms $timeQuartic;
 
@@ -102,18 +104,51 @@
 		@include cellphone-rwd() {
 			font-size: 9pt;
 		}
-
-		& + .btn {
-			margin-top: .5em;
+		$barWidth: 5px;
+		.upbar, .downbar, .leftbar, .rightbar {
+			position: absolute;
+			padding-bottom: 1px;
+			background: rgba(255,255,255,.8);
+			transition: all 500ms $timeQuartic 50ms;
+			strong {
+				font-size: 1em;
+			}
 		}
-		&.hover:hover {
-			cursor: pointer;
-			background-color: #FE2647;
-			color: white;
+		.upbar {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: $barWidth;
+			transform: translate(100%,0);
+			transform: translate3d(100%,0,0);
 		}
-		small {
-			font-size: .6em;
-			padding-right: .3em;
+		.downbar {
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: $barWidth;
+			transform: translate(-100%,0);
+			transform: translate3d(-100%,0,0);
+		}
+		.leftbar {
+			left: 0;
+			top: 0;
+			width: $barWidth;
+			height: 100%;
+			transform: translate(0,-100%);
+			transform: translate3d(0,-100%,0);
+		}
+		.rightbar {
+			right: 0;
+			top: 0;
+			width: $barWidth;
+			height: 100%;
+			transform: translate(0,100%);
+			transform: translate3d(0,100%,0);
+		}
+		&:hover > * {
+			transform: translate(0,0);
+			transform: translate3d(0,0,0);
 		}
 	}
 }
