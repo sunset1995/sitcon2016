@@ -21,6 +21,7 @@
 		section {
 			font-size: .8em;
 			display: block;
+			padding-bottom: 1px;
 		}
 		.stand {
 			display: inline-block;
@@ -36,12 +37,12 @@
 			border-radius: 3px;
 			font-weight: 100;
 			text-decoration: none;
-			background: $colorBallon;
-			color: rgba(255, 255, 255, 0.8);
+			background: $colorUnderground;
+			color: rgba(255, 255, 255, 0.6);
 			transition: all 500ms $timeQuartic;
 			&:hover {
-				background: rgba(255, 255, 255, 0.8);
-				color: $colorBallon;
+				background: rgba(255, 255, 255, 0.6);
+				color: $colorUnderground;
 			}
 		}
 	}
