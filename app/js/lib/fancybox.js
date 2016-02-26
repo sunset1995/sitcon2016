@@ -72,7 +72,9 @@ function preventScroll(e) {
 }
 function disableScroll() {
 	addEvent(document.documentElement, 'DOMMouseScroll', preventScroll);
+	addEvent(document.documentElement, 'touchmove', preventScroll);
 }
 function enableScroll() {
 	removeEvent(document.documentElement, 'DOMMouseScroll', preventScroll);
+	removeEvent(document.documentElement, 'touchmove', preventScroll);
 }
