@@ -73,6 +73,9 @@
 		@include ipad-rwd() {
 			left: 80%;
 		}
+		@include cellphone-rwd() {
+			left: 75%;
+		}
 	}
 	.btn-block {
 		display: block;

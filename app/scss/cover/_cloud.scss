@@ -22,6 +22,9 @@ $cloud_left: 17%, 10%, 25%, 70%, 77%, 67%;
 				transform $pageChangeDuration $timeQuartic;
 
 	@include cover-height-rwd();
+	@include cellphone-rwd() {
+		display: none;
+	}
 
 	.cloud {
 		position: absolute;

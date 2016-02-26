@@ -7,6 +7,11 @@
 				transform $pageChangeDuration $timeQuartic;
 
 	@include cover-height-rwd();
+	@include cellphone-rwd() {
+		& * {
+			display: none;
+		}
+	}
 }
 
 #image-bird1, #image-bird2, #image-bird3{
