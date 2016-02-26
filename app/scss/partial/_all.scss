@@ -33,6 +33,9 @@ html, body {
 }
 .blur {
 	filter: blur(3px);
+	@media screen and (max-width: 500px) {
+		filter: none;
+	}
 }
 .clear {
 	display: block;
