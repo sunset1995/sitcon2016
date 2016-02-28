@@ -58,7 +58,7 @@ var procStaff = function(staffs) {
 		group_members = group_members.filter(Boolean);
 		for(var j in group_members) {
 			var member = group_members[j];
-			var staff_card = generate_staff_card(member.profile, member.pk);
+			var staff_card = generate_staff_card(member.profile);
 			groupDOM.appendChild(staff_card);
 			lazy.regist({
 				img: staff_card.children[0],
@@ -76,8 +76,7 @@ var procStaff = function(staffs) {
 	lazy.check();
 }
 
-ajax.get('https://staff.sitcon.org/api/staffgroups/')
-	.query({format: 'json'})
+ajax.get('staff.json')
 	.end(function(err, res) {
 		var staffs = JSON.parse(res.text);
 		procStaff(staffs);
@@ -88,7 +87,7 @@ ajax.get('https://staff.sitcon.org/api/staffgroups/')
 */
 
 // Generate each member card
-function generate_staff_card(member, member_pk) {
+function generate_staff_card(member) {
 	var card = document.createElement('div');
 	var img = document.createElement('div');
 	var imgloader = document.createElement('img');
@@ -106,7 +105,7 @@ function generate_staff_card(member, member_pk) {
 			avatar_url = avatar;
 		}
 	} else {
-		avatar_url = 'https://staff.sitcon.org/users/' + member_pk + '/photo/small';
+		avatar_url = member.avatar;
 	}
 	imgloader.textContent = avatar_url;
 
