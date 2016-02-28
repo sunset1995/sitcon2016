@@ -25,6 +25,11 @@ module.exports = {
 		dst: 'build/',
 		watch: 'app/favicon*'
 	},
+	json: {
+		src: 'app/json/*',
+		dst: 'build/',
+		watch: 'app/json/*'
+	},
 	cfp: {
 		scss: {
 			src: ['app/cfp/landingpage.scss', 'app/cfp/CFP.scss'],

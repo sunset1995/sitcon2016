@@ -4,4 +4,4 @@
 */
 var gulp = require('gulp');
 
-gulp.task('default', ['html', 'scss', 'js', 'image', 'favicon', 'cfp']);
+gulp.task('default', ['html', 'scss', 'js', 'image', 'favicon', 'json', 'cfp']);
