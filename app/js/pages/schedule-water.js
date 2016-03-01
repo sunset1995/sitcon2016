@@ -16,14 +16,14 @@ var procConf = function(sessions) {
 		var nowImg = get_speaker_avatar_url(session.speaker);
 		var nowRoom = session.room.slice(0, 2);
 		var nowStart = new Date(session.start);
-		var id = nowRoom 
+		var id = nowRoom
 					+ '-'
 					+ nowStart.getUTCHours().toString()
 					+ nowStart.getUTCMinutes().toString();
 		var dom = Qid(id);
 		if( dom===null )
 			continue;
-		
+
 		var img = document.createElement('img');
 		img.src = nowImg;
 		img.style.display = 'none';
@@ -46,8 +46,7 @@ var procConf = function(sessions) {
 	});
 }
 
-ajax.get('https://cfp.sitcon.org/api/submissions/')
-	.query({format: 'json'})
+ajax.get('submissions.json')
 	.end(function(err, res) {
 		var confs = JSON.parse(res.text);
 		procConf(confs);
@@ -88,7 +87,7 @@ function get_speaker_avatar_url(speaker) {
 			return avatar;
 		}
 	} else {
-		return 'https://cfp.sitcon.org/users/' + speaker.pk + '/photo/medium';
+		return avatar
 	}
 }
 function createTitle(title) {
