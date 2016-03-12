@@ -68,13 +68,6 @@ $fancyboxDuration: 500ms;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 0%;
-	height: 0%;
-	transform: translate(-50%, -50%);
-}
-#fancybox-forward1.open,
-#fancybox-forward2.open,
-#fancybox-container.open {
 	width: 80%;
 	height: 80%;
 
@@ -82,4 +75,14 @@ $fancyboxDuration: 500ms;
 		height: 100%;
 		width: 100%;
 	}
+	transform-origin: 50% 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transform: translate3d(-50%, -50%, 0) scale(0);
+	will-change: transform;
+}
+#fancybox-forward1.open,
+#fancybox-forward2.open,
+#fancybox-container.open {
+	transform: translate(-50%, -50%) scale(1);
+	transform: translate3d(-50%, -50%, 0) scale(1);
 }
