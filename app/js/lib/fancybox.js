@@ -1,3 +1,4 @@
+require('requestAnimationFrame.js');
 require('dom.js');
 var perfectScrollBar = require('perfect-scrollbar');
 
@@ -8,47 +9,111 @@ fancybox = function() {
 	var fancyboxForward1 = Qid('fancybox-forward1');
 	var fancyboxForward2 = Qid('fancybox-forward2');
 	var blurArea = Qid('blur-area');
-	var locked = false, opened = false;
+	var locked = false;
 
 	var content = fancyContainer.querySelector('.content');
 	var xx = fancyContainer.querySelector('.xx');
 	var str = '';
 	perfectScrollBar.initialize(content);
 
-	var duration = 530;
-	var step2 = function() {
-		disableScroll();
-		content.innerHTML = str;
-		content.scrollTop = 0;
-		perfectScrollBar.update(content);
-		content.style.opacity	= xx.style.opacity
-								= '1';
-		setTimeout(function() {
-			if( opened )
+	var stepCnt = 0;
+	var starttime = null;
+	var eachstep = [
+		{
+			stime: 0,
+			dostep: function() {
+				fancybox.style.display = 'block';
+			}
+		},
+		{
+			stime: 100,
+			dostep: function() {
+				addClass(fancyboxForward1, 'open');
+			}
+		},
+		{
+			stime: 116,
+			dostep: function() {
+				addClass(fancyboxForward2, 'open');
+			}
+		},
+		{
+			stime: 132,
+			dostep: function() {
+				addClass(fancyContainer, 'open');
+			}
+		},
+		{
+			stime: 600,
+			dostep: function() {
+				disableScroll();
+			}
+		},
+		{
+			stime: 616,
+			dostep: function() {
+				content.innerHTML = str;
+			}
+		},
+		{
+			stime: 632,
+			dostep: function() {
+				content.scrollTop = 0;
+			}
+		},
+		{
+			stime: 648,
+			dostep: function() {
+				perfectScrollBar.update(content);
+			}
+		},
+		{
+			stime: 664,
+			dostep: function() {
+				content.style.opacity = '1';
+			}
+		},
+		{
+			stime: 700,
+			dostep: function() {
+				xx.style.opacity = '1';
+			}
+		},
+		{
+			stime: 1200,
+			dostep: function() {
 				addClass(blurArea, 'blur');
-		}, 500)
-	};
-	var step1 = function() {
-		addClass(fancyboxForward1, 'open');
-		addClass(fancyboxForward2, 'open');
-		addClass(fancyContainer, 'open');
-		setTimeout(step2, duration);
-	};
-	var reset = function() {
+				locked = false;
+			}
+		}
+	];
+	function openStep(nowtime) {
+		if( starttime === null )
+			starttime = nowtime;
+		var passtime = nowtime - starttime;
+		if( passtime > eachstep[stepCnt].stime ) {
+			eachstep[stepCnt].dostep();
+			++stepCnt;
+		}
+		if( stepCnt < eachstep.length )
+			requestAnimationFrame(openStep);
+	}
+
+	function reset() {
+		removeClass(blurArea, 'blur');
 		removeClass(fancyboxForward1, 'open');
 		removeClass(fancyboxForward2, 'open');
 		removeClass(fancyContainer, 'open');
-		content.style.opacity	= xx.style.opacity
-								= '0';
-	};
-
-	var close = function() {
-		enableScroll();
-		opened = false;
-		fancybox.style.display = 'none';
-		removeClass(blurArea, 'blur');
-		reset();
+		content.style.opacity = '0';
+		xx.style.opacity = '0';
 		locked = false;
+	}
+
+	function close() {
+		if( locked ) return;
+		enableScroll();
+		fancybox.style.display = 'none';
+		requestAnimationFrame(reset);
 	}
 	addEvent(fancyBg, 'click', close);
 	addEvent(xx, 'click', close);
@@ -59,9 +124,10 @@ fancybox = function() {
 		},
 		open: function() {
 			if( locked ) return;
-			locked = opened = true;
-			fancybox.style.display = 'block';
-			setTimeout(step1, 100);
+			locked = true;
+			stepCnt = 0;
+			starttime = null;
+			requestAnimationFrame(openStep);
 		},
 		close: close
 	}
