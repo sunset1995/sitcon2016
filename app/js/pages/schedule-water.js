@@ -4,6 +4,23 @@ require('fancybox.js');
 var ajax = require('superagent');
 var perfectScrollBar = require('perfect-scrollbar');
 
+var briefing = {
+	18: 'https://speakerdeck.com/pingnote/sitcon-2016-cross-platform-bim',
+	79: 'http://www.slideshare.net/choujohn351/dsl-58795980',
+	88: 'https://www.facebook.com/media/set/?set=a.507914002721762.1073741829.504797396366756&type=3&uploaded=56',
+	80: 'http://www.slideshare.net/ssuser803c6e/arm-uvisor-debug-refinement-project',
+	69: 'https://speakerdeck.com/tjjh89017/sitcon-2016-arm-cloud-project',
+	66: 'https://drive.google.com/file/d/0BzP5BGih9Ax7M2o0b1pMQS1jLXc/view?usp=sharing',
+	32: 'https://www.icloud.com/keynote/000YPbYqn6et7dbCHO2MTxc3g#%E5%8B%92%E7%B4%A2%E8%BB%9F%E9%AB%94SITCON',
+	17: 'http://slid.es/akira02/wall',
+	12: 'http://www.slideshare.net/bekketmcclane/war-of-native-speed-on-web-sitcon2016',
+	56: 'http://slides.com/michael34435/intern_in_your_journey',
+	19: 'https://goo.gl/0nfKQA',
+	57: 'http://www.slideshare.net/chiunhau/js-library',
+	26: 'http://slides.pastleo.me/SITCON_2016_myStyle/',
+	16: 'http://www.slideshare.net/Chengchiatseng/sitcon-2016',
+};
+
 // Process API data
 var procConf = function(sessions) {
 	for(var i in sessions) {
@@ -11,6 +28,7 @@ var procConf = function(sessions) {
 
 		var nowTitle = session.title;
 		var nowAbstract = session.abstract;
+		var nowBriefingURL = briefing[session.speaker.pk] || null;
 		var nowSpeaker = session.speaker.profile.display_name;
 		var nowBio = session.speaker.profile.bio;
 		var nowImg = get_speaker_avatar_url(session.speaker);
@@ -32,7 +50,7 @@ var procConf = function(sessions) {
 		dom.appendChild(createTitle(nowTitle));
 		dom.appendChild(createSpeaker(nowImg, nowSpeaker));
 		dom.appendChild(createDetail(
-			nowTitle, nowAbstract, nowSpeaker, nowBio, nowImg));
+			nowTitle, nowAbstract, nowSpeaker, nowBio, nowImg, nowBriefingURL));
 	}
 
 	Qall('.confslot', function(dom) {
@@ -108,7 +126,7 @@ function createSpeaker(url, speakerName) {
 	div.appendChild(name);
 	return div;
 }
-function createDetail(title, abstract, speaker, bio, imgurl) {
+function createDetail(title, abstract, speaker, bio, imgurl, briefingURL) {
 	var right = document.createElement('div');
 	var h1Title = document.createElement('h1');
 	var pAbstract = document.createElement('p');
@@ -130,6 +148,13 @@ function createDetail(title, abstract, speaker, bio, imgurl) {
 	img.style.backgroundImage = 'url('+imgurl+')';
 	left.className = 'left';
 	left.appendChild(img);
+	if( briefingURL ) {
+		var briefingLink = document.createElement('a');
+		briefingLink.href = briefingURL;
+		briefingLink.textContent = '#簡報連結';
+		briefingLink.target = '_blank';
+		left .appendChild(briefingLink);
+	}
 
 	var container = document.createElement('div');
 	container.className = 'data-conf';
