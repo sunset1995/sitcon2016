@@ -19,6 +19,8 @@ var briefing = {
 	57: 'http://www.slideshare.net/chiunhau/js-library',
 	26: 'http://slides.pastleo.me/SITCON_2016_myStyle/',
 	16: 'http://www.slideshare.net/Chengchiatseng/sitcon-2016',
+	30: 'http://slides.com/meng-yingtsai/sitcon2016',
+	50: 'http://www.slideshare.net/s3131212/got-your-pw',
 };
 
 // Process API data
