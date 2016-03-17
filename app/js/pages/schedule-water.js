@@ -28,15 +28,15 @@ var procConf = function(sessions) {
 	for(var i in sessions) {
 		var session = sessions[i];
 
-		var nowTitle = session.title;
-		var nowAbstract = session.abstract;
+		var nowTitle       = session.title;
+		var nowAbstract    = session.abstract;
 		var nowBriefingURL = briefing[session.speaker.pk] || null;
-		var nowSpeaker = session.speaker.profile.display_name;
-		var nowBio = session.speaker.profile.bio;
-		var nowImg = get_speaker_avatar_url(session.speaker);
-		var nowRoom = session.room.slice(0, 2);
-		var nowStart = new Date(session.start);
-		var id = nowRoom
+		var nowSpeaker     = session.speaker.profile.display_name;
+		var nowBio         = session.speaker.profile.bio;
+		var nowImg         = get_speaker_avatar_url(session.speaker);
+		var nowRoom        = session.room.slice(0, 2);
+		var nowStart       = new Date(session.start);
+		var id             = nowRoom
 					+ '-'
 					+ nowStart.getUTCHours().toString()
 					+ nowStart.getUTCMinutes().toString();
@@ -44,8 +44,8 @@ var procConf = function(sessions) {
 		if( dom===null )
 			continue;
 
-		var img = document.createElement('img');
-		img.src = nowImg;
+		var img           = document.createElement('img');
+		img.src           = nowImg;
 		img.style.display = 'none';
 		dom.appendChild(img);
 
@@ -112,14 +112,14 @@ function get_speaker_avatar_url(speaker) {
 	}
 }
 function createTitle(title) {
-	var div = document.createElement('div');
-	div.className = 'title';
+	var div         = document.createElement('div');
+	div.className   = 'title';
 	div.textContent = title;
 	return div;
 }
 function createSpeaker(url, speakerName) {
-	var div = document.createElement('div');
-	var img = document.createElement('div');
+	var div  = document.createElement('div');
+	var img  = document.createElement('div');
 	var name = document.createElement('span');
 	div.className = 'speaker';
 	img.className = 'photo';
@@ -143,41 +143,41 @@ function createLink(link) {
 	return a;
 }
 function createDetail(title, abstract, speaker, bio, imgurl, briefingURL) {
-	var right = document.createElement('div');
-	var h1Title = document.createElement('h1');
+	var right     = document.createElement('div');
+	var h1Title   = document.createElement('h1');
 	var pAbstract = document.createElement('p');
 	var h1Speaker = document.createElement('h1');
-	var pBio = document.createElement('p');
-	h1Title.textContent = title;
+	var pBio      = document.createElement('p');
+	h1Title.textContent   = title;
 	pAbstract.textContent = abstract;
 	h1Speaker.textContent = speaker;
-	pBio.textContent = bio;
+	pBio.textContent      = bio;
 	right.appendChild(h1Title);
 	right.appendChild(pAbstract);
 	right.appendChild(h1Speaker);
 	right.appendChild(pBio);
 	right.className = 'right';
 
-	var left = document.createElement('div');
-	var img = document.createElement('div');
-	img.className = 'photo';
+	var left       = document.createElement('div');
+	var img        = document.createElement('div');
+	img.className  = 'photo';
 	img.style.backgroundImage = 'url('+imgurl+')';
 	left.className = 'left';
 	left.appendChild(img);
 	if( briefingURL ) {
-		var briefingLink = document.createElement('a');
-		briefingLink.href = briefingURL;
+		var briefingLink         = document.createElement('a');
+		briefingLink.href        = briefingURL;
 		briefingLink.textContent = '#簡報連結';
-		briefingLink.target = '_blank';
-		left .appendChild(briefingLink);
+		briefingLink.target      = '_blank';
+		left.appendChild(briefingLink);
 	}
 
-	var container = document.createElement('div');
+	var container       = document.createElement('div');
 	container.className = 'data-conf';
 	container.appendChild(left);
 	container.appendChild(right);
 
-	var storage = document.createElement('div');
+	var storage       = document.createElement('div');
 	storage.className = 'data-storage';
 	storage.appendChild(container);
 	return storage;
