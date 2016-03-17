@@ -63,11 +63,13 @@
 	}
 	td {
 		border: 2px solid $colorWater;
+		padding: .5em 0;
 		text-align: center;
 		color: #484848;
 		background-color: rgba(255,255,255,.6);
 		&.unconf {
 			width: 10%;
+			padding: 0;
 
 			div:first-of-type {
 				margin-bottom: .8em;
@@ -340,5 +342,17 @@
 	.speaker {
 		display: inline-block;
 		margin: 0 1em;
+	}
+}
+a.briefing-link {
+	display: block;
+	margin-top: 1em;
+	height: 1.2em;
+	line-height: 1.2em;
+	color: #0093ba;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
 	}
 }

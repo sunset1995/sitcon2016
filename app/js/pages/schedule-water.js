@@ -51,6 +51,7 @@ var procConf = function(sessions) {
 
 		dom.appendChild(createTitle(nowTitle));
 		dom.appendChild(createSpeaker(nowImg, nowSpeaker));
+		dom.appendChild(createLink(briefing[session.speaker.pk] || null));
 		dom.appendChild(createDetail(
 			nowTitle, nowAbstract, nowSpeaker, nowBio, nowImg, nowBriefingURL));
 	}
@@ -127,6 +128,19 @@ function createSpeaker(url, speakerName) {
 	div.appendChild(img);
 	div.appendChild(name);
 	return div;
+}
+function createLink(link) {
+	var a         = document.createElement('a');
+	a.className   = 'briefing-link';
+	if( link ) {
+		a.target      = '_blank';
+		a.href        = link;
+		a.textContent = '#簡報連結';
+		a.onclick     = function(e) {
+			e.stopPropagation();
+		}
+	}
+	return a;
 }
 function createDetail(title, abstract, speaker, bio, imgurl, briefingURL) {
 	var right = document.createElement('div');
