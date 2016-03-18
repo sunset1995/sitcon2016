@@ -11,7 +11,7 @@ var briefing = {
 	80: 'http://www.slideshare.net/ssuser803c6e/arm-uvisor-debug-refinement-project',
 	69: 'https://speakerdeck.com/tjjh89017/sitcon-2016-arm-cloud-project',
 	66: 'https://drive.google.com/file/d/0BzP5BGih9Ax7M2o0b1pMQS1jLXc/view?usp=sharing',
-	32: 'https://www.icloud.com/keynote/000YPbYqn6et7dbCHO2MTxc3g#%E5%8B%92%E7%B4%A2%E8%BB%9F%E9%AB%94SITCON',
+	32: 'http://www.slideshare.net/MaHauo/ss-59732934',
 	17: 'http://slid.es/akira02/wall',
 	12: 'http://www.slideshare.net/bekketmcclane/war-of-native-speed-on-web-sitcon2016',
 	56: 'http://slides.com/michael34435/intern_in_your_journey',
